@@ -19,4 +19,14 @@
     <servlet-name>ServletListerRestaurants</servlet-name>
     <url-pattern>/ServletListerRestaurants</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ServletAccueil</display-name>
+    <servlet-name>ServletAccueil</servlet-name>
+    <servlet-class>controler.accueil.ServletAccueil</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ServletAccueil</servlet-name>
+    <url-pattern>/ServletAccueil</url-pattern>
+  </servlet-mapping>
 </web-app>
