@@ -29,4 +29,14 @@
     <servlet-name>ServletTesterConnexion</servlet-name>
     <url-pattern>/ServletTesterConnexion</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ServletListerUtilisateurs</display-name>
+    <servlet-name>ServletListerUtilisateurs</servlet-name>
+    <servlet-class>controler.utilisateurs.ServletListerUtilisateurs</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ServletListerUtilisateurs</servlet-name>
+    <url-pattern>/ServletListerUtilisateurs</url-pattern>
+  </servlet-mapping>
 </web-app>
