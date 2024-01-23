@@ -35,8 +35,19 @@
     <servlet-name>ServletListerProduit</servlet-name>
     <servlet-class>controler.produits.ServletListerProduit</servlet-class>
   </servlet>
+ 
   <servlet-mapping>
     <servlet-name>ServletListerProduit</servlet-name>
     <url-pattern>/ServletListerProduit</url-pattern>
+</servlet-mapping>
+<servlet>
+    <display-name>ServletListerUtilisateurs</display-name>
+    <servlet-name>ServletListerUtilisateurs</servlet-name>
+    <servlet-class>controler.utilisateurs.ServletListerUtilisateurs</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ServletListerUtilisateurs</servlet-name>
+    <url-pattern>/ServletListerUtilisateurs</url-pattern>
+
   </servlet-mapping>
 </web-app>
