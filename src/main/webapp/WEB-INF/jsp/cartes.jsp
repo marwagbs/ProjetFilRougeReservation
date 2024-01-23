@@ -7,6 +7,7 @@
 <title>la carte de notre restaurant</title>
 </head>
 <body>
+
 		 
  <%@include file="../fragments/header.jspf" %> 
  <main>
@@ -19,5 +20,8 @@
 <%@include file="../fragments/searchbar.jspf" %> 
 <%@include file="../fragments/footer.jspf" %> 	
 			 
+
+	<h1>Notre carte</h1>
+
 </body>
 </html>
