@@ -1,4 +1,25 @@
 <footer>
-
-
+	<div class="footer">
+        <img src="././assets/logos/logo.png" alt="Logo de M2I Ristorante" />
+        <div class="footer-flex">
+            <a href="">Nous contacter</a>
+            <a href="">Laisser un avis</a>
+            <div class="footer-icons">
+                <a target="_blank" href="">
+                    <img src="././assets/logos/facebook.png" alt="Logo Facebook" >
+                </a>
+                <a target="_blank" href="" class="lien-icone">
+                    <img src="././assets/logos/instagram.png" alt="Logo Instagram" >
+                </a>
+                <a target="_blank" href="" class="lien-icone">
+                    <img src="././assets/logos/linkedin.png" alt="Logo LinkedIn" >
+                </a>
+            </div>
+            <div class="footer-flex">
+                <a href="">Gestion de cookies</a>
+                <p>Le nom de notre equipe</p>
+                <p>© 2024 M2I Ristorante</p>
+            </div>
+        </div>
+    </div>
 </footer>
