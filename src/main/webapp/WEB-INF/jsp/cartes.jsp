@@ -6,7 +6,10 @@
 <head>
 <meta charset="UTF-8">
 <title>la carte de notre restaurant</title>
+<link href="././css/style.css" rel="stylesheet" >
+<%@include file="../fragments/linksfont.jspf" %>
 </head>
+
 <body>
 
 		 
@@ -77,15 +80,7 @@
  			</div>
  			</div>
 	 	</section>
-
-	 
 	</main>
-	 
-	
-	<%@include file="../fragments/footer.jspf" %> 	
-			 
-
-	<h1>Notre carte</h1>
-
+	<%@include file="../fragments/footer.jspf" %>
 </body>
 </html>
