@@ -1,16 +1,13 @@
 package controler.restaurants;
 
 import jakarta.servlet.ServletException;
-import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.util.List;
 
 import bll.BLLException;
 import bll.RestaurantBLL;
-import bo.Restaurant;
 
 public class ServletListerRestaurants extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -27,15 +24,12 @@ public class ServletListerRestaurants extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		try {
-			List<Restaurant> restaurants = restaurantBLL.selectAll();
-			for (Restaurant current : restaurants) {
-				System.out.println(current);
-			}
+			request.setAttribute("restaurants", restaurantBLL.selectAll());
 		} catch (BLLException e) {
 			e.printStackTrace();
 		}
 		
-		request.getRequestDispatcher("/WEB-INF/jsp/cartes.jsp").forward(request, response);
+		request.getRequestDispatcher("/WEB-INF/jsp/restaurants.jsp").forward(request, response);
 	}
 
 }
