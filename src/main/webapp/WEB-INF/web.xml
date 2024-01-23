@@ -19,6 +19,18 @@
     <servlet-name>ServletListerRestaurants</servlet-name>
     <url-pattern>/ServletListerRestaurants</url-pattern>
   </servlet-mapping>
+  
+    <servlet>
+    <description></description>
+    <display-name>ServletListerProduits</display-name>
+    <servlet-name>ServletListerProduits</servlet-name>
+    <servlet-class>controler.produits.ServletListerProduits</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ServletListerProduits</servlet-name>
+    <url-pattern>/cartes</url-pattern>
+  </servlet-mapping>
+  
   <servlet>
     <description></description>
     <display-name>ServletTesterConnexion</display-name>

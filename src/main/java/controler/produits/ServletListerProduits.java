@@ -28,10 +28,9 @@ public class ServletListerProduits extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		try {
+			
 			List<Produit> produits = produitBLL.selectALL();
-			for (Produit current : produits) {
-				System.out.println(current);
-			}
+			request.setAttribute("listeDeProduit", produits);
 		} catch (BLLException e) {
 			e.printStackTrace();
 		}
