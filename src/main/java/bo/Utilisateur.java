@@ -10,6 +10,11 @@ public class Utilisateur {
 	private Boolean isAdmin;
 	
 	public Utilisateur() {}
+    
+	public Utilisateur(int id) {
+		super();
+		this.id = id;
+	}
 
 	public Utilisateur(int id, String nom, String prenom, String email, String motDePasse, String telephone,
 			Boolean isAdmin) {

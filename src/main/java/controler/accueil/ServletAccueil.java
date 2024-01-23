@@ -40,8 +40,9 @@ public class ServletAccueil extends HttpServlet {
 
       
         RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/accueil.jsp");
+ 
         dispatcher.forward(request, response);
-        
+   
        
     } catch (Exception e) {
       

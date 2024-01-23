@@ -62,7 +62,7 @@ CREATE TABLE Reservations(
 	nb_personne int NOT NULL CHECK (nb_personne>=1),
 	id_utilisateur int NOT NULL,
 	id_restaurant INT NOT NULL,
-	statut VARCHAR (50) NULL CHECK (statut in ('acceptée', 'refusée')),
+	statut VARCHAR (50) NULL CHECK (statut in ('acceptée', 'refusée', null)),
 	commentaire VARCHAR (250) NULL
 
 );

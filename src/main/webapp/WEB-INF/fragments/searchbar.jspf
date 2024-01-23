@@ -1,3 +1,8 @@
-<div>
-chercher
-</div>
+ <div>
+ <form action="ServletDetail" method="GET">
+        <label for="search-bar">Rechercher un restaurant : </label>
+        <input type="text" id="search-bar" name="id" placeholder="ID du contact...">
+        <input type="submit" value="Rechercher">
+    </form>
+    
+    </div>
