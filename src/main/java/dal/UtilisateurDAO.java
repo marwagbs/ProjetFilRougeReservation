@@ -27,7 +27,7 @@ public class UtilisateurDAO implements GenericDAO<Utilisateur> {
 		try {
 			context = new InitialContext();
 			DataSource dataSource= (DataSource) context.lookup("java:comp/env/sqlserver");
-			 cnx =dataSource.getConnection();
+			 cnx = dataSource.getConnection();
 			 if(!cnx.isClosed()) {
 					System.out.println("la connexion est ouverte");
 				}
