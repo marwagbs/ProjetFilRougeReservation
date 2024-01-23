@@ -19,8 +19,7 @@
     <servlet-name>ServletListerRestaurants</servlet-name>
     <url-pattern>/ServletListerRestaurants</url-pattern>
   </servlet-mapping>
-  
-    <servlet>
+  <servlet>
     <description></description>
     <display-name>ServletListerProduits</display-name>
     <servlet-name>ServletListerProduits</servlet-name>
@@ -30,7 +29,6 @@
     <servlet-name>ServletListerProduits</servlet-name>
     <url-pattern>/cartes</url-pattern>
   </servlet-mapping>
-  
   <servlet>
     <description></description>
     <display-name>ServletTesterConnexion</display-name>
@@ -47,12 +45,11 @@
     <servlet-name>ServletListerProduit</servlet-name>
     <servlet-class>controler.produits.ServletListerProduit</servlet-class>
   </servlet>
- 
   <servlet-mapping>
     <servlet-name>ServletListerProduit</servlet-name>
     <url-pattern>/ServletListerProduit</url-pattern>
-</servlet-mapping>
-<servlet>
+  </servlet-mapping>
+  <servlet>
     <display-name>ServletListerUtilisateurs</display-name>
     <servlet-name>ServletListerUtilisateurs</servlet-name>
     <servlet-class>controler.utilisateurs.ServletListerUtilisateurs</servlet-class>
@@ -60,6 +57,15 @@
   <servlet-mapping>
     <servlet-name>ServletListerUtilisateurs</servlet-name>
     <url-pattern>/ServletListerUtilisateurs</url-pattern>
-
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ServletCreationCompte</display-name>
+    <servlet-name>ServletCreationCompte</servlet-name>
+    <servlet-class>controler.utilisateurs.ServletCreationCompte</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ServletCreationCompte</servlet-name>
+    <url-pattern>/creationDuCompte</url-pattern>
   </servlet-mapping>
 </web-app>
