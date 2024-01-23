@@ -1,0 +1,65 @@
+@charset "UTF-8";
+
+
+/* *****************************************************************
+                        GENERALITES
+***************************************************************** */
+html {
+	font-size: 62.5%; /* 1rem = 10px (la formule est 10/16*100) la taille par défaut étant 16px */
+	scroll-behavior: smooth;
+}
+
+img{
+    max-width:100%;
+    width: auto;
+    height: auto;
+}
+body {
+	font-family: 'Cabin', sans-serif;
+	line-height: 1.5;
+	font-size: 1.8rem; 
+	background-color: #fff;
+	
+}
+
+h1, 
+h2, 
+h3, 
+h4 {
+	font-family: 'Merienda', cursive;
+	font-weight: bold;
+} 
+
+h1 {
+	font-size: 3rem;
+	margin: 3rem 0;
+	text-align: center;
+
+}
+
+h2 {
+	font-size: 2.5rem;
+	margin: 4rem 0 2rem 0;
+
+}
+h2,h3{
+	text-align: center;
+}
+pre{
+	margin-top:0;
+	padding-top:0;
+	color:#fff;
+}
+p{
+	margin-bottom: 1.5rem;
+}
+
+a{
+	text-decoration: none;
+	color:black;
+}
+
+.container{
+    margin:auto;
+    max-width:1100px;
+}
