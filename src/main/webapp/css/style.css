@@ -43,6 +43,8 @@ h1 {
 
 
 
+/* Le code css pour le pied de page */
+
 .footer {
 	display: flex;
 	flex-direction: column;
@@ -90,4 +92,69 @@ h1 {
 	font-size: 0.8em;
 	text-align: center;
 	padding-bottom: 10px;
+}
+
+/* Le code css pour la page des restaurants */
+
+.resto-section {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 100%;
+	gap: 50px;
+	line-height: 0;
+	background-color: #2F4558;
+	padding: 60px 0;
+}
+
+.resto-card {
+	display: flex;
+	flex-direction: column;
+	border: 1px solid black;
+	width: 60%;
+	height: 300px;
+	gap: 30px;
+	padding: 30px 10px;
+	border-radius: 10px;
+	background-color: #F6B12D;
+}
+
+.resto-flex, .resto-icons {
+	display: flex;
+	flex-direction: row;
+	gap: 10px;
+	align-items: center;
+}
+
+.resto-icons img {
+	width: 0.8em;
+	height: auto;
+}
+
+.resto-icons p {
+	text-transform: uppercase;
+	font-size: 0.8em;
+}
+
+.resto-icons span {
+	padding: 9px 11px;
+	border-radius: 50%;
+	border: 1px solid black;
+	align-items: center;
+}
+
+#icon-moto {
+	padding: 12px 11px;
+}
+
+.resto-btn button {
+	width: 200px;
+	padding: 20px;
+	border: none;
+	border-radius: 30px;
+	background-color: #EF4B0A;
+	font-size: 0.6em;
+	color: white;
+	text-transform: uppercase;
+	font-weight: bold;
 }
