@@ -7,6 +7,17 @@
 <title>la carte de notre restaurant</title>
 </head>
 <body>
-
+		 
+ <%@include file="../fragments/header.jspf" %> 
+ <main>
+ 
+ 
+ 
+</main>
+ 
+ 
+<%@include file="../fragments/searchbar.jspf" %> 
+<%@include file="../fragments/footer.jspf" %> 	
+			 
 </body>
 </html>

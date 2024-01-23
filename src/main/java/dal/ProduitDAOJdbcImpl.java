@@ -40,7 +40,23 @@ public class ProduitDAOJdbcImpl  implements GenericDAO<Produit>{
 			+ "    Categories AS CAT ON P.id_categorie = CAT.id WHERE P.id=  ?";
 	
 	
-	private static final String SELECT = "SELECT * from produits  ";
+	private static final String SELECT = "SELECT"
+			+ "    P.id AS id_produit,"
+			+ "    P.nom ,"
+			+ "    P.description , "
+			+ "    P.prix, "
+			+ "    C.id AS id_carte, "
+			+ "    C.libelle , "
+			+ "    CAT.id AS id_categorie, "
+			+ "    CAT.libelle "
+			+ "FROM "
+			+ "    Produits AS P "
+			+ "INNER JOIN "
+			+ "    Produits_Cartes AS PC ON P.id = PC.id_produit "
+			+ "INNER JOIN "
+			+ "    Cartes AS C ON PC.id_carte = C.id "
+			+ "INNER JOIN "
+			+ "    Categories AS CAT ON P.id_categorie = CAT.id  ";
 	
 
 	private static final String SELECTByCarte = "SELECT"
@@ -105,14 +121,14 @@ public class ProduitDAOJdbcImpl  implements GenericDAO<Produit>{
 				produit.setNom(resultat.getString("nom"));
 				produit.setDescription(resultat.getString("description"));
 				produit.setPrix(resultat.getFloat("prix"));
-//				Categorie categorie=new Categorie();
-//				categorie.setId(resultat.getInt("id_categorie"));
-//				categorie.setLibelle(resultat.getString("libelle"));
-//				produit.setCategorie(categorie);
-//				Carte carte=new Carte();
-//				carte.setId(resultat.getInt("id_carte"));
-//				carte.setLibelle(resultat.getString("libelle"));
-//				produit.setCarte(carte);
+				Categorie categorie=new Categorie();
+				categorie.setId(resultat.getInt("id_categorie"));
+				categorie.setLibelle(resultat.getString("libelle"));
+				produit.setCategorie(categorie);
+				Carte carte=new Carte();
+				carte.setId(resultat.getInt("id_carte"));
+				carte.setLibelle(resultat.getString("libelle"));
+				produit.setCarte(carte);
 				produits.add(produit);
 			
 			}
