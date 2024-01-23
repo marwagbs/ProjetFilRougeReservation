@@ -1,3 +1,14 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>accueil</title>
+</head>
+<body>
+
 <%@ include file="/WEB-INF/fragments/header.jspf" %>
 
 <div>
@@ -10,11 +21,11 @@
 </div>
 
 <div>
-    <h2> Nos coups de cœur</h2>
+    <h2> Nos coups de coeur</h2>
 </div>
 
 <div>
-    <h2>Nous découvrir</h2>
+    <h2>Nous decouvrir</h2>
     <c:forEach var="restaurant" items="${restaurants}">
         <div class="card">
             <div class="container">
@@ -25,6 +36,7 @@
 </div>
 
 <div>
-    <h2> Témoignages </h2>
+    <h2> Temoignages </h2>
 </div>
 <%@ include file="/WEB-INF/fragments/footer.jspf" %>
+
