@@ -29,4 +29,14 @@
     <servlet-name>ServletTesterConnexion</servlet-name>
     <url-pattern>/ServletTesterConnexion</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ServletListerProduit</display-name>
+    <servlet-name>ServletListerProduit</servlet-name>
+    <servlet-class>controler.produits.ServletListerProduit</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ServletListerProduit</servlet-name>
+    <url-pattern>/ServletListerProduit</url-pattern>
+  </servlet-mapping>
 </web-app>
