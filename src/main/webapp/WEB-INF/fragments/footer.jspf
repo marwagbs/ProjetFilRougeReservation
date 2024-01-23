@@ -1,10 +1,10 @@
 <footer>
 	<div class="footer">
-        <img src="././assets/logos/logo.png" alt="Logo de M2I Ristorante" />
+        <img src="././assets/logos/logo.png" alt="Logo de M2I Ristorante" class="footer-logo" />
         <div class="footer-flex">
             <a href="">Nous contacter</a>
             <a href="">Laisser un avis</a>
-            <div class="footer-icons">
+        <div class="footer-icons">
                 <a target="_blank" href="">
                     <img src="././assets/logos/facebook.png" alt="Logo Facebook" >
                 </a>
@@ -15,11 +15,14 @@
                     <img src="././assets/logos/linkedin.png" alt="Logo LinkedIn" >
                 </a>
             </div>
-            <div class="footer-flex">
-                <a href="">Gestion de cookies</a>
-                <p>Le nom de notre equipe</p>
-                <p>© 2024 M2I Ristorante</p>
-            </div>
+        </div>
+        <div class="footer-text">
+            <p>Une vie sans pizza c'est comme la mer sans vague, Bonnie sans Clyde, Marseille sans Jul, le sud sans les cigales, Saint√© sans les verts, le pesto sans basilic...</p>
+        </div>
+        <div class="footer-info">
+            <a href="">Gestion de cookies</a>
+            <p>Le nom de notre equipe</p>
+            <p>C 2024 M2I Ristorante</p>
         </div>
     </div>
 </footer>
