@@ -5,6 +5,8 @@
 <head>
 <meta charset="UTF-8">
 <title>la carte de notre restaurant</title>
+<link href="././css/style.css" rel="stylesheet" >
+<%@include file="../fragments/linksfont.jspf" %>
 </head>
 <body>
 

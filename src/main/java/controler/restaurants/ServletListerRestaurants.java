@@ -34,6 +34,8 @@ public class ServletListerRestaurants extends HttpServlet {
 		} catch (BLLException e) {
 			e.printStackTrace();
 		}
+		
+		request.getRequestDispatcher("/WEB-INF/jsp/cartes.jsp").forward(request, response);
 	}
 
 }
