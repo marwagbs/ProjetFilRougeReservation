@@ -8,5 +8,20 @@
 </head>
 <body>
 
+		 
+ <%@include file="../fragments/header.jspf" %> 
+ <main>
+ 
+ 
+ 
+</main>
+ 
+ 
+<%@include file="../fragments/searchbar.jspf" %> 
+<%@include file="../fragments/footer.jspf" %> 	
+			 
+
+	<h1>Notre carte</h1>
+
 </body>
 </html>

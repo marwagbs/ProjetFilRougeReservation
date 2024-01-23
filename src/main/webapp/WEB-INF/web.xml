@@ -19,6 +19,18 @@
     <servlet-name>ServletListerRestaurants</servlet-name>
     <url-pattern>/ServletListerRestaurants</url-pattern>
   </servlet-mapping>
+  
+    <servlet>
+    <description></description>
+    <display-name>ServletListerProduits</display-name>
+    <servlet-name>ServletListerProduits</servlet-name>
+    <servlet-class>controler.produits.ServletListerProduits</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ServletListerProduits</servlet-name>
+    <url-pattern>/cartes</url-pattern>
+  </servlet-mapping>
+  
   <servlet>
     <description></description>
     <display-name>ServletAccueil</display-name>
@@ -38,5 +50,26 @@
   <servlet-mapping>
     <servlet-name>ServletTesterConnexion</servlet-name>
     <url-pattern>/ServletTesterConnexion</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ServletListerProduit</display-name>
+    <servlet-name>ServletListerProduit</servlet-name>
+    <servlet-class>controler.produits.ServletListerProduit</servlet-class>
+  </servlet>
+ 
+  <servlet-mapping>
+    <servlet-name>ServletListerProduit</servlet-name>
+    <url-pattern>/ServletListerProduit</url-pattern>
+</servlet-mapping>
+<servlet>
+    <display-name>ServletListerUtilisateurs</display-name>
+    <servlet-name>ServletListerUtilisateurs</servlet-name>
+    <servlet-class>controler.utilisateurs.ServletListerUtilisateurs</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ServletListerUtilisateurs</servlet-name>
+    <url-pattern>/ServletListerUtilisateurs</url-pattern>
+
   </servlet-mapping>
 </web-app>
