@@ -8,22 +8,13 @@
 <link href="././css/style.css" rel="stylesheet" >
 <%@include file="../fragments/linksfont.jspf" %>
 </head>
-<body>
 
-		 
- <%@include file="../fragments/header.jspf" %> 
- <main>
- 
- 
- 
-</main>
- 
- 
-<%@include file="../fragments/searchbar.jspf" %> 
-<%@include file="../fragments/footer.jspf" %> 	
-			 
-
-	<h1>Notre carte</h1>
-
+<body>	 
+	<%@include file="../fragments/header.jspf" %> 
+	<main>
+		<%@include file="../fragments/searchbar.jspf" %> 
+		<h1>Notre carte</h1>
+	</main>
+	<%@include file="../fragments/footer.jspf" %>
 </body>
 </html>
