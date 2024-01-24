@@ -1,32 +1,19 @@
 @charset "UTF-8";
-/* *****************************************************************
-                        GENERALITES
-***************************************************************** */
-/*html {
-	font-size: 62.5%;  1rem = 10px (la formule est 10/16*100) la taille par défaut étant 16px 
-	scroll-behavior: smooth;
-}
-*/
+
 * {
 	font-family: 'Roboto', sans-serif;
 	margin: 0;
 }
-
+ 
+img {
+    max-width: 100%;
+    width: auto;
+    height: auto;
+}
 body {
-	line-height: 1.5;
+	font-size: 1.8rem;
 	background-color: #fff;
 
-}
-
-h2 {
-	font-size: 2.5rem;
-	margin: 4rem 0 2rem 0;
-
-}
-
-a{
-	text-decoration: none;
-	color:black;
 }
  
 h1,
@@ -34,15 +21,31 @@ h2,
 h3,
 h4 {
 	font-weight: bold;
-  text-align: center;
 }
  
 h1 {
 	font-size: 3rem;
 	margin: 3rem 0;
 }
+ 
+h2 {
+	font-size: 2.5rem;
+	margin: 4rem 0 2rem 0;
+ 
+}
+
+h1,h2,h3 {
+	text-align: center;
+}
+ 
+a {
+	text-decoration: none;
+	color:black;
+}
 
 
+
+/* Le code css pour le pied de page */
 
 .footer {
 	display: flex;
@@ -91,4 +94,109 @@ h1 {
 	font-size: 0.8em;
 	text-align: center;
 	padding-bottom: 10px;
+}
+
+/* Le code css pour la page des restaurants */
+
+.resto-section {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 100%;
+	gap: 50px;
+	line-height: 0;
+	background-color: #2F4558;
+	padding: 60px 0;
+}
+
+.resto-section h3 {
+	color: #EF4B0A;
+}
+
+.resto-card, .resto-info {
+	display: flex;
+	flex-direction: column;
+}
+
+.resto-card {
+	border: 1px solid black;
+	width: 60%;
+	height: 300px;
+	gap: 80px;
+	padding: 30px;
+	border-radius: 10px;
+	background-color: #F6B12D;
+}
+
+.resto-flex, .resto-icons, .icons-container {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+}
+
+.resto-flex, .icons-container {
+	justify-content: space-between;
+}
+
+.icons-container {
+	gap: 20px;
+}
+
+.resto-info {
+	width: 90%;
+	gap: 30px;
+	font-size: 0.7em;
+}
+
+.resto-info a {
+	color: white;
+}
+
+.resto-icons {
+	gap: 5px;
+}
+
+.resto-icons img {
+	width: 0.8em;
+	height: auto;
+}
+
+.resto-icons p {
+	text-transform: uppercase;
+	font-size: 0.6em;
+	font-weight: bold;
+}
+
+.resto-icons span {
+	padding: 9px 11px;
+	border-radius: 50%;
+	align-items: center;
+	background-color: white;
+}
+
+#icon-moto {
+	padding: 13px 11px;
+}
+
+.resto-btn {
+	display: flex;
+	gap: 30px;
+}
+
+.resto-btn button {
+	width: 200px;
+	padding: 20px;
+	border: none;
+	border-radius: 30px;
+	background-color: #EF4B0A;
+	font-size: 0.6em;
+	color: white;
+	text-transform: uppercase;
+	font-weight: bold;
+}
+
+/* Le code css pour la page Profil de l'utilisateur */
+
+.user-profil p {
+	text-transform: uppercase;
 }

@@ -40,6 +40,19 @@
     <url-pattern>/ServletTesterConnexion</url-pattern>
   </servlet-mapping>
   <servlet>
+<<<<<<< HEAD
+=======
+    <description></description>
+    <display-name>ServletListerProduit</display-name>
+    <servlet-name>ServletListerProduit</servlet-name>
+    <servlet-class>controler.produits.ServletListerProduit</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ServletListerProduit</servlet-name>
+    <url-pattern>/ServletListerProduit</url-pattern>
+  </servlet-mapping>
+  <servlet>
+>>>>>>> f8ee5ec8ce59657469356aca5dd90790f1782ca4
     <display-name>ServletListerUtilisateurs</display-name>
     <servlet-name>ServletListerUtilisateurs</servlet-name>
     <servlet-class>controler.utilisateurs.ServletListerUtilisateurs</servlet-class>
@@ -47,6 +60,19 @@
   <servlet-mapping>
     <servlet-name>ServletListerUtilisateurs</servlet-name>
     <url-pattern>/ServletListerUtilisateurs</url-pattern>
+<<<<<<< HEAD
+=======
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ServletPageProfil</display-name>
+    <servlet-name>ServletPageProfil</servlet-name>
+    <servlet-class>controler.utilisateurs.ServletPageProfil</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ServletPageProfil</servlet-name>
+    <url-pattern>/ServletPageProfil</url-pattern>
+>>>>>>> f8ee5ec8ce59657469356aca5dd90790f1782ca4
   </servlet-mapping>
   <servlet>
     <description></description>

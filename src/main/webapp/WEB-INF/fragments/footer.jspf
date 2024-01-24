@@ -6,13 +6,13 @@
             <a href="">Laisser un avis</a>
         <div class="footer-icons">
                 <a target="_blank" href="">
-                    <img src="././assets/logos/facebook.png" alt="Logo Facebook" >
+                    <img src="././assets/icons/facebook.png" alt="Logo Facebook" >
                 </a>
                 <a target="_blank" href="" class="lien-icone">
-                    <img src="././assets/logos/instagram.png" alt="Logo Instagram" >
+                    <img src="././assets/icons/instagram.png" alt="Logo Instagram" >
                 </a>
                 <a target="_blank" href="" class="lien-icone">
-                    <img src="././assets/logos/linkedin.png" alt="Logo LinkedIn" >
+                    <img src="././assets/icons/linkedin.png" alt="Logo LinkedIn" >
                 </a>
             </div>
         </div>
