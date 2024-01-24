@@ -15,6 +15,7 @@ import javax.sql.DataSource;
 import bo.Utilisateur;
 
 public class UtilisateurDAO implements GenericDAO<Utilisateur> {
+	private static final String SELECT_BY_EMAIL = "SELECT * FROM utilisateurs WHERE email = ?";
 	private static final String DELETE = "DELETE FROM utilisateurs WHERE id = ?";
 	private static final String UPDATE = "UPDATE utilisateurs SET nom = ?, prenom = ?, email = ?, mot_de_passe = ?, telephone = ?, isAdmin = ? WHERE id = ?";
 	private static final String INSERT = "INSERT INTO utilisateurs (nom, prenom, email, mot_de_passe, telephone, isAdmin) VALUES (?,?,?,?,?,?)";
@@ -86,6 +87,30 @@ public class UtilisateurDAO implements GenericDAO<Utilisateur> {
 		}
 		return utilisateur;	
 	}
+	
+	
+	public Utilisateur selectByEmail(String email) throws DALException {
+		Utilisateur utilisateur = null;
+		try {
+			PreparedStatement ps = cnx.prepareStatement("SELECT * FROM utilisateurs WHERE email = ?");
+			ps.setString(1, email);
+			ResultSet rs = ps.executeQuery();
+			if (rs.next()) {
+				utilisateur = new Utilisateur();
+				utilisateur.setId(rs.getInt("id"));
+				utilisateur.setNom(rs.getString("nom"));
+				utilisateur.setPrenom(rs.getString("prenom"));
+				utilisateur.setEmail(rs.getString("email"));
+				utilisateur.setMotDePasse(rs.getString("mot_de_passe"));
+				utilisateur.setTelephone(rs.getString("telephone"));
+				utilisateur.setIsAdmin(rs.getBoolean("isAdmin"));
+			}
+		} catch (SQLException e) {
+			throw new DALException("Impossible de mettre à jour les infos pour l'id " + email, e);
+		}
+		return utilisateur;	
+	}
+	
 	
 	public void insert(Utilisateur utilisateur) throws DALException {
 		PreparedStatement ps;

@@ -40,16 +40,7 @@
     <url-pattern>/ServletTesterConnexion</url-pattern>
   </servlet-mapping>
   <servlet>
-    <description></description>
-    <display-name>ServletListerProduit</display-name>
-    <servlet-name>ServletListerProduit</servlet-name>
-    <servlet-class>controler.produits.ServletListerProduit</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>ServletListerProduit</servlet-name>
-    <url-pattern>/ServletListerProduit</url-pattern>
-  </servlet-mapping>
-  <servlet>
+
     <display-name>ServletListerUtilisateurs</display-name>
     <servlet-name>ServletListerUtilisateurs</servlet-name>
     <servlet-class>controler.utilisateurs.ServletListerUtilisateurs</servlet-class>
@@ -57,6 +48,7 @@
   <servlet-mapping>
     <servlet-name>ServletListerUtilisateurs</servlet-name>
     <url-pattern>/ServletListerUtilisateurs</url-pattern>
+
   </servlet-mapping>
   <servlet>
     <description></description>
@@ -66,6 +58,40 @@
   </servlet>
   <servlet-mapping>
     <servlet-name>ServletPageProfil</servlet-name>
-    <url-pattern>/ServletPageProfil</url-pattern>
+    <url-pattern>/profil</url-pattern>
+
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ServletCreationCompte</display-name>
+    <servlet-name>ServletCreationCompte</servlet-name>
+    <servlet-class>controler.utilisateurs.ServletCreationCompte</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ServletCreationCompte</servlet-name>
+    <url-pattern>/creationDuCompte</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ServletConnexion</display-name>
+    <servlet-name>ServletConnexion</servlet-name>
+    <servlet-class>controler.utilisateurs.ServletConnexion</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ServletConnexion</servlet-name>
+    <url-pattern>/connexion</url-pattern>
+  </servlet-mapping>
+  <filter>
+    <display-name>FilterConnect</display-name>
+    <filter-name>FilterConnect</filter-name>
+    <filter-class>filter.FilterConnect</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>FilterConnect</filter-name>
+    <dispatcher>REQUEST</dispatcher>
+    <dispatcher>FORWARD</dispatcher>
+    <dispatcher>INCLUDE</dispatcher>
+    <dispatcher>ERROR</dispatcher>
+    <url-pattern>/*</url-pattern>
+  </filter-mapping>
 </web-app>
