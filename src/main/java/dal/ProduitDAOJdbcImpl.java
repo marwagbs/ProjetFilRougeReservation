@@ -15,6 +15,7 @@ import javax.sql.DataSource;
 import bo.Carte;
 import bo.Categorie;
 import bo.Produit;
+import bo.Restaurant;
 
 public class ProduitDAOJdbcImpl  implements GenericDAO<Produit>{
 	
@@ -41,22 +42,26 @@ public class ProduitDAOJdbcImpl  implements GenericDAO<Produit>{
 	
 	
 	private static final String SELECT = "SELECT"
-			+ "    P.id AS id_produit,"
+			+ "  P.id AS id_produit,"
 			+ "    P.nom ,"
-			+ "    P.description , "
+			+ "		   P.description ,"
 			+ "    P.prix, "
-			+ "    C.id AS id_carte, "
-			+ "    C.libelle , "
-			+ "    CAT.id AS id_categorie, "
-			+ "    CAT.libelle "
+			+ "  C.id AS id_carte,"
+			+ " C.libelle AS libelle_carte,"
+			+ "   CAT.id AS id_categorie, "
+			+ "  CAT.libelle ,"
+			+ "R.id AS id_restaurant,"
+			+ "R.nom AS nom_restaurant "
 			+ "FROM "
-			+ "    Produits AS P "
+			+ "   Produits AS P "
 			+ "INNER JOIN "
-			+ "    Produits_Cartes AS PC ON P.id = PC.id_produit "
+			+ " Produits_Cartes AS PC ON P.id = PC.id_produit "
 			+ "INNER JOIN "
-			+ "    Cartes AS C ON PC.id_carte = C.id "
-			+ "INNER JOIN "
-			+ "    Categories AS CAT ON P.id_categorie = CAT.id  ";
+			+ " Cartes AS C ON PC.id_carte = C.id "
+			+ "			INNER JOIN "
+			+ "   Categories AS CAT ON P.id_categorie = CAT.id "
+			+ "INNER JOIN Restaurants AS R ON R.id_carte = C.id "
+			+ " ORDER BY id_categorie";
 	
 
 	private static final String SELECTByCarte = "SELECT"
@@ -127,7 +132,11 @@ public class ProduitDAOJdbcImpl  implements GenericDAO<Produit>{
 				produit.setCategorie(categorie);
 				Carte carte=new Carte();
 				carte.setId(resultat.getInt("id_carte"));
-				carte.setLibelle(resultat.getString("libelle"));
+				carte.setLibelle(resultat.getString("libelle_carte"));
+				Restaurant restaurant=new Restaurant();
+				restaurant.setId(resultat.getInt("id_restaurant"));
+				restaurant.setNom(resultat.getString("nom_restaurant"));
+				carte.setRestaurant(restaurant);
 				produit.setCarte(carte);
 				produits.add(produit);
 			

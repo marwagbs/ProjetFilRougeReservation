@@ -1,0 +1,161 @@
+@charset "UTF-8";
+
+* {
+	font-family: 'Roboto', sans-serif;
+	margin: 0;
+}
+ 
+img {
+    max-width: 100%;
+    width: auto;
+    height: auto;
+}
+body {
+	font-size: 1.8rem;
+	background-color: #fff;
+}
+ 
+h1,
+h2,
+h3,
+h4 {
+	font-weight: bold;
+}
+ 
+h1 {
+	font-size: 3rem;
+	margin: 3rem 0;
+}
+ 
+h2 {
+	font-size: 2.5rem;
+	margin: 4rem 0 2rem 0;
+ 
+}
+
+h1,h2,h3 {
+	text-align: center;
+}
+ 
+a {
+	text-decoration: none;
+	color:black;
+}
+
+
+
+/* Le code css pour le pied de page */
+
+.footer {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	font-size: 0.7em;
+	width: 100%;
+	height: 250px;
+	background-color: #F6B12D;
+	gap: 0.6em;
+	padding: 30px 0 20px;
+	
+}
+
+.footer-logo {
+	width: 300px;
+	height: auto;
+}
+
+.footer-icons img {
+	width: 1em;
+	height: auto;
+}
+
+.footer-icons {
+	display: flex;
+	gap: 1em;
+}
+
+.footer-flex, .footer-info {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	gap: 15em;
+}
+
+.footer-info {
+	font-size: 0.6em;
+}
+
+.footer-text {
+	width: 450px;
+}
+
+.footer-text p {
+	font-size: 0.8em;
+	text-align: center;
+	padding-bottom: 10px;
+}
+
+/* Le code css pour la page des restaurants */
+
+.resto-section {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 100%;
+	gap: 50px;
+	line-height: 0;
+	background-color: #2F4558;
+	padding: 60px 0;
+}
+
+.resto-card {
+	display: flex;
+	flex-direction: column;
+	border: 1px solid black;
+	width: 60%;
+	height: 300px;
+	gap: 30px;
+	padding: 30px 10px;
+	border-radius: 10px;
+	background-color: #F6B12D;
+}
+
+.resto-flex, .resto-icons {
+	display: flex;
+	flex-direction: row;
+	gap: 10px;
+	align-items: center;
+}
+
+.resto-icons img {
+	width: 0.8em;
+	height: auto;
+}
+
+.resto-icons p {
+	text-transform: uppercase;
+	font-size: 0.8em;
+}
+
+.resto-icons span {
+	padding: 9px 11px;
+	border-radius: 50%;
+	border: 1px solid black;
+	align-items: center;
+}
+
+#icon-moto {
+	padding: 12px 11px;
+}
+
+.resto-btn button {
+	width: 200px;
+	padding: 20px;
+	border: none;
+	border-radius: 30px;
+	background-color: #EF4B0A;
+	font-size: 0.6em;
+	color: white;
+	text-transform: uppercase;
+	font-weight: bold;
+}
