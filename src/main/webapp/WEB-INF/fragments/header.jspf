@@ -1,22 +1,21 @@
 <header class=".header">
 <nav class="navbar">
-	<div>
-		<a href="/accueil"><img src="././assets/logos/logo.png" alt="Logo de restaurant"/></a>
+	<div class="divImg">
+		<a href="accueil"><img src="././assets/logos/logo.png" alt="Logo de restaurant"/></a>
 		
 	</div>	
 	<ul class="navbarUl">
 		<li class="first"><a href="" class="active">Accueil</a></li>
 		<li class="second"><a href="">Nos restaurants </a></li>
 		<li class="third"><a href="">On fait connaissance ?</a></li>
-		<li class="four"><a href="/connexion" >Se conntecter</a></li>
+		<li class="four"><a href="connexion" >Se conntecter</a></li>
 
 	</ul>
-
-		<div class="menuBtn" id="hamburger">
+	<!-- <div class="menuBtn" id="hamburger">
 			<div class="bar1"></div>
 			<div class="bar2"></div>
 			<div class="bar3"></div>
-		</div>
-	
+		</div> -->
 	</nav>
+	
 </header>
