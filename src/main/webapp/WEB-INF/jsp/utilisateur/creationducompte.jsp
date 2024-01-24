@@ -1,11 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+ <%@ taglib prefix="c" uri="jakarta.tags.core" %>  
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link href="../../../../css/style.css" rel="stylesheet" >
+<link href="css/style.css" rel="stylesheet" >
 </head>
 <body>
 	 <%@include file="../../fragments/header.jspf" %> 
@@ -13,7 +14,7 @@
 	 <main>
 	 	<h1>Création du compte</h1>
 	 	<section>
-	 		<form action="/creationducompte" method="POST">
+	 		<form action="creationDuCompte" method="POST">
 				<div>
 				<label>Nom</label>
 				<input type="text" placeholder="Votre nom" name="nom"/>
@@ -43,7 +44,12 @@
 			  	<input type="submit" value="Enregistrer"/>
 			  </div>	 		
 	 		</form>
-	 	
+	 		<div>
+	 			<c:forEach var="current" items="${erreurs }">
+	 				<p>${current }</p>
+	 			</c:forEach>
+	 		</div>
+	 			
 	 	</section>
 	 	
 	 	

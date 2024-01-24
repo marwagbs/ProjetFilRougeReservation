@@ -32,12 +32,20 @@ public class ServletCreationCompte extends HttpServlet {
 			String numTel=request.getParameter("numTel");
 			String email=request.getParameter("email");
 			String motDepasse=request.getParameter("motDePasse");
-			
+		
 			try {
 				utilisateurBLL.insert(nom, prenom, email, motDepasse, numTel, false);
+				request.getRequestDispatcher("WEB-INF/jsp/utilisateur/connexion.jsp").forward(request, response);
 			} catch (BLLException e) {
-				// TODO Auto-generated catch block
+				for (String erreur: e.getErreurs()) {
+					System.out.println("\t"+ erreur);	 
+				}
+				 request.setAttribute("erreurs", e.getErreurs());
 				e.printStackTrace();
+				request.getRequestDispatcher("WEB-INF/jsp/utilisateur/creationducompte.jsp").forward(request, response);
+				return;
 			}
+			
 		}
+	
 }

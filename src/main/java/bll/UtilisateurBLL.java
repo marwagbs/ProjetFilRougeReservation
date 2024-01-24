@@ -3,7 +3,6 @@ package bll;
 import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
-import java.security.SecureRandom;
 import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -38,20 +37,34 @@ private UtilisateurDAO dao;
 			throw new BLLException("Echec de la récupération d'id " + id, e);
 		}
 	}
-	
-	public Utilisateur insert(String nom, String prenom, String email, String motDePasse, String telephone, Boolean isAdmin) throws BLLException {
-		verifierLesDonnees(nom, prenom, email, motDePasse, telephone, isAdmin);
-		SecureRandom secureRandom = new SecureRandom();
-        byte[] saltBytes = new byte[16];
-        secureRandom.nextBytes(saltBytes);
-        String salt = new String(saltBytes, StandardCharsets.UTF_8);
-
-        String hashedMotDePasse = hashPassword(motDePasse, salt);
-		Utilisateur utilisateur = new Utilisateur(nom, prenom, email, hashedMotDePasse, telephone, isAdmin);
+	public Utilisateur selectByEmail(String email) throws BLLException {
 		try {
-			dao.insert(utilisateur);
+			return dao.selectByEmail(email);
+		} catch (DALException e) {
+			throw new BLLException("Echec de la récupération de l'email " + email, e);
+		}
+	}
+	public Utilisateur insert(String nom, String prenom, String email, String motDePasse, String telephone, Boolean isAdmin) throws BLLException {
+		BLLException bllException = new BLLException();
+		verifierLesDonnees(nom, prenom, email, motDePasse, telephone, isAdmin);
+
+         byte[] saltBytes = email.getBytes();
+        String hashedMotDePasse = hashMotDePasse(motDePasse, saltBytes);
+		
+        Utilisateur utilisateur = new Utilisateur(nom, prenom, email, hashedMotDePasse, telephone, isAdmin);
+		try {
+			
+			if(dao.selectByEmail(email) != null) {
+				bllException.ajouterErreur("Cette adreese email existe déja");
+			}else {
+				dao.insert(utilisateur);
+			}
+			
 		} catch (DALException e) {
 			throw new BLLException("Echec de l'insertion", e);
+		}
+		if (bllException.getErreurs().size() > 0) {
+			throw bllException;
 		}
 		return utilisateur;
 	}
@@ -73,49 +86,29 @@ private UtilisateurDAO dao;
 		}
 	}
 	
-	private static void verifierLesDonnees(String nom, String prenom, String email, String motDePasse, String telephone, Boolean isAdmin) throws BLLException {
+	private  void verifierLesDonnees(String nom, String prenom, String email, String motDePasse, String telephone, Boolean isAdmin) throws BLLException {
 		
 		BLLException bllException = new BLLException();
 		
 		
-		if (nom.length() < 2) {
-			bllException.ajouterErreur("Le nom doit faire au moins 2 caractères");
+		if (nom.isEmpty() || nom.length() < 2 || nom.length() > 50) {
+		    bllException.ajouterErreur("Le nom doit avoir entre 2 et 50 caractères");
+		}
+
+		if (prenom.isEmpty() || prenom.length() < 2 || prenom.length() > 50) {
+		    bllException.ajouterErreur("Le prénom doit avoir entre 2 et 50 caractères");
+		}
+		if (motDePasse.isEmpty() || !validatePassword(motDePasse)) {
+		    bllException.ajouterErreur("Le mot de passe doit contenir entre 8 et 20 caractères, "
+		            + "incluant au moins une lettre majuscule, une lettre minuscule, un chiffre et un caractère spécial");
+		}
+
+		if (email.isEmpty() || !validateEmail(email)) {
+		    bllException.ajouterErreur("L'e-mail n'est pas valide");
 		}
 		
-		if (nom.length() > 50) {
-			bllException.ajouterErreur("Le nom doit faire max 50 caractères");
-		}
-		
-		if (prenom.length() < 2) {
-			bllException.ajouterErreur("Le prenom doit faire au moins 2 caractères");
-		}
-		
-		if (prenom.length() > 50) {
-			bllException.ajouterErreur("Le prenom doit faire max 50 caractères");
-		}
-		
-		if (email.length() < 5) {
-			bllException.ajouterErreur("L'email doit faire au moins 5 caractères");
-		}
-		
-		if (email.length() > 50) {
-			bllException.ajouterErreur("L'email doit faire max 50 caractères");
-		}
-		
-		if (!validatePassword(motDePasse)) {
-			bllException.ajouterErreur("Le mot de passe doit contenir entre 8 et 20 caractères, "
-					+ "incluant au moins une lettre majuscule, une lettre minuscule, un chiffre et un caractère spécial");
-		}
-		if (!validateEmail(email)) {
-			bllException.ajouterErreur("l'email n'est pas valide");
-		}
-		
-		if (telephone.length() < 8) {
-			bllException.ajouterErreur("Le numéro de telephone doit faire au moins 8 caractères");
-		}
-		
-		if (telephone.length() > 50) {
-			bllException.ajouterErreur("Le numéro de telephone doit faire max 50 caractères");
+		if (telephone.isEmpty() || telephone.length() < 8 || telephone.length() > 50) {
+		    bllException.ajouterErreur("Le numéro de téléphone doit avoir entre 8 et 50 caractères");
 		}
 		
 		if (bllException.getErreurs().size() > 0) {
@@ -123,7 +116,7 @@ private UtilisateurDAO dao;
 		}
 	}
 	
-	 private static boolean validatePassword(String motDePasse) {
+	 public  boolean validatePassword(String motDePasse) {
 	        // la regex MDP
 	        String regex = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#&()–[{}]:;',?/*~$^+=<>]).{8,20}$";
 
@@ -137,36 +130,24 @@ private UtilisateurDAO dao;
 	        return matcher.matches();
 	    }
 	 
-	 public static boolean validateEmail(String email) {
-	        // regex l'e-mail
+	 public  boolean validateEmail(String email) {
+
 	        String regex = "^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$";
 
-	        // Création du pattern
 	        Pattern pattern = Pattern.compile(regex);
 
-	        // Création du matcher
 	        Matcher matcher = pattern.matcher(email);
-
-	        // Vérification de la correspondance
 	        return matcher.matches();
 	    }
 	 
-	 public static String  hashPassword(String passwordToHash, String salt) {
+	 public  String  hashMotDePasse(String motDePasseToHash, byte [] salt) {
 	        String generatedPassword = null;
 	        try {
 	            MessageDigest md = MessageDigest.getInstance("SHA-512");
-
-	            // Utiliser SecureRandom pour générer un sel cryptographiquement sécurisé
-	            SecureRandom secureRandom = new SecureRandom();
-	            byte[] saltBytes = new byte[16];
-	            secureRandom.nextBytes(saltBytes);
-
-	            md.update(saltBytes);
-	            md.update(passwordToHash.getBytes(StandardCharsets.UTF_8));
-
+	            md.update(salt);
+	            md.update(motDePasseToHash.getBytes(StandardCharsets.UTF_8));
 	            byte[] bytes = md.digest();
 
-	            // Convertir les octets hachés en une chaîne hexadécimale
 	            StringBuilder sb = new StringBuilder();
 	            for (byte b : bytes) {
 	                sb.append(Integer.toString((b & 0xff) + 0x100, 16).substring(1));
@@ -178,5 +159,34 @@ private UtilisateurDAO dao;
 	        }
 	        return generatedPassword;
 	    }
+	 	
+	 
+	 public void verifierUtilisateur(String email, String motDePasse) throws BLLException {
+		 BLLException bllException = new BLLException();
+		 try {
+	            
+	            Utilisateur utilisateur = dao.selectByEmail(email);
+	            if (utilisateur != null) { 
+	                    String motDePasseSaisie = hashMotDePasse(motDePasse, email.getBytes());
+	                    String mdpHache=utilisateur.getMotDePasse();
+	                   
+	                    if (!mdpHache.equals(motDePasseSaisie)) {
+	                        bllException.ajouterErreur("Mot de passe incorrect");
+	                   
+	                    } 
+	            } else {
+	                bllException.ajouterErreur("L'adresse e-mail fournie ne correspond à aucun compte."); 
+	            }
+	        } catch (DALException e) {
+	           
+	            e.printStackTrace();
+	            bllException.ajouterErreur("Erreur lors de la vérification des informations d'identification");
+	        }
+
+	        if (bllException.getErreurs().size() > 0) {
+	            throw bllException;
+	        }
+	    }
+
 
 }
