@@ -14,40 +14,51 @@
 	<main>
 		<%@include file="../fragments/searchbar.jspf" %>
 		<section class="resto-section">
-			<c:forEach var="restaurant" items="${restaurants }">
-			<div class="resto-card">
-				<h3>${restaurant.nom }</h3>
-				<div class="resto-flex">
-					<div class="resto-icons">
-						<span>
-							<img src="././assets/icons/emporter.svg" alt="Icône de sac d'achat" >
-						</span>
-						<p>à emporter</p>
+				<c:forEach var="restaurant" items="${restaurants }">
+				<div class="resto-card">
+					<div class="resto-flex">
+						<h3>${restaurant.nom }</h3>
+						<div class="icons-container">
+							<div class="resto-icons">
+								<span>
+									<img src="././assets/icons/emporter.svg" alt="Icône de sac d'achat" >
+								</span>
+								<p>à emporter</p>
+							</div>
+							<div class="resto-icons">
+								<span id="icon-moto">
+									<img src="././assets/icons/livraison.svg" alt="Icône de moto" >
+								</span>
+								<p>en livraison</p>
+							</div>
+							<div class="resto-icons">
+								<span>
+									<img src="././assets/icons/surplace.svg" alt="Icône de couverts" >
+								</span>
+								<p>sur place</p>
+							</div>
+						</div>
 					</div>
-					<div class="resto-icons">
-						<span id="icon-moto">
-							<img src="././assets/icons/livraison.svg" alt="Icône de moto" >
-						</span>
-						<p>en livraison</p>
+					<div class="resto-flex">
+						<div class="resto-info">
+							<p>${restaurant.adresse }, ${restaurant.cpo } ${restaurant.ville }</p>
+							<p>Téléphone : 04 87 22 00 70</p>
+						</div>
+						<div class="resto-info">
+							<a href="">Voir les horaires</a>
+							<p>Nombre de places disponibles : 20</p>
+						</div>
 					</div>
-					<div class="resto-icons">
-						<span>
-							<img src="././assets/icons/surplace.svg" alt="Icône de couverts" >
-						</span>
-						<p>sur place</p>
+					<div class="resto-btn">
+						<a href="">
+							<button type="submit" name="consulter">Voir la carte</button>
+						</a>
+						<a href="">
+							<button type="submit" name="reserver">Réserver</button>
+						</a>
 					</div>
 				</div>
-				<p>${restaurant.adresse }, ${restaurant.cpo } ${restaurant.ville }</p>
-				<div class="resto-btn">
-					<a href="">
-						<button type="submit" name="consulter">Voir la carte</button>
-					</a>
-					<a href="">
-						<button type="submit" name="reserver">Réserver</button>
-					</a>
-				</div>
-			</div>
-			</c:forEach>
+				</c:forEach>
 		</section>
 	</main>
 	<%@include file="../fragments/footer.jspf" %>

@@ -5,6 +5,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Time;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
@@ -61,8 +62,8 @@ List<Horaire> horaires = new ArrayList<>();
 				Horaire horaire = new Horaire();
 				horaire.setId(rs.getInt("id"));
 				horaire.setJour(rs.getString("jour"));
-				horaire.setHeureOuverture(LocalTime.parse(rs.getString("heure_ouverture"), DateTimeFormatter.ofPattern("HH:mm")));
-	            horaire.setHeureFermeture(LocalTime.parse(rs.getString("heure_fermeture"), DateTimeFormatter.ofPattern("HH:mm")));
+				horaire.setHeureOuverture(rs.getTime("heure_ouverture").toLocalTime());
+	            horaire.setHeureFermeture(rs.getTime("heure_fermeture").toLocalTime());
 				horaires.add(horaire);
 			}
 		} catch (SQLException e) {
@@ -82,8 +83,8 @@ List<Horaire> horaires = new ArrayList<>();
 				horaire = new Horaire();
 				horaire.setId(rs.getInt("id"));
 				horaire.setJour(rs.getString("jour"));
-				horaire.setHeureOuverture(LocalTime.parse(rs.getString("heure_ouverture"), DateTimeFormatter.ofPattern("HH:mm")));
-	            horaire.setHeureFermeture(LocalTime.parse(rs.getString("heure_fermeture"), DateTimeFormatter.ofPattern("HH:mm")));
+				horaire.setHeureOuverture(rs.getTime("heure_ouverture").toLocalTime());
+	            horaire.setHeureFermeture(rs.getTime("heure_fermeture").toLocalTime());
 			}
 		} catch (SQLException e) {
 			throw new DALException("Impossible de recuperer les informations pour l'id "+ id, e);
@@ -98,8 +99,8 @@ List<Horaire> horaires = new ArrayList<>();
 			// L'ajout de RETURN_GENERATED_KEYS permet de récupérer l'id généré par la base
 			PreparedStatement ps = cnx.prepareStatement(INSERT, PreparedStatement.RETURN_GENERATED_KEYS);
 			ps.setString(1, horaire.getJour());
-			ps.setString(2, horaire.getHeureOuverture().format(DateTimeFormatter.ofPattern("HH:mm")));
-	        ps.setString(3, horaire.getHeureFermeture().format(DateTimeFormatter.ofPattern("HH:mm")));
+			ps.setTime(2, Time.valueOf(horaire.getHeureOuverture()));
+	        ps.setTime(3, Time.valueOf(horaire.getHeureFermeture()));
 			ps.executeUpdate();
 			
 			// Le bloc suivant permet de faire la récupération de l'id
@@ -118,8 +119,8 @@ List<Horaire> horaires = new ArrayList<>();
 		try {
 			PreparedStatement ps = cnx.prepareStatement(UPDATE);
 			ps.setString(1, horaire.getJour());
-			ps.setString(2, horaire.getHeureOuverture().format(DateTimeFormatter.ofPattern("HH:mm")));
-			ps.setString(3, horaire.getHeureFermeture().format(DateTimeFormatter.ofPattern("HH:mm")));
+			ps.setTime(2, Time.valueOf(horaire.getHeureOuverture()));
+	        ps.setTime(3, Time.valueOf(horaire.getHeureFermeture()));
 			ps.setInt(4, horaire.getId());
 			ps.executeUpdate();
 		} catch (SQLException e) {

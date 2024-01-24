@@ -23,8 +23,10 @@ public class ServletListerRestaurants extends HttpServlet {
 	}
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
 		try {
 			request.setAttribute("restaurants", restaurantBLL.selectAll());
+			
 		} catch (BLLException e) {
 			e.printStackTrace();
 		}
