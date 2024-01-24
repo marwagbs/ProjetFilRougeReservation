@@ -193,3 +193,9 @@ a {
 	text-transform: uppercase;
 	font-weight: bold;
 }
+
+/* Le code css pour la page Profil de l'utilisateur */
+
+.user-profil p {
+	text-transform: uppercase;
+}
