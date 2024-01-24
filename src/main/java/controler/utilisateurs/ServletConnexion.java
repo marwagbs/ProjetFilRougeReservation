@@ -36,7 +36,7 @@ public class ServletConnexion extends HttpServlet {
 	
 		try {
 			utilisateurBLL.verifierUtilisateur(identifiant, motDePasse);
-			//response.sendRedirect("profile");
+			response.sendRedirect("profil");
 			request.getSession().setAttribute("identifiant",identifiant);
 		} catch (BLLException e) {
 			request.setAttribute("erreurs", e.getErreurs());
