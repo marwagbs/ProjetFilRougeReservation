@@ -137,7 +137,9 @@ INSERT INTO Horaires (jour, heure_ouverture, heure_fermeture) VALUES
 -- Insertion des horaires restaurants
 INSERT INTO Horaires_restaurants (id_restaurant, id_horaire) VALUES
 (1, 1),
-(2, 2),
+(1, 2),
+(1, 3),
+(2, 1),
 (3, 3),
 (4, 4);
 

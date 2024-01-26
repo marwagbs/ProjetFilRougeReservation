@@ -6,9 +6,11 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.List;
 
 import bll.BLLException;
 import bll.RestaurantBLL;
+import bo.Restaurant;
 
 public class ServletListerRestaurants extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -25,7 +27,7 @@ public class ServletListerRestaurants extends HttpServlet {
 //-----------------------------------------------------------------------------------//
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		try {
-<<<<<<< HEAD
+
 			List<Restaurant> restaurants = restaurantBLL.selectAll();
 			
 			 request.setAttribute("restaurants", restaurants);
@@ -34,9 +36,7 @@ public class ServletListerRestaurants extends HttpServlet {
 	            
 			 dispatcher.forward(request, response);
 
-=======
-			request.setAttribute("restaurants", restaurantBLL.selectAll());
->>>>>>> 295eed659466d2ab011d2d09a0adc7d6a413c93a
+
 		} catch (BLLException e) {
 			e.printStackTrace();
 		}

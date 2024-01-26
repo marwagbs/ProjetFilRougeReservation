@@ -28,6 +28,7 @@ public class ReservationDAO implements GenericDAO<Reservation>{
 	private static final String INSERT = "INSERT INTO reservations (date_res, heure, nb_personne, id_utilisateur, id_restaurant, statut, commentaire) VALUES (?, ?, ?, ?, ?, ?, ?)";
 	private static final String SELECT_BY_ID = "SELECT * FROM reservations WHERE id = ?";
 	private static final String SELECT = "SELECT * FROM reservations";
+	private static final String SELECT_JOIN = "SELECT  r.id AS reservation_id, r.date_res, r.heure, r.nb_personne, r.statut, r.commentaire, u.id_utilisateur, u.nom AS utilisateur_nom, u.prenom AS utilisateur_prenom, res.id_restaurant, res.nom AS restaurant_nom, res.adresse AS restaurant_adresse FROM Reservations r JOIN Utilisateurs u ON r.id_utilisateur = u.id JOIN Restaurants res ON r.id_restaurant = res.id ";
 	
 	private Connection cnx;
 	private Context context;
@@ -71,6 +72,8 @@ public class ReservationDAO implements GenericDAO<Reservation>{
 		reservation.setStatut(rs.getString("statut"));
 		reservation.getRestaurant().setId(rs.getInt("id_restaurant"));
 		reservation.getUtilisateur().setId(rs.getInt("id_utilisateur"));
+	
+		
 		
 		reservations.add(reservation);
 		}
@@ -80,6 +83,33 @@ public class ReservationDAO implements GenericDAO<Reservation>{
 		return reservations;
 		
 	}
+	//------------------------------------------------------------------//
+	public List<Reservation> selectAllJoin() throws DALException {  
+		 List<Reservation> reservations = new ArrayList<>();
+		 try {
+				PreparedStatement ps = cnx.prepareStatement(SELECT_JOIN );
+				ResultSet rs = ps.executeQuery();	while (rs.next()) {
+				Reservation reservation = new Reservation();
+				reservation.setId(rs.getInt("id"));
+				reservation.setDateRes(LocalDate.parse(rs.getString("date_res"), DateTimeFormatter.ofPattern("yyyy-MM-dd")));
+				reservation.setHeure(LocalTime.parse(rs.getString("heure"), DateTimeFormatter.ofPattern("HH:mm")));
+				reservation.setNbrPersonnes(rs.getInt("nb_personne"));
+				reservation.setCommentaire(rs.getString("commentaire"));
+				reservation.setStatut(rs.getString("statut"));
+				reservation.getRestaurant().setId(rs.getInt("id_restaurant"));
+				reservation.getRestaurant().setNom(rs.getString("nom_restaurant"));
+				reservation.getUtilisateur().setId(rs.getInt("id_utilisateur"));
+				reservation.getUtilisateur().setNom(rs.getString("utilisateur_nom"));
+				reservation.getUtilisateur().setPrenom(rs.getString("utilisateur_prenom"));
+				
+				reservations.add(reservation);
+				}
+				} catch (SQLException e) {
+					throw new DALException("Impossible de récuperer les infos", e);
+				}	
+				return reservations;
+				
+			}
 	//------------------------------------------------------------------//
 	public Reservation selectById(int id) throws DALException {
 		Reservation reservation = null;

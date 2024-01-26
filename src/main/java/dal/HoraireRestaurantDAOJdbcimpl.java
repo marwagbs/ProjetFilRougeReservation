@@ -4,6 +4,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -24,8 +26,8 @@ public class HoraireRestaurantDAOJdbcimpl implements GenericDAO<HoraireRestauran
 	private static final String SELECT_BY_ID = "SELECT * FROM "+ TABLE_NAME +" WHERE id = ?";
 	private static final String SELECT = "SELECT * FROM "+ TABLE_NAME;
 	private static final String COUNT = "SELECT COUNT(*) FROM " + TABLE_NAME + " WHERE id_horaire = ? AND id_restaurant = ?";
+	private static final String SELECT_ALL_BY_RESTAURANT = "SELECT * FROM " + TABLE_NAME + " JOIN Horaires h ON id_horaire = h.id WHERE id_restaurant = ?";
 
-	//private static final String SELECTWHERE = "SELECT * FROM"+ TABLE_NAME +"WHERE id_restaurant = ? AND id_horaire = ? ";
 	
 	
 	
@@ -163,6 +165,38 @@ public class HoraireRestaurantDAOJdbcimpl implements GenericDAO<HoraireRestauran
 		return false;
 	}
 	//---------------------------------------------------------------//
-
+	public List<HoraireRestaurant> selectAllByRestaurant(int id) throws DALException {
+	    List<HoraireRestaurant> horairesRestaurants = new ArrayList<>();
+	   
+	    
+	    try {
+	    	PreparedStatement ps = cnx.prepareStatement(SELECT_ALL_BY_RESTAURANT);
+	    	ps.setInt(1, id); // Remplace le '?' numero 1 par la valeur de l'id
+			ResultSet rs = ps.executeQuery();
+			
+			
+			while (rs.next()) {
+				HoraireRestaurant horaireRestaurant = new HoraireRestaurant();
+				Horaire horaire = new Horaire();
+				Restaurant restaurant = new Restaurant();
+				
+				
+				horaireRestaurant.setHoraire(horaire);
+				horaireRestaurant.setRestaurant(restaurant);
+				
+				horaireRestaurant.setId(rs.getInt("id"));
+				horaireRestaurant.getRestaurant().setId(rs.getInt("id"));
+				horaireRestaurant.getHoraire().setId(rs.getInt("id"));
+				horaire.setJour(rs.getString("jour"));
+				horaire.setHeureOuverture(LocalTime.parse(rs.getString("heure_ouverture"), DateTimeFormatter.ofPattern("HH:mm:ss")));
+				horaire.setHeureFermeture(LocalTime.parse(rs.getString("heure_fermeture"), DateTimeFormatter.ofPattern("HH:mm:ss")));
+				
+				horairesRestaurants.add(horaireRestaurant);
+			}
+		} catch (SQLException e) {
+			throw new DALException("Impossible de recuperer les informations", e);
+		}
+	    return horairesRestaurants;
+		}
 
 }

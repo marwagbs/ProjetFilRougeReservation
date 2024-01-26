@@ -11,7 +11,7 @@ import dal.HoraireRestaurantDAOJdbcimpl;
 
 
 public class HoraireRestaurantBLL {
-	private GenericDAO<HoraireRestaurant> dao;
+	
 	private HoraireRestaurantDAOJdbcimpl daoHoraireRestaurant; 
 	
 
@@ -20,7 +20,7 @@ public class HoraireRestaurantBLL {
 //--------------------------------------------------------------//
 public HoraireRestaurantBLL() throws BLLException {
 			try {
-				dao = new HoraireRestaurantDAOJdbcimpl();
+				daoHoraireRestaurant = new HoraireRestaurantDAOJdbcimpl();
 			} catch (DALException e) {
 				throw new BLLException("Echec de la connexion", e);
 			}
@@ -30,7 +30,7 @@ public HoraireRestaurantBLL() throws BLLException {
 		//--------------------------------------------------------------------------//
 		public List<HoraireRestaurant> selectAll() throws BLLException {
 			try {
-				return dao.selectAll();
+				return daoHoraireRestaurant.selectAll();
 			} catch (DALException e) {
 				throw new BLLException("Echec de la recuperation des horaires", e);
 			}
@@ -38,7 +38,7 @@ public HoraireRestaurantBLL() throws BLLException {
 	//--------------------------------------------------------------------------//
 		public HoraireRestaurant selectById(int id) throws BLLException {
 			try {
-				return dao.selectById(id);
+				return daoHoraireRestaurant.selectById(id);
 			} catch (DALException e) {
 				throw new BLLException("Echec de la recuperation de l'horaire d'id " + id, e);
 			}
@@ -62,7 +62,7 @@ public HoraireRestaurantBLL() throws BLLException {
 		   
             
 		    try {
-		    	dao.insert(horaireRestaurant);
+		    	daoHoraireRestaurant.insert(horaireRestaurant);
 		    } catch (Exception e) {
 		        throw new BLLException("Echec de l'insertion", e);
 		    }
@@ -72,7 +72,7 @@ public HoraireRestaurantBLL() throws BLLException {
 //-----------------------------------------------------------------------------------//
 public void delete(int id) throws BLLException {
 	try {
-		dao.delete(id);
+		daoHoraireRestaurant.delete(id);
 	} catch (DALException e) {
 		throw new BLLException("Echec de la suppression", e);
 	}
@@ -80,13 +80,19 @@ public void delete(int id) throws BLLException {
 //------------------------------------------------------------------------------------------------//
 public void update (HoraireRestaurant horaireRestaurant) throws BLLException {
 	try {
-		dao.update(horaireRestaurant);
+		daoHoraireRestaurant.update(horaireRestaurant);
 	} catch (DALException e) {
 		throw new BLLException("Echec de la mise a jour", e);
 	}
 }
 //------------------------------------------------------//
-
+public List<HoraireRestaurant> selectAllByRestaurant(int id) throws BLLException {
+	try {
+		return daoHoraireRestaurant.selectAllByRestaurant(id);
+	} catch (DALException e) {
+		throw new BLLException("Echec de la recuperation des horaires", e);
+	}
+}
 
 }
 
