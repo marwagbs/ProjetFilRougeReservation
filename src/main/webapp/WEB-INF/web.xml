@@ -17,7 +17,7 @@
   </servlet>
   <servlet-mapping>
     <servlet-name>ServletListerRestaurants</servlet-name>
-    <url-pattern>/ServletListerRestaurants</url-pattern>
+    <url-pattern>/nosRestaurants</url-pattern>
   </servlet-mapping>
   <servlet>
     <description></description>
@@ -40,7 +40,6 @@
     <url-pattern>/ServletTesterConnexion</url-pattern>
   </servlet-mapping>
   <servlet>
-
     <display-name>ServletListerUtilisateurs</display-name>
     <servlet-name>ServletListerUtilisateurs</servlet-name>
     <servlet-class>controler.utilisateurs.ServletListerUtilisateurs</servlet-class>
@@ -48,7 +47,6 @@
   <servlet-mapping>
     <servlet-name>ServletListerUtilisateurs</servlet-name>
     <url-pattern>/ServletListerUtilisateurs</url-pattern>
-
   </servlet-mapping>
   <servlet>
     <description></description>
@@ -59,7 +57,6 @@
   <servlet-mapping>
     <servlet-name>ServletPageProfil</servlet-name>
     <url-pattern>/profil</url-pattern>
-
   </servlet-mapping>
   <servlet>
     <description></description>
@@ -88,10 +85,20 @@
   </filter>
   <filter-mapping>
     <filter-name>FilterConnect</filter-name>
+    <url-pattern>/*</url-pattern>
     <dispatcher>REQUEST</dispatcher>
     <dispatcher>FORWARD</dispatcher>
     <dispatcher>INCLUDE</dispatcher>
     <dispatcher>ERROR</dispatcher>
-    <url-pattern>/*</url-pattern>
   </filter-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ServletDeconnexion</display-name>
+    <servlet-name>ServletDeconnexion</servlet-name>
+    <servlet-class>controler.utilisateurs.ServletDeconnexion</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ServletDeconnexion</servlet-name>
+    <url-pattern>/deconnexion</url-pattern>
+  </servlet-mapping>
 </web-app>
