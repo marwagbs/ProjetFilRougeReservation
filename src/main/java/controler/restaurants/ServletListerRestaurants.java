@@ -1,16 +1,17 @@
 package controler.restaurants;
 
-import jakarta.servlet.RequestDispatcher;
-import jakarta.servlet.ServletException;
-import jakarta.servlet.http.HttpServlet;
-import jakarta.servlet.http.HttpServletRequest;
-import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
 import bll.BLLException;
 import bll.RestaurantBLL;
 import bo.Restaurant;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+import vo.Horaire;
+import vo.HoraireParJour;
 
 public class ServletListerRestaurants extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -24,7 +25,7 @@ public class ServletListerRestaurants extends HttpServlet {
 			e.printStackTrace();
 		}
 	}
-//-----------------------------------------------------------------------------------//
+
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		try {
@@ -32,13 +33,19 @@ public class ServletListerRestaurants extends HttpServlet {
 
 			List<Restaurant> restaurants = restaurantBLL.selectAll();
 			
-			 request.setAttribute("restaurants", restaurants);
+			HoraireParJour hpj = new HoraireParJour();
+			hpj.ajouterHoraire("Lundi", new Horaire("10h00", "20h00"));
+			hpj.ajouterHoraire("Mardi", new Horaire("10h00", "20h00"));
+			hpj.ajouterHoraire("Mercredi", new Horaire("10h00", "20h00"));
+			hpj.ajouterHoraire("Jeudi", new Horaire("10h00", "20h00"));
+			hpj.ajouterHoraire("Vendredi", new Horaire("10h00", "23h00"));
+			hpj.ajouterHoraire("Samedi", new Horaire("10h00", "23h00"));
+			hpj.ajouterHoraire("Dimanche", new Horaire("10h00", "23h00"));
+			
+			request.setAttribute("horaires", hpj);
+			
+			request.setAttribute("restaurants", restaurants);
 			 
-			 RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/accueil.jsp");
-	            
-			 dispatcher.forward(request, response);
-
-
 
 		} catch (BLLException e) {
 			e.printStackTrace();
