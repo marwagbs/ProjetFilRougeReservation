@@ -6,7 +6,6 @@ import java.util.List;
 import bll.BLLException;
 import bll.RestaurantBLL;
 import bo.Restaurant;
-import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
@@ -45,12 +44,8 @@ public class ServletListerRestaurants extends HttpServlet {
 			
 			request.setAttribute("horaires", hpj);
 			
-			 request.setAttribute("restaurants", restaurants);
+			request.setAttribute("restaurants", restaurants);
 			 
-			 RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/accueil.jsp");
-	            
-			 dispatcher.forward(request, response);
-
 
 		} catch (BLLException e) {
 			e.printStackTrace();
