@@ -57,7 +57,7 @@
 						</div>
 					</div>
 					<div class="resto-btn">
-						<a href="">
+						<a href="cartes?id=${restaurant.id }">
 							<button type="submit" name="consulter">Voir la carte</button>
 						</a>
 						<a href="">
