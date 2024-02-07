@@ -44,13 +44,20 @@
 							<p>${restaurant.adresse }, ${restaurant.cpo } ${restaurant.ville }</p>
 							<p>Téléphone : 04 87 22 00 70</p>
 						</div>
-						<div class="resto-info">
-							<a href="">Voir les horaires</a>
-							<p>Nombre de places disponibles : 20</p>
+						<div class="resto-horaires">
+							<h3>Horaires d'ouverture</h3>
+							<c:forEach var="jour" items="${horaires.jours }" >
+								<div>
+									<h4>${jour } : &nbsp</h4>
+									<c:forEach var="heures" items="${horaires.horaires[jour] }">
+										<p> ${heures.ouverture } - ${heures.fermeture }</p>
+									</c:forEach>
+								</div>
+							</c:forEach>
 						</div>
 					</div>
 					<div class="resto-btn">
-						<a href="">
+						<a href="cartes?id=${restaurant.id }">
 							<button type="submit" name="consulter">Voir la carte</button>
 						</a>
 						<a href="">
@@ -59,6 +66,11 @@
 					</div>
 				</div>
 				</c:forEach>
+				
+				<%-- <c:forEach var="current" items="${restaurants }">
+					<img src="img/${current.id }.png" />
+				</c:forEach> --%>
+				
 		</section>
 	</main>
 	<%@include file="../fragments/footer.jspf" %>

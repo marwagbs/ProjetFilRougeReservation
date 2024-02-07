@@ -44,6 +44,7 @@ private UtilisateurDAO dao;
 			throw new BLLException("Echec de la récupération de l'email " + email, e);
 		}
 	}
+	
 	public Utilisateur insert(String nom, String prenom, String email, String motDePasse, String telephone, Boolean isAdmin) throws BLLException {
 		BLLException bllException = new BLLException();
 		verifierLesDonnees(nom, prenom, email, motDePasse, telephone, isAdmin);
