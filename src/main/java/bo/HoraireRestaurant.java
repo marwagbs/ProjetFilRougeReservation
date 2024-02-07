@@ -49,6 +49,11 @@ public void setRestaurant(Restaurant restaurant) {
 	this.restaurant = restaurant;
 }
 
+@Override
+public String toString() {
+	return "HoraireRestaurant [id=" + id + ", horaire=" + horaire + ", restaurant=" + restaurant + "]";
+}
+
 
 
 

@@ -1,3 +1,4 @@
+
 <header class="header">
 	<div class="containerHeader">
 		<a href="index.html"class="logo" >
@@ -12,7 +13,7 @@
 				
 			<c:if test="${not empty identifiant }">
 			 <li><a href="profil">Mon profil</a></li>
-			        <li><a href="deconnexion">se déconnecter</a></li>
+			        <li><a href="deconnexion">se dï¿½connecter</a></li>
 			</c:if>
 			<c:if test="${empty identifiant }">
 			       <li> <a href="connexion">Connexion</a></li>
@@ -21,6 +22,8 @@
 		</nav>
 	</div> 
 </header>
+
+
 
 
 

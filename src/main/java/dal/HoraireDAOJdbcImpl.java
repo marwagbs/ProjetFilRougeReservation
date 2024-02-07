@@ -62,8 +62,10 @@ List<Horaire> horaires = new ArrayList<>();
 				Horaire horaire = new Horaire();
 				horaire.setId(rs.getInt("id"));
 				horaire.setJour(rs.getString("jour"));
+
 				horaire.setHeureOuverture(rs.getTime("heure_ouverture").toLocalTime());
 	            horaire.setHeureFermeture(rs.getTime("heure_fermeture").toLocalTime());
+
 				horaires.add(horaire);
 			}
 		} catch (SQLException e) {
@@ -83,8 +85,10 @@ List<Horaire> horaires = new ArrayList<>();
 				horaire = new Horaire();
 				horaire.setId(rs.getInt("id"));
 				horaire.setJour(rs.getString("jour"));
+
 				horaire.setHeureOuverture(rs.getTime("heure_ouverture").toLocalTime());
 	            horaire.setHeureFermeture(rs.getTime("heure_fermeture").toLocalTime());
+
 			}
 		} catch (SQLException e) {
 			throw new DALException("Impossible de recuperer les informations pour l'id "+ id, e);
@@ -119,8 +123,10 @@ List<Horaire> horaires = new ArrayList<>();
 		try {
 			PreparedStatement ps = cnx.prepareStatement(UPDATE);
 			ps.setString(1, horaire.getJour());
+
 			ps.setTime(2, Time.valueOf(horaire.getHeureOuverture()));
 	        ps.setTime(3, Time.valueOf(horaire.getHeureFermeture()));
+
 			ps.setInt(4, horaire.getId());
 			ps.executeUpdate();
 		} catch (SQLException e) {
