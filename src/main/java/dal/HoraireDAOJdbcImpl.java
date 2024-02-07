@@ -61,8 +61,8 @@ List<Horaire> horaires = new ArrayList<>();
 				Horaire horaire = new Horaire();
 				horaire.setId(rs.getInt("id"));
 				horaire.setJour(rs.getString("jour"));
-				horaire.setHeureOuverture(LocalTime.parse(rs.getString("heure_ouverture"), DateTimeFormatter.ofPattern("HH:mm")));
-	            horaire.setHeureFermeture(LocalTime.parse(rs.getString("heure_fermeture"), DateTimeFormatter.ofPattern("HH:mm")));
+				horaire.setHeureOuverture(LocalTime.parse(rs.getString("heure_ouverture"), DateTimeFormatter.ofPattern("HH:mm:ss")));
+	            horaire.setHeureFermeture(LocalTime.parse(rs.getString("heure_fermeture"), DateTimeFormatter.ofPattern("HH:mm:ss")));
 				horaires.add(horaire);
 			}
 		} catch (SQLException e) {
@@ -82,8 +82,8 @@ List<Horaire> horaires = new ArrayList<>();
 				horaire = new Horaire();
 				horaire.setId(rs.getInt("id"));
 				horaire.setJour(rs.getString("jour"));
-				horaire.setHeureOuverture(LocalTime.parse(rs.getString("heure_ouverture"), DateTimeFormatter.ofPattern("HH:mm")));
-	            horaire.setHeureFermeture(LocalTime.parse(rs.getString("heure_fermeture"), DateTimeFormatter.ofPattern("HH:mm")));
+				horaire.setHeureOuverture(LocalTime.parse(rs.getString("heure_ouverture"), DateTimeFormatter.ofPattern("HH:mm:ss")));
+	            horaire.setHeureFermeture(LocalTime.parse(rs.getString("heure_fermeture"), DateTimeFormatter.ofPattern("HH:mm:ss")));
 			}
 		} catch (SQLException e) {
 			throw new DALException("Impossible de recuperer les informations pour l'id "+ id, e);
@@ -118,8 +118,8 @@ List<Horaire> horaires = new ArrayList<>();
 		try {
 			PreparedStatement ps = cnx.prepareStatement(UPDATE);
 			ps.setString(1, horaire.getJour());
-			ps.setString(2, horaire.getHeureOuverture().format(DateTimeFormatter.ofPattern("HH:mm")));
-			ps.setString(3, horaire.getHeureFermeture().format(DateTimeFormatter.ofPattern("HH:mm")));
+			ps.setString(2, horaire.getHeureOuverture().format(DateTimeFormatter.ofPattern("HH:mm:ss")));
+			ps.setString(3, horaire.getHeureFermeture().format(DateTimeFormatter.ofPattern("HH:mm:ss")));
 			ps.setInt(4, horaire.getId());
 			ps.executeUpdate();
 		} catch (SQLException e) {
