@@ -9,9 +9,9 @@
 	</div>	
 	<ul class="navbarUl">
 		<li class="first"><a href="" class="active">Accueil</a></li>
-		<li class="second"><a href="">Nos restaurants </a></li>
+		<li class="second"><a href="accueil">Nos restaurants </a></li>
 		<li class="third"><a href="">On fait connaissance ?</a></li>
-		<li class="four"><a href="/connexion" >Se conntecter</a></li>
+		<li class="four"><a href="connexion" >Se conntecter</a></li>
 
 	</ul>
 

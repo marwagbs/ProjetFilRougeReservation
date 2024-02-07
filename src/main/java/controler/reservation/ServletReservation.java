@@ -17,7 +17,7 @@ import bll.HoraireBLL;
 import bll.HoraireRestaurantBLL;
 import bll.ReservationBLL;
 import bll.RestaurantBLL;
-
+import bll.UtilisateurBLL;
 import bo.Horaire;
 import bo.HoraireRestaurant;
 import bo.Restaurant;
@@ -29,6 +29,7 @@ public class ServletReservation extends HttpServlet {
     private RestaurantBLL restaurantBLL;
     private HoraireRestaurantBLL horaireRestaurantBLL;
     private HoraireBLL horaireBLL;
+	private UtilisateurBLL utilisateurBLL;
   //------------------------------------------------------------------------------------------------------------------------------------------------------//
     @Override
     public void init() throws ServletException {
@@ -38,6 +39,7 @@ public class ServletReservation extends HttpServlet {
             reservationBLL = new ReservationBLL();
             horaireRestaurantBLL = new HoraireRestaurantBLL();
             horaireBLL = new HoraireBLL();
+            utilisateurBLL = new UtilisateurBLL(); 
         } catch (BLLException e) {
             e.printStackTrace();
         }
@@ -55,11 +57,9 @@ public class ServletReservation extends HttpServlet {
             e.printStackTrace();
         }
         request.setAttribute("restaurant", restaurant);
+        
+       
 
-        HttpSession session = request.getSession();
-        Utilisateur utilisateur = (Utilisateur) session.getAttribute("utilisateur");
-
-        if (utilisateur != null) {
             
             try {
                 List<Horaire> horaires = new ArrayList<>();
@@ -73,16 +73,13 @@ public class ServletReservation extends HttpServlet {
                     }
                 }
                 request.setAttribute("horaires", horaires);
-                request.setAttribute("utilisateur", utilisateur);
+               
             } catch (BLLException e) {
                 e.printStackTrace();
             }
             request.getRequestDispatcher("/WEB-INF/jsp/reservation.jsp").forward(request, response);
-        } else {
-        	response.sendRedirect(request.getContextPath() + "/ServletConnexion");
-
-        }
-    }
+        } 
+    
 //------------------------------------------------------------------------------------------------------------------------------------------------------//
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -97,21 +94,29 @@ public class ServletReservation extends HttpServlet {
 
         LocalTime heure = LocalTime.parse(heureStr);
         int nbrPersonnes = Integer.parseInt(nbrPersonnesStr);
-
-        HttpSession session = request.getSession();
-        Utilisateur utilisateur = (Utilisateur) session.getAttribute("utilisateur");
-
-        if (utilisateur != null) {
-            try {
-                reservationBLL.insert(dateRes, heure, nbrPersonnes, utilisateur, new Restaurant(idRestaurant), null,
-                        commentaire);
-            } catch (BLLException e) {
-                e.printStackTrace();
-            }
+        
+     
+		  // Retrieve the "identifiant" attribute from the session
+	    String identifiant = (String) request.getSession().getAttribute("identifiant"); 
+	    // Set the "identifiant" attribute as a request attribute
+	     Utilisateur utilisateur;
+		
+	     
+	     try {
+			utilisateur = utilisateurBLL.selectByEmail(identifiant);
+			if (utilisateur != null) {
+				try {
+			reservationBLL.insert(dateRes, heure, nbrPersonnes, utilisateur, new Restaurant(idRestaurant), null,commentaire);
+     } catch (BLLException e) {
+				 e.printStackTrace();
+					            }
             doGet(request, response);
-        } else {
-        	response.sendRedirect(request.getContextPath() + "/ServletConnexion");
-
         }
-    }
-}
+			 request.setAttribute("utilisateur", utilisateur);
+	    	 System.out.println(utilisateur);
+		} catch (BLLException e) {
+			
+			e.printStackTrace();
+		}
+
+	    }  } 
