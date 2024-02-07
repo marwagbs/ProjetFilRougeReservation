@@ -7,6 +7,9 @@ public class Restaurant {
 	private String cpo;
 	private String ville;
 	private Carte carte;
+	private Horaire horaire;
+	private HoraireRestaurant horaireRestaurant;
+	private TableRes tableRes;
 	
 	public Restaurant() {}
   
@@ -89,11 +92,40 @@ public class Restaurant {
 		this.carte = carte;
 	}
 
+	public Horaire getHoraire() {
+		return horaire;
+	}
+
+	public void setHoraire(Horaire horaire) {
+		this.horaire = horaire;
+	}
+
+	public TableRes getTableRes() {
+		return tableRes;
+	}
+
+	public void setTableRes(TableRes tableRes) {
+		this.tableRes = tableRes;
+	}
+
+	public HoraireRestaurant getHoraireRestaurant() {
+		return horaireRestaurant;
+	}
+
+	public void setHoraireRestaurant(HoraireRestaurant horaireRestaurant) {
+		this.horaireRestaurant = horaireRestaurant;
+	}
+
 	@Override
 	public String toString() {
 		return "Restaurant [id=" + id + ", nom=" + nom + ", adresse=" + adresse + ", cpo=" + cpo + ", ville=" + ville
-				+  "]";
+				+ ", carte=" + carte + ", horaire=" + horaire + ", horaireRestaurant=" + horaireRestaurant
+				+ ", tableRes=" + tableRes + "]";
 	}
+
+	
+
+	
 	
 	
 	

@@ -26,7 +26,9 @@ public class ServletListerRestaurants extends HttpServlet {
 	}
 //-----------------------------------------------------------------------------------//
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
 		try {
+
 
 			List<Restaurant> restaurants = restaurantBLL.selectAll();
 			
@@ -35,6 +37,7 @@ public class ServletListerRestaurants extends HttpServlet {
 			 RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/accueil.jsp");
 	            
 			 dispatcher.forward(request, response);
+
 
 
 		} catch (BLLException e) {

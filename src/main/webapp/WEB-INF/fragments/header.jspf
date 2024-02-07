@@ -1,16 +1,17 @@
 
-<header>
+<header class=".header">
+
 <nav class="navbar">
-	<div class="flex">
-		<a href="">
-		<img src="img/Logo-restaurant.PNG" alt="Logo de restaurant"/></a>
+	
+	<div>
+		<a href="/accueil"><img src="././assets/logos/logo.png" alt="Logo de restaurant"/></a>
 		
 	</div>	
 	<ul class="navbarUl">
 		<li class="first"><a href="" class="active">Accueil</a></li>
 		<li class="second"><a href="">Nos restaurants </a></li>
 		<li class="third"><a href="">On fait connaissance ?</a></li>
-		<li class="four"><a href="" >Se conntecter</a></li>
+		<li class="four"><a href="/connexion" >Se conntecter</a></li>
 
 	</ul>
 
