@@ -154,7 +154,7 @@ a {
 	border: 1px solid black;
 	width: 60%;
 	height: 300px;
-	gap: 80px;
+	gap: 15px;
 	padding: 30px;
 	border-radius: 10px;
 	background-color: #F6B12D;
@@ -175,13 +175,30 @@ a {
 }
 
 .resto-info {
-	width: 90%;
+	width: 50%;
 	gap: 30px;
 	font-size: 0.7em;
 }
 
-.resto-info a {
-	color: white;
+.resto-horaires {
+	display: flex;
+	flex-direction: column;
+	justify-content: left;
+	gap: 5px;
+	width: 35%;
+	font-size: 0.5em;
+	line-height: 1;
+	padding-top: 10px;
+}
+
+.resto-horaires h3 {
+	text-align: left;
+	padding-bottom: 10px;
+}
+
+.resto-horaires div {
+	display: flex;
+	flex-direction: row;
 }
 
 .resto-icons {

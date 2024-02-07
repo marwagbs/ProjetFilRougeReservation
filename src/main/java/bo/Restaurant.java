@@ -1,5 +1,7 @@
 package bo;
 
+import java.util.List;
+
 public class Restaurant {
 	private int id;
 	private String nom;
@@ -7,8 +9,7 @@ public class Restaurant {
 	private String cpo;
 	private String ville;
 	private Carte carte;
-	private Horaire horaire;
-	private HoraireRestaurant horaireRestaurant;
+	private List<Horaire> horaire;
 	private TableRes tableRes;
 	
 	public Restaurant() {}
@@ -87,11 +88,11 @@ public class Restaurant {
 		this.carte = carte;
 	}
 
-	public Horaire getHoraire() {
+	public List<Horaire> getHoraire() {
 		return horaire;
 	}
 
-	public void setHoraire(Horaire horaire) {
+	public void setHoraire(List<Horaire> horaire) {
 		this.horaire = horaire;
 	}
 
@@ -103,20 +104,15 @@ public class Restaurant {
 		this.tableRes = tableRes;
 	}
 
-	public HoraireRestaurant getHoraireRestaurant() {
-		return horaireRestaurant;
-	}
-
-	public void setHoraireRestaurant(HoraireRestaurant horaireRestaurant) {
-		this.horaireRestaurant = horaireRestaurant;
-	}
-
 	@Override
 	public String toString() {
 		return "Restaurant [id=" + id + ", nom=" + nom + ", adresse=" + adresse + ", cpo=" + cpo + ", ville=" + ville
-				+ ", carte=" + carte + ", horaire=" + horaire + ", horaireRestaurant=" + horaireRestaurant
-				+ ", tableRes=" + tableRes + "]";
+				+ ", carte=" + carte + ", horaire=" + horaire + ", tableRes=" + tableRes + "]";
 	}
+
+	
+
+	
 
 	
 

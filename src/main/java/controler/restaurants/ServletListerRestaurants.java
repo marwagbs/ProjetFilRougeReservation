@@ -1,13 +1,15 @@
 package controler.restaurants;
 
-import jakarta.servlet.ServletException;
-import jakarta.servlet.http.HttpServlet;
-import jakarta.servlet.http.HttpServletRequest;
-import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 import bll.BLLException;
 import bll.RestaurantBLL;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+import vo.Horaire;
+import vo.HoraireParJour;
 
 public class ServletListerRestaurants extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -26,6 +28,17 @@ public class ServletListerRestaurants extends HttpServlet {
 		
 		try {
 			request.setAttribute("restaurants", restaurantBLL.selectAll());
+			
+			HoraireParJour hpj = new HoraireParJour();
+			hpj.ajouterHoraire("Lundi", new Horaire("10h00", "20h00"));
+			hpj.ajouterHoraire("Mardi", new Horaire("10h00", "20h00"));
+			hpj.ajouterHoraire("Mercredi", new Horaire("10h00", "20h00"));
+			hpj.ajouterHoraire("Jeudi", new Horaire("10h00", "20h00"));
+			hpj.ajouterHoraire("Vendredi", new Horaire("10h00", "23h00"));
+			hpj.ajouterHoraire("Samedi", new Horaire("10h00", "23h00"));
+			hpj.ajouterHoraire("Dimanche", new Horaire("10h00", "23h00"));
+			
+			request.setAttribute("horaires", hpj);
 			
 		} catch (BLLException e) {
 			e.printStackTrace();
