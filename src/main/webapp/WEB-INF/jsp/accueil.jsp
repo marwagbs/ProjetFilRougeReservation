@@ -10,7 +10,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title> ACCUEIL</title>
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="./css/styles.css">
 
 </head>
 
@@ -23,9 +23,7 @@
     
 <main >
 
-<div>
-    <%@ include file="/WEB-INF/fragments/searchbar.jspf" %>
-</div>
+
 
 <div class="apropos">
     <h2>A Propos de nous</h2>
@@ -43,20 +41,11 @@
     <div class="nous-decouvrir">
     <c:forEach var="restaurant" items="${restaurants}">
     <div class="nous-decouvrir-card">
-    
-    
-       <!--
-        
-       
-        <a href="ServletReservation?id=${restaurant.id }" >Reserver</a>
-            -->
-         
-         
+   
       <h3><c:out value="${restaurant.nom}" /></h3>
         
         <img src="images/restaurant.jpg" alt="Description of the image" class="decouvrir-img">
-        
-        
+     
         <form action="ServletReservation" method="get">
             <input type="hidden" name="idRestaurant" value="${restaurant.id}">
             
@@ -83,4 +72,3 @@
 <%@ include file="/WEB-INF/fragments/footer.jspf" %>        
 </body>
 </html>
-
