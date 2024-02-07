@@ -1,5 +1,8 @@
+
 <header class=".header">
+
 <nav class="navbar">
+	
 	<div>
 		<a href="/accueil"><img src="././assets/logos/logo.png" alt="Logo de restaurant"/></a>
 		
@@ -18,5 +21,8 @@
 			<div class="bar3"></div>
 		</div>
 	
-	</nav>
+
+	
 </header>
+
+

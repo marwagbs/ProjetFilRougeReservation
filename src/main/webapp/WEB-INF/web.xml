@@ -29,6 +29,18 @@
     <servlet-name>ServletListerProduits</servlet-name>
     <url-pattern>/cartes</url-pattern>
   </servlet-mapping>
+
+  <servlet>
+    <description></description>
+    <display-name>ServletAccueil</display-name>
+    <servlet-name>ServletAccueil</servlet-name>
+    <servlet-class>controler.accueil.ServletAccueil</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ServletAccueil</servlet-name>
+    <url-pattern>/ServletAccueil</url-pattern>
+  </servlet-mapping>
+
   <servlet>
     <description></description>
     <display-name>ServletTesterConnexion</display-name>
@@ -41,6 +53,17 @@
   </servlet-mapping>
   <servlet>
 
+    <description></description>
+    <display-name>ServletListerProduit</display-name>
+    <servlet-name>ServletListerProduit</servlet-name>
+    <servlet-class>controler.produits.ServletListerProduit</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ServletListerProduit</servlet-name>
+    <url-pattern>/ServletListerProduit</url-pattern>
+  </servlet-mapping>
+  <servlet>
+
     <display-name>ServletListerUtilisateurs</display-name>
     <servlet-name>ServletListerUtilisateurs</servlet-name>
     <servlet-class>controler.utilisateurs.ServletListerUtilisateurs</servlet-class>
@@ -48,7 +71,26 @@
   <servlet-mapping>
     <servlet-name>ServletListerUtilisateurs</servlet-name>
     <url-pattern>/ServletListerUtilisateurs</url-pattern>
-
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ServletRechercheRestaurant</display-name>
+    <servlet-name>ServletRechercheRestaurant</servlet-name>
+    <servlet-class>controler.restaurants.ServletRechercheRestaurant</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ServletRechercheRestaurant</servlet-name>
+    <url-pattern>/ServletRechercheRestaurant</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ServletReservation</display-name>
+    <servlet-name>ServletReservation</servlet-name>
+    <servlet-class>controler.reservation.ServletReservation</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ServletReservation</servlet-name>
+    <url-pattern>/ServletReservation</url-pattern>
   </servlet-mapping>
   <servlet>
     <description></description>

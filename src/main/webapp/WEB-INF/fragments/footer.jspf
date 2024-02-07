@@ -1,4 +1,6 @@
+
 <footer>
+
 	<div class="footer">
         <img src="././assets/logos/logo.png" alt="Logo de M2I Ristorante" class="footer-logo" />
         <div class="footer-flex">
@@ -25,4 +27,5 @@
             <p>C 2024 M2I Ristorante</p>
         </div>
     </div>
+
 </footer>

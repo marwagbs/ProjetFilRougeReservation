@@ -1,9 +1,12 @@
 package controler.restaurants;
 
 import java.io.IOException;
+import java.util.List;
 
 import bll.BLLException;
 import bll.RestaurantBLL;
+import bo.Restaurant;
+import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
@@ -15,7 +18,7 @@ public class ServletListerRestaurants extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private RestaurantBLL restaurantBLL;
 	
-	@Override
+
 	public void init() throws ServletException {
 		try {
 			restaurantBLL = new RestaurantBLL();
@@ -27,7 +30,9 @@ public class ServletListerRestaurants extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		try {
-			request.setAttribute("restaurants", restaurantBLL.selectAll());
+
+
+			List<Restaurant> restaurants = restaurantBLL.selectAll();
 			
 			HoraireParJour hpj = new HoraireParJour();
 			hpj.ajouterHoraire("Lundi", new Horaire("10h00", "20h00"));
@@ -40,6 +45,13 @@ public class ServletListerRestaurants extends HttpServlet {
 			
 			request.setAttribute("horaires", hpj);
 			
+			 request.setAttribute("restaurants", restaurants);
+			 
+			 RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/jsp/accueil.jsp");
+	            
+			 dispatcher.forward(request, response);
+
+
 		} catch (BLLException e) {
 			e.printStackTrace();
 		}

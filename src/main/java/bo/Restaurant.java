@@ -13,6 +13,11 @@ public class Restaurant {
 	private TableRes tableRes;
 	
 	public Restaurant() {}
+  
+	public Restaurant(int id) {
+		super();
+		this.id = id;
+	}
 
 	public Restaurant(int id, String nom, String adresse, String cpo, String ville, Carte carte) {
 		this.id = id;
