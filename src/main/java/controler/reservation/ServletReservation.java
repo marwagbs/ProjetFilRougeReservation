@@ -78,8 +78,14 @@ public class ServletReservation extends HttpServlet {
                 e.printStackTrace();
             }
             request.getRequestDispatcher("/WEB-INF/jsp/reservation.jsp").forward(request, response);
+
+        } else {
+        	response.sendRedirect(request.getContextPath() + "/connexion");
+
+        }
+    }
         } 
-    
+
 //------------------------------------------------------------------------------------------------------------------------------------------------------//
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -111,6 +117,9 @@ public class ServletReservation extends HttpServlet {
 				 e.printStackTrace();
 					            }
             doGet(request, response);
+
+        } else {
+        	response.sendRedirect(request.getContextPath() + "/connexion");
         }
 			 request.setAttribute("utilisateur", utilisateur);
 	    	 System.out.println(utilisateur);

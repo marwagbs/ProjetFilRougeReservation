@@ -46,6 +46,7 @@ a {
 /******************** Header**********/
 .header {
 	padding-top: 30px;
+
 	background: linear-gradient(to bottom, rgba(246,177,45,0.7) 0%,rgba(235,227,219,0.25) 25%,rgba(255,255,255,0) 100%);
 }
 
@@ -100,12 +101,14 @@ a {
     background: linear-gradient(145deg,#e6e6e6,#fff);
     padding: 10px 15px;
     text-align: center;
+    color:#EF4B0A;
   }
   
  .flex-form{
 	 display: flex;
 	 flex-direction: column;
 	 flex-wrap: wrap;
+	 align-items: center;
  } 
 .mb-3{
 	margin-bottom: 1rem;
@@ -114,14 +117,17 @@ a {
 	margin-top:3rem;
 }
 .form {
-	
 	padding: 2rem 5rem;
 	margin: auto;
+	font-size: 18px;
 	
 }
 .form-div{
 	margin:auto;
 }
+/*.form-div label{
+	color:#F6B12D;
+}*/
 .form-div input{
 	border-radius: 5px;
 	padding:4px 5px;
@@ -130,6 +136,7 @@ a {
 .textConnexion , .label-check {
     margin: 5px 0;
     text-align: center;
+    font-size: 18px;
 }
 .textConnexion a , .div-complement a{
 	color: deepskyblue;
@@ -172,6 +179,7 @@ a {
     cursor: pointer;
     border:none;
     display: inline-block;
+    font-size: 18px;
    
 }
 .color-link{
@@ -181,6 +189,7 @@ a {
     margin-bottom: 10px;
     padding: 10px;
     text-transform: uppercase;
+    
 }
 /* Le code css pour le pied de page */
 
@@ -234,7 +243,26 @@ a {
 }
 
 /* Le code css pour la page des restaurants */
-
+.intro-resto {
+	background: url(../assets/img/resto2.jpg) center center;
+	background-size: cover;
+	padding: 8rem 0;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+.intro-resto h1, .intro-about h1 {
+	color:#fff;
+	text-transform: uppercase;
+}
+.intro-resto p, .intro-p{
+	color:#EF4B0A ;
+	background-color: #fff;
+	padding:10px 35px;
+	font-family: italic;
+	
+}
 .resto-section {
 	display: flex;
 	flex-direction: column;
@@ -347,6 +375,76 @@ a {
 	color: white;
 	text-transform: uppercase;
 	font-weight: bold;
+}
+/***************about*********************/
+video {
+	display: block;
+	width: 80%;
+	margin: 4rem auto;
+}
+.title-about{
+	color:#EF4B0A;
+}
+.intro-about{
+	background: url(../assets/img/about.jpg) center center;
+	background-size: cover;
+	padding: 8rem 0;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+.h1-about{
+	color:#F6B12D;
+}
+.concept ul{
+    list-style: none;
+    padding-left:0;
+     display:grid;
+    grid-template-columns:1fr;
+    align-items:center;
+    gap:20px;
+    text-align:center;
+}
+.concept li{
+    background-color:#2F4558;
+    border-radius:20px;
+    border:1px solid #2F4558;
+    margin:20px;
+   
+}
+.concept i{
+    color: #F6B12D;
+    font-size:4rem;
+    padding:10px 0;
+}
+.h3-about{
+	color:#F6B12D;
+}
+.p-about{
+    padding:20px;
+    text-align:center;
+    color:#fff;
+}
+.equipe{
+    display:flex;
+    flex-direction:column;
+    align-items:flex-start;
+    justify-content:space-around;
+}
+.equipe p{
+    text-align:center;
+    padding:20px;
+}
+.imgEquipe{
+   display:grid;
+   grid-template-columns:1fr 1fr;
+   gap:20px;
+    
+}
+.imgEquipe img{
+    border-radius:20px;
+    margin:50px;
 }
 
  /**********Reservation *****************************************/
@@ -498,8 +596,8 @@ a {
 .intro h1 {
 	color:#fff;
 	text-transform: uppercase;
-	margin-bottom: 3rem;
-	padding: 1.5rem 2rem;
+	margin-bottom: 0;
+	/*padding: 1.5rem 2rem;*/
 }
 
 .menu_header {
@@ -509,6 +607,7 @@ a {
 .cursive-title{
 	text-align: center;
 	color:#fff;
+	
 	
 	
 }
@@ -547,6 +646,7 @@ a {
     font-weight: 400;
     text-align: left;
     color:#fff;
+    font-size: 18px;
    
 }
 .submenu_title:after {
@@ -571,6 +671,7 @@ a {
     justify-content: space-between;
     max-width: 100%;
     animation: slideup 1s forwards;
+        font-size: 20px;
     
      
     }
@@ -602,6 +703,67 @@ a {
     transform: translatey(0px);
     opacity: 100%;
 }
+}
+.color-error{
+	color:brown;
+	text-align: center;
+}
+/*****************Contact**********/
+.double-title {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    position: relative;
+    align-items: center;
+    text-align: center;
+   }
+.contact-subtitle {
+    margin-bottom: 0.2222222222em;
+    letter-spacing: 1px;
+    font-size: 1.375rem;
+      color: #Fff;
+}
+.contact-title {
+    line-height: 1;
+    font-weight: 400;
+    font-size: 2.5rem;
+    color: #F6B12D;
+    letter-spacing: 1px;
+    margin-bottom: 0;
+}
+.main-banner {
+    position: relative;
+    z-index: 4;
+    padding-top: 1.5625rem;
+    
+}
+.main-container{
+	background-color: #2F4558;
+	padding: 2rem 5rem;
+	margin: auto;
+}
+.input-contact{
+	background-color:#f4e7db;
+	border: none !important;
+	padding:15px 10px !important;
+	
+}
+.container-margin{
+	margin:auto;
+	width:800px;
+}
+.label-contact{
+	color:#F6B12D;
+}
+.form-contact{
+	width: 800px !important;
+	
+}
+.select-contact{
+	width:102%;
+}
+.color-messge{
+	color:#fff;
 }
 /* *****************************************************************
 VERSION TABLETTE
@@ -639,15 +801,21 @@ VERSION TABLETTE
    		 margin-right:0;
    		 margin-left:0;
 	}
+	.concept ul{
+            grid-template-columns:1fr 1fr;
+        }
 }
+
 
 /* *****************************************************************
 VERSION DESKTOP
 ***************************************************************** */
 @media screen and (min-width: 1100px) {
 	.header{
-		/*background: linear-gradient(to bottom,rgba(246,177,45,0.7)  0%,rgba(235,227,219,0.5) 50%,rgba(255,255,255,0) 100%);*/
-		background: #fff;
+		
+		 background:#fff; 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); 
+    padding: 20px;
 		
 		/*position: sticky;
 		top:0;*/
@@ -660,6 +828,7 @@ VERSION DESKTOP
 		justify-content: space-between;
 		align-items: center;
 		padding:5px 0;
+		
 		
 	}
 	
@@ -689,6 +858,7 @@ VERSION DESKTOP
 	
 	.submenus{
 		    grid-template-columns: repeat(4, 1fr);
+		    gap:1rem;
 	}
 	.container{
 		padding:0 25px;
@@ -696,6 +866,27 @@ VERSION DESKTOP
 	.cursive-title{
 		margin-top:0.25rem;
 	}
+	.intro h1, .intro-about h1 , .intro-resto h1{
+
+	margin-bottom: 3rem ;
+	padding: 1.5rem 2rem;
+}
+	/*****page about****/
+	  
+        .concept ul{
+            grid-template-columns:1fr 1fr 1fr;
+        }
+        .equipe{
+            display:flex;
+            flex-direction:row;
+        }
+        .imgEquipe img{
+            width:80%;
+        }
+        .imgEquipe{
+            gap:5px;
+        }
+        
 }
 
 /* Le code css pour la page d'utilisateur */
