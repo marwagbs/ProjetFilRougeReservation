@@ -32,6 +32,7 @@ public class FilterConnect extends HttpFilter implements Filter {
 		listPath.add("/connexion");
 		listPath.add("/accueil");
 		listPath.add("/nosRestaurants");
+		listPath.add("/accueil");
 		listPath.add("/WEB-INF/jsp/utilisateur/connexion.jsp");
 		listPath.add("/WEB-INF/jsp/utilisateur/creationducompte.jsp");
 		listPath.add("/WEB-INF/jsp/utilisateur/restaurants.jsp");

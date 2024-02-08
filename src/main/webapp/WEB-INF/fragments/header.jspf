@@ -2,19 +2,19 @@
 
 <header class="header">
 	<div class="containerHeader">
-		<a href="index.html"class="logo" >
+		<a href="accueil"class="logo" >
 			<img src="././assets/logos/logo.png" alt="Logo for pate d'or">
 			
 		</a>
 		<nav class="nav">
 			<ul class="navbarUl">
-				<li><a href="">Accueil</a></li>
-				<li><a href="">On fait connaissance?</a></li>
+				<li><a href="accueil">Accueil</a></li>
+				<li><a href="about">On fait connaissance?</a></li>
 				<li><a href="nosRestaurants">Nos Restaurants</a></li>
 				
 			<c:if test="${not empty identifiant }">
 			 <li><a href="profil">Mon profil</a></li>
-			        <li><a href="deconnexion">se dï¿½connecter</a></li>
+			        <li><a href="deconnexion">se déconnecter</a></li>
 			</c:if>
 			<c:if test="${empty identifiant }">
 			       <li> <a href="connexion">Connexion</a></li>

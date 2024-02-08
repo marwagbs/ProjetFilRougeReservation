@@ -7,6 +7,7 @@ pageEncoding="UTF-8"%> <%@ taglib prefix="c" uri="jakarta.tags.core" %>
     <title>la carte de notre restaurant</title>
     <link href="././css/style.css" rel="stylesheet" />
     <%@include file="../fragments/linksfont.jspf" %>
+ 
   </head>
 
   <body>
@@ -14,6 +15,7 @@ pageEncoding="UTF-8"%> <%@ taglib prefix="c" uri="jakarta.tags.core" %>
     <main>
     	<div class="intro">
 				<h1>Notre carte</h1>
+				<p class="intro-p">Passionnément, à la folie… </p>
 		</div>
   
       <section class="menu container">

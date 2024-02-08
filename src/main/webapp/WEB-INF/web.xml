@@ -40,16 +40,6 @@
     <url-pattern>/accueil</url-pattern>
   </servlet-mapping>
   <servlet>
-    <description></description>
-    <display-name>ServletTesterConnexion</display-name>
-    <servlet-name>ServletTesterConnexion</servlet-name>
-    <servlet-class>controler.ServletTesterConnexion</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>ServletTesterConnexion</servlet-name>
-    <url-pattern>/ServletTesterConnexion</url-pattern>
-  </servlet-mapping>
-  <servlet>
     <display-name>ServletListerUtilisateurs</display-name>
     <servlet-name>ServletListerUtilisateurs</servlet-name>
     <servlet-class>controler.utilisateurs.ServletListerUtilisateurs</servlet-class>
@@ -76,7 +66,7 @@
   </servlet>
   <servlet-mapping>
     <servlet-name>ServletReservation</servlet-name>
-    <url-pattern>/ServletReservation</url-pattern>
+    <url-pattern>/reservation</url-pattern>
   </servlet-mapping>
   <servlet>
     <description></description>
@@ -133,6 +123,24 @@
   </servlet-mapping>
   <servlet>
     <description></description>
+    <display-name>ServletContact</display-name>
+    <servlet-name>ServletContact</servlet-name>
+    <servlet-class>controler.contact.ServletContact</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ServletContact</servlet-name>
+    <url-pattern>/contact</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ServletAbout</display-name>
+    <servlet-name>ServletAbout</servlet-name>
+    <servlet-class>controler.accueil.ServletAbout</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ServletAbout</servlet-name>
+    <url-pattern>/about</url-pattern>
+
     <display-name>ServletModifierProfil</display-name>
     <servlet-name>ServletModifierProfil</servlet-name>
     <servlet-class>controler.utilisateurs.ServletModifierProfil</servlet-class>
