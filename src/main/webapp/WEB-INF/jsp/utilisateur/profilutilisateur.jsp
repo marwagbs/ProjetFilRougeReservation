@@ -82,6 +82,5 @@
 		</div>
 	</main>
 	<%@include file="../../fragments/footer.jspf" %>
-	<script src="././javascript/profilutilisateur.js"></script>
 </body>
 </html>
