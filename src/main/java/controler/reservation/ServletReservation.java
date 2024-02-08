@@ -79,7 +79,7 @@ public class ServletReservation extends HttpServlet {
             }
             request.getRequestDispatcher("/WEB-INF/jsp/reservation.jsp").forward(request, response);
         } else {
-        	response.sendRedirect(request.getContextPath() + "/ServletConnexion");
+        	response.sendRedirect(request.getContextPath() + "/connexion");
 
         }
     }
@@ -110,7 +110,7 @@ public class ServletReservation extends HttpServlet {
             }
             doGet(request, response);
         } else {
-        	response.sendRedirect(request.getContextPath() + "/ServletConnexion");
+        	response.sendRedirect(request.getContextPath() + "/connexion");
 
         }
     }
