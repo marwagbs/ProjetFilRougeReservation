@@ -197,13 +197,19 @@ a {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	font-size: 0.7em;
+	font-size: 1em;
 	width: 100%;
-	height: 250px;
 	background-color: rgb(246, 177, 45);
-	gap: 0.6em;
-	padding: 30px 0 20px;
+	gap: 20px;
+	padding: 30px;
 	
+}
+
+.footer-flex {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 20px;
 }
 
 .footer-logo {
@@ -212,24 +218,25 @@ a {
 }
 
 .footer-icons img {
-	width: 1em;
+	width: 40px;
 	height: auto;
 }
 
 .footer-icons {
 	display: flex;
-	gap: 1em;
-}
-
-.footer-flex, .footer-info {
-	display: flex;
-	flex-direction: row;
-	justify-content: space-between;
-	gap: 15em;
+	gap: 20px;
 }
 
 .footer-info {
-	font-size: 0.6em;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 10px;
+}
+
+.footer-info {
+	font-size: 0.8em;
 }
 
 .footer-text {
@@ -950,6 +957,15 @@ VERSION DESKTOP
 	flex-direction: row;
 	justify-content: flex-start;
 	position: inherit;
+}
+
+/* Le pied de page */
+
+.footer-flex, .footer-info {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	gap: 15em;
 }
         
 }
