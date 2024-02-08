@@ -71,12 +71,30 @@ private UtilisateurDAO dao;
 	}
 	
 	public void update(Utilisateur utilisateur) throws BLLException {
-//	verifierLesDonnees(utilisateur.getNom(), utilisateur.getPrenom(), utilisateur.getEmail(), utilisateur.getMotDePasse(), utilisateur.getTelephone(), utilisateur.getIsAdmin());
+		BLLException bllException = new BLLException();
+		
+		if (utilisateur.getNom().isEmpty() || utilisateur.getNom().length() < 2 || utilisateur.getNom().length() > 50) {
+			bllException.ajouterErreur("Le nom doit avoir entre 2 et 50 caractères");
+		}
+		
+		if (utilisateur.getPrenom().isEmpty() || utilisateur.getPrenom().length() < 2 || utilisateur.getPrenom().length() > 50) {
+			bllException.ajouterErreur("Le prénom doit avoir entre 2 et 50 caractères");
+		}
+		
+		if (utilisateur.getTelephone().isEmpty() || utilisateur.getTelephone().length() < 8 || utilisateur.getTelephone().length() > 50) {
+			bllException.ajouterErreur("Le numéro de téléphone doit avoir entre 8 et 50 caractères");
+		}
+		
+		if (bllException.getErreurs().size() > 0) {
+			throw bllException;
+		}
+		
 		try {
 			dao.update(utilisateur);
 		} catch (DALException e) {
 			throw new BLLException("Echec de la mise à jour", e);
 		}
+		
 	}
 	
 	public void delete(int id) throws BLLException {

@@ -55,10 +55,20 @@ public class ServletPageProfil extends HttpServlet {
 			utilisateurBLL.update(utilisateur);
 			
 		} catch (BLLException e) {
+			request.setAttribute("erreurs", e.getErreurs());
 			e.printStackTrace();
 		}
 		
-		response.sendRedirect("profil");
+		String userMail = (String) request.getSession().getAttribute("identifiant");
+		try {
+			Utilisateur utilisateur = utilisateurBLL.selectByEmail(userMail);
+			request.setAttribute("utilisateur", utilisateur);
+			
+		} catch (BLLException e) {
+			e.printStackTrace();
+		}
+		
+		request.getRequestDispatcher("/WEB-INF/jsp/utilisateur/profilutilisateur.jsp").forward(request, response);
 		
 	}
 
