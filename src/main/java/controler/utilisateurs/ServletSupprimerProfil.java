@@ -33,7 +33,7 @@ private UtilisateurBLL utilisateurBLL;
 		} catch (BLLException e) {
 			e.printStackTrace();
 		}
-		
+		response.sendRedirect("connexion");
 	}
 
 
