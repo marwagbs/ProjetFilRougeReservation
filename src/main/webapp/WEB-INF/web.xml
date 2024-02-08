@@ -140,5 +140,23 @@
   <servlet-mapping>
     <servlet-name>ServletAbout</servlet-name>
     <url-pattern>/about</url-pattern>
+
+    <display-name>ServletModifierProfil</display-name>
+    <servlet-name>ServletModifierProfil</servlet-name>
+    <servlet-class>controler.utilisateurs.ServletModifierProfil</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ServletModifierProfil</servlet-name>
+    <url-pattern>/ServletModifierProfil</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ServletSupprimerProfil</display-name>
+    <servlet-name>ServletSupprimerProfil</servlet-name>
+    <servlet-class>controler.utilisateurs.ServletSupprimerProfil</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ServletSupprimerProfil</servlet-name>
+    <url-pattern>/ServletSupprimerProfil</url-pattern>
   </servlet-mapping>
 </web-app>

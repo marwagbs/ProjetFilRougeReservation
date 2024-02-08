@@ -42,6 +42,7 @@ a {
 	text-decoration: none;
 	color:black;
 }
+
 /******************** Header**********/
 .header {
 	padding-top: 30px;
@@ -536,6 +537,51 @@ video {
 }
 
 
+/***************   Style pour page accueil ******************************************/
+.restaurant-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.restaurant-card {
+    width: calc(25% - 20px); /* Adjust the width to fit four cards per row with spacing */
+    margin: 10px; /* Add spacing between cards */
+    background-color: #f9f9f9; /* Card background color */
+    border: 1px solid #ddd; /* Card border */
+    border-radius: 5px; /* Card border radius */
+    padding: 20px; /* Card padding */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Card shadow */
+    text-align: center; /* Center content */
+}
+
+.restaurant-img {
+    width: 100%; /* Ensure the image takes up the full width of its container */
+    height: auto; /* Maintain aspect ratio */
+    margin-bottom: 10px; /* Add space below the image */
+}
+
+.btn-reserver {
+    background-color: #007bff; /* Button background color */
+    color: #fff; /* Button text color */
+    border: none; /* Remove button border */
+    padding: 10px 20px; /* Button padding */
+    border-radius: 5px; /* Button border radius */
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Smooth button transition */
+}
+
+.btn-reserver:hover {
+    background-color: #0056b3; /* Button background color on hover */
+}
+
+
+
+
+
+
+
 /*******************Carte**********/
 .intro {
 	background: url(../assets/img/b1.jpg) center center;
@@ -842,4 +888,40 @@ VERSION DESKTOP
         }
         
 }
+
+/* Le code css pour la page d'utilisateur */
+
+	.user-profil {
+		display: flex;
+		width: 90%;
+		justify-content: center;
+		padding: 100px 0;
+	}
+	
+	.user-profil-form {
+		width: 50%;
+	}
+	
+	.form-group {
+		margin-bottom: 20px;
+	}
+	
+	.form-btn {
+	display: flex;
+	justify-content: center;
+	gap: 30px;
+	margin-top: 50px;
+	}
+
+	.form-btn button {
+		width: 200px;
+		padding: 20px;
+		border: none;
+		border-radius: 30px;
+		background-color: #EF4B0A;
+		font-size: 0.6em;
+		color: white;
+		text-transform: uppercase;
+		font-weight: bold;
+	}
 

@@ -71,7 +71,7 @@ private UtilisateurDAO dao;
 	}
 	
 	public void update(Utilisateur utilisateur) throws BLLException {
-		verifierLesDonnees(utilisateur.getNom(), utilisateur.getPrenom(), utilisateur.getEmail(), utilisateur.getMotDePasse(), utilisateur.getTelephone(), utilisateur.getIsAdmin());
+//	verifierLesDonnees(utilisateur.getNom(), utilisateur.getPrenom(), utilisateur.getEmail(), utilisateur.getMotDePasse(), utilisateur.getTelephone(), utilisateur.getIsAdmin());
 		try {
 			dao.update(utilisateur);
 		} catch (DALException e) {
