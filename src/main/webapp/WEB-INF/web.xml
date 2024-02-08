@@ -140,7 +140,9 @@
   <servlet-mapping>
     <servlet-name>ServletAbout</servlet-name>
     <url-pattern>/about</url-pattern>
-
+  </servlet-mapping>
+    <servlet>
+    <description></description>
     <display-name>ServletModifierProfil</display-name>
     <servlet-name>ServletModifierProfil</servlet-name>
     <servlet-class>controler.utilisateurs.ServletModifierProfil</servlet-class>
