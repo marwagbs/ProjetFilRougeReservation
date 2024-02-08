@@ -275,6 +275,7 @@ a {
 }
 
 .resto-section h3 {
+	padding-top: 20px;
 	color: #EF4B0A;
 }
 
@@ -284,33 +285,35 @@ a {
 }
 
 .resto-card {
+	position: relative;
 	border: 1px solid black;
-	width: 60%;
-	height: 300px;
+	width: 50%;
+	height: 350px;
 	gap: 15px;
 	padding: 30px;
 	border-radius: 10px;
 	background-color: #F6B12D;
 }
 
-.resto-flex, .resto-icons, .icons-container {
+.resto-flex {
 	display: flex;
-	flex-direction: row;
-	align-items: center;
-}
-
-.resto-flex, .icons-container {
-	justify-content: space-between;
+	flex-direction: column;
+	align-items: flex-start;
 }
 
 .icons-container {
-	gap: 20px;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+	width: 100%;
 }
 
 .resto-info {
-	width: 50%;
+	width: 100%;
 	gap: 30px;
 	font-size: 0.7em;
+	padding-top: 10px;
 }
 
 .resto-horaires {
@@ -318,10 +321,9 @@ a {
 	flex-direction: column;
 	justify-content: left;
 	gap: 5px;
-	width: 35%;
+	width: 100%;
 	font-size: 0.5em;
 	line-height: 1;
-	padding-top: 10px;
 }
 
 .resto-horaires h3 {
@@ -335,6 +337,10 @@ a {
 }
 
 .resto-icons {
+	margin-top: 30px;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
 	gap: 5px;
 }
 
@@ -362,7 +368,12 @@ a {
 
 .resto-btn {
 	display: flex;
-	gap: 30px;
+	flex-direction: column;
+	gap: 10px;
+	justify-content: center;
+	position: absolute;
+	bottom: 47px;
+	right: 30px;
 }
 
 .resto-btn button {
@@ -798,6 +809,18 @@ VERSION TABLETTE
 	.concept ul{
             grid-template-columns:1fr 1fr;
         }
+        
+   /* Page Nos restaurants */
+
+	.resto-card {
+		width: 65%;
+		padding: 30px 60px;
+	}
+	
+	.resto-btn {
+		right: 55px;
+	}
+     
 }
 
 
@@ -880,6 +903,54 @@ VERSION DESKTOP
         .imgEquipe{
             gap:5px;
         }
+        
+ /* Page Nos restaurants */
+
+.resto-section h3 {
+	padding-top: 0px;
+}
+
+.resto-card {
+	position: inherit;
+	width: 60%;
+	height: 300px;
+}
+
+.resto-flex, .resto-icons, .icons-container {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+}
+
+.resto-flex, .icons-container {
+	justify-content: space-between;
+}
+
+.icons-container {
+	gap: 20px;
+	width: auto;
+}
+
+.resto-info {
+	width: 50%;
+	padding-top: 0px;
+}
+
+.resto-horaires {
+	width: 35%;
+	padding-top: 10px;
+}
+
+.resto-icons {
+	margin-top: 0px;
+}
+
+.resto-btn {
+	gap: 30px;
+	flex-direction: row;
+	justify-content: flex-start;
+	position: inherit;
+}
         
 }
 
@@ -1031,10 +1102,4 @@ VERSION DESKTOP
 	  display: table;
 	}
 	
-	/* Change styles for cancel button and delete button on extra small screens */
-	@media screen and (max-width: 300px) {
-	  .cancelbtn, .deletebtn {
-	    width: 100%;
-	  }
-	}
 
