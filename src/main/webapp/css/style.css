@@ -198,7 +198,6 @@ a {
 	flex-direction: column;
 	align-items: center;
 	font-size: 1em;
-	width: 100%;
 	background-color: rgb(246, 177, 45);
 	gap: 20px;
 	padding: 30px;
@@ -212,14 +211,22 @@ a {
 	gap: 20px;
 }
 
+.footer-flex a {
+	color: #EF4B0A;
+	transition: transform 300ms ease-in-out;
+}
+
+.footer-flex a:hover {
+	transform: scale(1.2);
+}
+
 .footer-logo {
 	width: 300px;
 	height: auto;
 }
 
-.footer-icons img {
-	width: 40px;
-	height: auto;
+.fa-brands {
+	font-size: 1.3em;
 }
 
 .footer-icons {
@@ -240,7 +247,7 @@ a {
 }
 
 .footer-text {
-	width: 450px;
+	width: 45%;
 }
 
 .footer-text p {
@@ -263,6 +270,11 @@ a {
 	color:#fff;
 	text-transform: uppercase;
 }
+
+ .intro-resto h1 {
+	margin: 1rem 0;	
+}
+
 .intro-resto p, .intro-p{
 	color:#EF4B0A ;
 	background-color: #fff;
@@ -282,7 +294,7 @@ a {
 }
 
 .resto-section h3 {
-	padding-top: 20px;
+	padding-top: 15px;
 	color: #EF4B0A;
 }
 
@@ -319,7 +331,7 @@ a {
 .resto-info {
 	width: 100%;
 	gap: 30px;
-	font-size: 0.7em;
+	font-size: 0.6em;
 	padding-top: 10px;
 }
 
@@ -329,13 +341,13 @@ a {
 	justify-content: left;
 	gap: 5px;
 	width: 100%;
-	font-size: 0.5em;
+	font-size: 0.6em;
 	line-height: 1;
 }
 
 .resto-horaires h3 {
 	text-align: left;
-	padding-bottom: 10px;
+	padding-bottom: 5px;
 }
 
 .resto-horaires div {
@@ -394,6 +406,15 @@ a {
 	text-transform: uppercase;
 	font-weight: bold;
 }
+.resto-btn a {
+	transition: transform 300ms ease-in-out;
+}
+
+.resto-btn a:hover {
+	transform: scale(0.8);
+}
+
+
 /***************about*********************/
 video {
 	display: block;
@@ -912,6 +933,10 @@ VERSION DESKTOP
         }
         
  /* Page Nos restaurants */
+ 
+  .intro-resto h1 {
+	margin: 0.6rem 0;	
+}
 
 .resto-section h3 {
 	padding-top: 0px;
@@ -933,14 +958,21 @@ VERSION DESKTOP
 	justify-content: space-between;
 }
 
+.resto-flex-two {
+	display: flex;
+	flex-direction: column;
+	gap: 50px;
+	width: 70%;
+}
+
 .icons-container {
 	gap: 20px;
 	width: auto;
 }
 
 .resto-info {
-	width: 50%;
-	padding-top: 0px;
+	width: 100%;
+	padding-top: 35px;
 }
 
 .resto-horaires {
@@ -965,7 +997,15 @@ VERSION DESKTOP
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
+	
+}
+
+.footer-info {
 	gap: 15em;
+}
+
+.footer-flex {
+	gap: 33.5em;
 }
         
 }
@@ -989,6 +1029,7 @@ VERSION DESKTOP
 		display: flex;
 		flex-direction: column;
 		padding-bottom: 30px;
+		padding-left: 20px;
 	}
 	
 	.user-profil-form {
@@ -1015,6 +1056,14 @@ VERSION DESKTOP
 		color: white;
 		text-transform: uppercase;
 		font-weight: bold;
+		transition: all 0.3s ease-in-out;
+	}
+	
+	.form-btn button:hover {
+		 color: #EF4B0A;
+	  	 border: 2px solid #EF4B0A;
+	  	 background: transparent;
+	  	 transform: scale(.9);
 	}
 	
 	#email , #motdepasse {
@@ -1033,7 +1082,7 @@ VERSION DESKTOP
 	
 	.user-profil-error {
 		text-align: center;
-		color: red;
+		color: #EF4B0A;
 		font-size: 0.7em;
 		width: 80%;
 		padding-bottom: 20px;
@@ -1057,13 +1106,22 @@ VERSION DESKTOP
 	
 	/* Add a color to the cancel button */
 	.cancelbtn {
-	  background-color: #ccc;
-	  color: black;
+	  background-color: #2F4558;
+	  color: white;
+	}
+	
+	.cancelbtn:hover {
+		opacity: 0.8;
 	}
 	
 	/* Add a color to the delete button */
 	.deletebtn {
 	  background-color: #EF4B0A;
+	  color: white;
+	}
+	
+	.deletebtn:hover {
+		opacity: 0.8;
 	}
 	
 	/* The Modal (background) */
@@ -1107,7 +1165,7 @@ VERSION DESKTOP
 	
 	.close:hover,
 	.close:focus {
-	  color: #f44336;
+	  color: #EF4B0A;
 	  cursor: pointer;
 	}
 	
