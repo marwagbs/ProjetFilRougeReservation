@@ -1047,10 +1047,10 @@ VERSION DESKTOP
 	}
 
 	.form-btn button {
-		width: 50%;
-		padding: 11px;
+		width: 40%;
+		padding: 15px 5px;
 		border: none;
-		border-radius: 5px;
+		border-radius: 10px;
 		background-color: #EF4B0A;
 		font-size: 0.6em;
 		color: white;
@@ -1176,4 +1176,42 @@ VERSION DESKTOP
 	  display: table;
 	}
 	
-
+/* Le code css pour la page 404 */
+	
+	.error-page {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		padding: 60px 0 100px;
+		margin: 130px 0;
+	}
+	
+	.error-number {
+		color: #EF4B0A;
+		font-size: 96px;
+		font-weight: 700;
+	}
+	
+	.error-text {
+		color: #EF4B0A;
+		font-size: 18px;
+		font-weight: 500;
+		text-align: center;
+		width: 50%;
+		padding: 40px 0 50px;
+	}
+	
+	.error-page h2 {
+		margin: 0;
+	}
+	
+	.error-link {
+		font-weight: 500;
+		font-size: 14px;
+		text-decoration: underline;
+	}
+	
+	.fa-triangle-exclamation {
+		font-size: 6em;
+		color: #F6B12D;
+	}
