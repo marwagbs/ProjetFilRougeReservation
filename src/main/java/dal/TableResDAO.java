@@ -17,11 +17,11 @@ import bo.TableRes;
 
 public class TableResDAO implements GenericDAO<TableRes> {
 	
-	private static final String DELETE = "DELETE FROM tablesRes WHERE id = ?";
-	private static final String UPDATE = "UPDATE tablesRes SET nombre_places = ?, numero_table = ?, statut = ?, id_restaurant = ? WHERE id = ?";
-	private static final String INSERT = "INSERT INTO tablesRes (nombre_places, numero_table, statut, id_restaurant) VALUES (?,?,?,?)";
-	private static final String SELECT_BY_ID = "SELECT * FROM tablesRes JOIN restaurants ON tablesRes.id_restaurant = restaurants.id WHERE tablesRes.id = ?";
-	private static final String SELECT = "SELECT * FROM tablesRes JOIN restaurants ON tablesRes.id_restaurant = restaurants.id";
+	private static final String DELETE = "DELETE FROM tableres WHERE id = ?";
+	private static final String UPDATE = "UPDATE tableres SET nombre_places = ?, numero_table = ?, statut = ?, id_restaurant = ? WHERE id = ?";
+	private static final String INSERT = "INSERT INTO tableres (nombre_places, numero_table, statut, id_restaurant) VALUES (?,?,?,?)";
+	private static final String SELECT_BY_ID = "SELECT * FROM tableres JOIN restaurants ON tableres.id_restaurant = restaurants.id WHERE tableres.id = ?";
+	private static final String SELECT = "SELECT * FROM tableres JOIN restaurants ON tableres.id_restaurant = restaurants.id";
 	
 	private Connection cnx;
 	private Context context;

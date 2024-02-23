@@ -691,6 +691,7 @@ video {
     left: 0;
     bottom: 0;
 }
+
 .menuItem {
     background-color: #F6B12D;
     padding: 1rem;
@@ -740,6 +741,19 @@ video {
 .color-error{
 	color:brown;
 	text-align: center;
+}
+.a-reservation{
+	background-color: #EF4B0A;
+    border-radius: 15px;
+    color: #fff !important;
+    padding: 15px 5px;
+    width: 40%;
+    cursor: pointer;
+  	display: block;
+   font-size: 18px;
+   text-decoration: none !important;
+   text-align: center;
+   margin-bottom: 20px;
 }
 /*****************Contact**********/
 .double-title {
@@ -931,7 +945,11 @@ VERSION DESKTOP
         .imgEquipe{
             gap:5px;
         }
+        .a-reservation{
+		width: 15%;
+	}
         
+
  /* Page Nos restaurants */
  
   .intro-resto h1 {
@@ -1215,3 +1233,4 @@ VERSION DESKTOP
 		font-size: 6em;
 		color: #F6B12D;
 	}
+}
