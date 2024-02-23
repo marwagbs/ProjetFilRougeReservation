@@ -27,14 +27,16 @@ public class ServletListerProduits extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String idStr =request.getParameter("id");
-//		if(idStr==null || idStr.isBlank()) {
-//			request.getRequestDispatcher("index.jsp").forward(request, response);
-//			
-//		}
-	    int id = Integer.parseInt(idStr);
+		if(idStr==null || idStr.isBlank()) {
+			request.getRequestDispatcher("index.jsp").forward(request, response);
+			
+		}
+	  int id = Integer.parseInt(idStr);
 		try {
 			List<Produit> listeProduits = produitBLL.selectALL();
-			
+			for (Produit current : listeProduits) {
+				System.out.println(current);
+			}
 			
 			List<Produit> listeEntrees = new ArrayList<>();
 			List<Produit> listePlats = new ArrayList<>();

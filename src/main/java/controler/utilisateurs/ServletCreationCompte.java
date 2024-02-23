@@ -34,7 +34,7 @@ public class ServletCreationCompte extends HttpServlet {
 			String motDepasse=request.getParameter("motDePasse");
 		
 			try {
-				utilisateurBLL.insert(nom, prenom, email, motDepasse, numTel, false);
+				utilisateurBLL.insert(nom, prenom, email, motDepasse, numTel, "client");
 				request.getRequestDispatcher("WEB-INF/jsp/utilisateur/connexion.jsp").forward(request, response);
 			} catch (BLLException e) {
 				for (String erreur: e.getErreurs()) {

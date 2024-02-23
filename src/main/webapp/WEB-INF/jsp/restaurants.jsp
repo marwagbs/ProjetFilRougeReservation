@@ -12,7 +12,10 @@
 <body>
 	<%@include file="../fragments/header.jspf" %> 
 	<main>
-		<%@include file="../fragments/searchbar.jspf" %>
+			<div class="intro-resto">
+				<h1 >Nos restaurants</h1>
+				<p>Trouvez le restaurant le plus proche de chez vous !</p>
+		</div>
 		<section class="resto-section">
 				<c:forEach var="restaurant" items="${restaurants }">
 				<div class="resto-card">
@@ -40,32 +43,39 @@
 						</div>
 					</div>
 					<div class="resto-flex">
-						<div class="resto-info">
-							<p>${restaurant.adresse }, ${restaurant.cpo } ${restaurant.ville }</p>
-							<p>Téléphone : 04 87 22 00 70</p>
+						<div class="resto-flex-two">
+							<div class="resto-info">
+								<p>Adresse : ${restaurant.adresse }, ${restaurant.cpo } ${restaurant.ville }</p>
+								<p>Téléphone : 04 87 22 00 70</p>
+							</div>
+							<div class="resto-btn">
+								<a href="cartes?id=${restaurant.id }">
+									<button type="submit" name="consulter">Voir la carte</button>
+								</a>
+								
+								 <c:if test="${not empty identifiant }">
+									<a href="reservation?id=${restaurant.id}"><button type="button">Réserver</button></a>
+								</c:if>
+								<c:if test="${empty identifiant }">
+								      <a href="connexion"><button type="button">Réserver</button></a>
+								</c:if> 
+							</div>
 						</div>
 						<div class="resto-horaires">
-							<h3>Horaires d'ouverture</h3>
-							<c:forEach var="jour" items="${horaires.jours }" >
-								<div>
-									<h4>${jour } : &nbsp</h4>
-									<c:forEach var="heures" items="${horaires.horaires[jour] }">
-										<p> ${heures.ouverture } - ${heures.fermeture }</p>
-									</c:forEach>
-								</div>
-							</c:forEach>
+								<h3>Horaires d'ouverture</h3>
+								<c:forEach var="jour" items="${horaires.jours }" >
+									<div>
+										<h4>${jour } : &nbsp</h4>
+										<c:forEach var="heures" items="${horaires.horaires[jour] }">
+											<p> ${heures.ouverture } - ${heures.fermeture }</p>
+										</c:forEach>
+									</div>
+								</c:forEach>
 						</div>
-					</div>
-					<div class="resto-btn">
-						<a href="cartes?id=${restaurant.id }">
-							<button type="submit" name="consulter">Voir la carte</button>
-						</a>
-						<a href="">
-							<button type="submit" name="reserver">Réserver</button>
-						</a>
 					</div>
 				</div>
 				</c:forEach>
+					
 				
 				<%-- <c:forEach var="current" items="${restaurants }">
 					<img src="img/${current.id }.png" />

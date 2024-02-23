@@ -13,7 +13,8 @@ public class Reservation {
 	private Utilisateur utilisateur;
 	private Restaurant restaurant; 
 	private String statut;
-	private String commentaire;		      
+	private String commentaire;	
+	private TableRes tableRes;
 
 
 
@@ -150,6 +151,14 @@ public String getCommentaire() {
 
 public void setCommentaire(String commentaire) {
 	this.commentaire = commentaire;
+}
+
+public TableRes getTableRes() {
+	return tableRes;
+}
+
+public void setTableRes(TableRes tableRes) {
+	this.tableRes = tableRes;
 }
 
 

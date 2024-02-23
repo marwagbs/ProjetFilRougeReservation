@@ -45,14 +45,26 @@ private UtilisateurDAO dao;
 		}
 	}
 	
-	public Utilisateur insert(String nom, String prenom, String email, String motDePasse, String telephone, Boolean isAdmin) throws BLLException {
+	public Utilisateur insert(String nom, String prenom, String email, String motDePasse, String telephone,String role) throws BLLException {
 		BLLException bllException = new BLLException();
-		verifierLesDonnees(nom, prenom, email, motDePasse, telephone, isAdmin);
+		verifierLesDonnees(nom, prenom, email, motDePasse, telephone);
 
          byte[] saltBytes = email.getBytes();
         String hashedMotDePasse = hashMotDePasse(motDePasse, saltBytes);
 		
-        Utilisateur utilisateur = new Utilisateur(nom, prenom, email, hashedMotDePasse, telephone, isAdmin);
+        Utilisateur utilisateur = new Utilisateur();
+        utilisateur.setNom(nom);
+        utilisateur.setPrenom(prenom);
+        utilisateur.setEmail(email);
+        utilisateur.setMotDePasse(hashedMotDePasse);
+        utilisateur.setTelephone(telephone);
+        
+        if (role != null && !role.isEmpty()) {
+            utilisateur.setRole(role);
+        } else {
+            utilisateur.setRole("client"); // Définir le rôle par défaut en tant que "client"
+        }
+        
 		try {
 			
 			if(dao.selectByEmail(email) != null) {
@@ -71,12 +83,30 @@ private UtilisateurDAO dao;
 	}
 	
 	public void update(Utilisateur utilisateur) throws BLLException {
-		verifierLesDonnees(utilisateur.getNom(), utilisateur.getPrenom(), utilisateur.getEmail(), utilisateur.getMotDePasse(), utilisateur.getTelephone(), utilisateur.getIsAdmin());
+		BLLException bllException = new BLLException();
+		
+		if (utilisateur.getNom().isEmpty() || utilisateur.getNom().length() < 2 || utilisateur.getNom().length() > 50) {
+			bllException.ajouterErreur("Le nom doit avoir entre 2 et 50 caractères");
+		}
+		
+		if (utilisateur.getPrenom().isEmpty() || utilisateur.getPrenom().length() < 2 || utilisateur.getPrenom().length() > 50) {
+			bllException.ajouterErreur("Le prénom doit avoir entre 2 et 50 caractères");
+		}
+		
+		if (utilisateur.getTelephone().isEmpty() || utilisateur.getTelephone().length() < 8 || utilisateur.getTelephone().length() > 50) {
+			bllException.ajouterErreur("Le numéro de téléphone doit avoir entre 8 et 50 caractères");
+		}
+		
+		if (bllException.getErreurs().size() > 0) {
+			throw bllException;
+		}
+		
 		try {
 			dao.update(utilisateur);
 		} catch (DALException e) {
 			throw new BLLException("Echec de la mise à jour", e);
 		}
+		
 	}
 	
 	public void delete(int id) throws BLLException {
@@ -87,7 +117,7 @@ private UtilisateurDAO dao;
 		}
 	}
 	
-	private  void verifierLesDonnees(String nom, String prenom, String email, String motDePasse, String telephone, Boolean isAdmin) throws BLLException {
+	private  void verifierLesDonnees(String nom, String prenom, String email, String motDePasse, String telephone) throws BLLException {
 		
 		BLLException bllException = new BLLException();
 		

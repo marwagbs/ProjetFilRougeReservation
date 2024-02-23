@@ -11,7 +11,7 @@ img {
     height: auto;
 }
 body {
-	font-size: 18px;
+	font-size: 1.8rem;
 	background-color: #fff;
 
 }
@@ -24,17 +24,13 @@ h4 {
 }
  
 h1 {
-	font-size: 2.5rem;
-	margin: 30px 0;
-	color:#EF4B0A;
-	font-weight: bold;
-	letter-spacing: 1px;
-	font-family:  century-gothic-pro,arial,sans-serif;
+	font-size: 3rem;
+	margin: 3rem 0;
 }
  
 h2 {
-	font-size: 25px;
-	margin: 40px 0 20px 0;
+	font-size: 2.5rem;
+	margin: 4rem 0 2rem 0;
  
 }
 
@@ -46,12 +42,11 @@ a {
 	text-decoration: none;
 	color:black;
 }
-.container{
-	margin:auto;
-}
+
 /******************** Header**********/
 .header {
 	padding-top: 30px;
+
 	background: linear-gradient(to bottom, rgba(246,177,45,0.7) 0%,rgba(235,227,219,0.25) 25%,rgba(255,255,255,0) 100%);
 }
 
@@ -106,12 +101,14 @@ a {
     background: linear-gradient(145deg,#e6e6e6,#fff);
     padding: 10px 15px;
     text-align: center;
+    color:#EF4B0A;
   }
   
  .flex-form{
 	 display: flex;
 	 flex-direction: column;
 	 flex-wrap: wrap;
+	 align-items: center;
  } 
 .mb-3{
 	margin-bottom: 1rem;
@@ -120,14 +117,17 @@ a {
 	margin-top:3rem;
 }
 .form {
-	
 	padding: 2rem 5rem;
 	margin: auto;
+	font-size: 18px;
 	
 }
 .form-div{
 	margin:auto;
 }
+/*.form-div label{
+	color:#F6B12D;
+}*/
 .form-div input{
 	border-radius: 5px;
 	padding:4px 5px;
@@ -136,6 +136,7 @@ a {
 .textConnexion , .label-check {
     margin: 5px 0;
     text-align: center;
+    font-size: 18px;
 }
 .textConnexion a , .div-complement a{
 	color: deepskyblue;
@@ -178,6 +179,7 @@ a {
     cursor: pointer;
     border:none;
     display: inline-block;
+    font-size: 18px;
    
 }
 .color-link{
@@ -187,6 +189,7 @@ a {
     margin-bottom: 10px;
     padding: 10px;
     text-transform: uppercase;
+    
 }
 /* Le code css pour le pied de page */
 
@@ -194,13 +197,27 @@ a {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	font-size: 0.7em;
-	width: 100%;
-	height: 250px;
+	font-size: 1em;
 	background-color: rgb(246, 177, 45);
-	gap: 0.6em;
-	padding: 30px 0 20px;
+	gap: 20px;
+	padding: 30px;
 	
+}
+
+.footer-flex {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 20px;
+}
+
+.footer-flex a {
+	color: #EF4B0A;
+	transition: transform 300ms ease-in-out;
+}
+
+.footer-flex a:hover {
+	transform: scale(1.2);
 }
 
 .footer-logo {
@@ -208,29 +225,29 @@ a {
 	height: auto;
 }
 
-.footer-icons img {
-	width: 1em;
-	height: auto;
+.fa-brands {
+	font-size: 1.3em;
 }
 
 .footer-icons {
 	display: flex;
-	gap: 1em;
-}
-
-.footer-flex, .footer-info {
-	display: flex;
-	flex-direction: row;
-	justify-content: space-between;
-	gap: 15em;
+	gap: 20px;
 }
 
 .footer-info {
-	font-size: 0.6em;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 10px;
+}
+
+.footer-info {
+	font-size: 0.8em;
 }
 
 .footer-text {
-	width: 450px;
+	width: 45%;
 }
 
 .footer-text p {
@@ -240,7 +257,31 @@ a {
 }
 
 /* Le code css pour la page des restaurants */
+.intro-resto {
+	background: url(../assets/img/resto2.jpg) center center;
+	background-size: cover;
+	padding: 8rem 0;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+.intro-resto h1, .intro-about h1 {
+	color:#fff;
+	text-transform: uppercase;
+}
 
+ .intro-resto h1 {
+	margin: 1rem 0;	
+}
+
+.intro-resto p, .intro-p{
+	color:#EF4B0A ;
+	background-color: #fff;
+	padding:10px 35px;
+	font-family: italic;
+	
+}
 .resto-section {
 	display: flex;
 	flex-direction: column;
@@ -253,6 +294,7 @@ a {
 }
 
 .resto-section h3 {
+	padding-top: 15px;
 	color: #EF4B0A;
 }
 
@@ -262,33 +304,35 @@ a {
 }
 
 .resto-card {
+	position: relative;
 	border: 1px solid black;
-	width: 60%;
-	height: 300px;
+	width: 50%;
+	height: 350px;
 	gap: 15px;
 	padding: 30px;
 	border-radius: 10px;
 	background-color: #F6B12D;
 }
 
-.resto-flex, .resto-icons, .icons-container {
+.resto-flex {
 	display: flex;
-	flex-direction: row;
-	align-items: center;
-}
-
-.resto-flex, .icons-container {
-	justify-content: space-between;
+	flex-direction: column;
+	align-items: flex-start;
 }
 
 .icons-container {
-	gap: 20px;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+	width: 100%;
 }
 
 .resto-info {
-	width: 50%;
+	width: 100%;
 	gap: 30px;
-	font-size: 0.7em;
+	font-size: 0.6em;
+	padding-top: 10px;
 }
 
 .resto-horaires {
@@ -296,15 +340,14 @@ a {
 	flex-direction: column;
 	justify-content: left;
 	gap: 5px;
-	width: 35%;
-	font-size: 0.5em;
+	width: 100%;
+	font-size: 0.6em;
 	line-height: 1;
-	padding-top: 10px;
 }
 
 .resto-horaires h3 {
 	text-align: left;
-	padding-bottom: 10px;
+	padding-bottom: 5px;
 }
 
 .resto-horaires div {
@@ -313,6 +356,10 @@ a {
 }
 
 .resto-icons {
+	margin-top: 30px;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
 	gap: 5px;
 }
 
@@ -340,7 +387,12 @@ a {
 
 .resto-btn {
 	display: flex;
-	gap: 30px;
+	flex-direction: column;
+	gap: 10px;
+	justify-content: center;
+	position: absolute;
+	bottom: 47px;
+	right: 30px;
 }
 
 .resto-btn button {
@@ -353,6 +405,85 @@ a {
 	color: white;
 	text-transform: uppercase;
 	font-weight: bold;
+}
+.resto-btn a {
+	transition: transform 300ms ease-in-out;
+}
+
+.resto-btn a:hover {
+	transform: scale(0.8);
+}
+
+
+/***************about*********************/
+video {
+	display: block;
+	width: 80%;
+	margin: 4rem auto;
+}
+.title-about{
+	color:#EF4B0A;
+}
+.intro-about{
+	background: url(../assets/img/about.jpg) center center;
+	background-size: cover;
+	padding: 8rem 0;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+.h1-about{
+	color:#F6B12D;
+}
+.concept ul{
+    list-style: none;
+    padding-left:0;
+     display:grid;
+    grid-template-columns:1fr;
+    align-items:center;
+    gap:20px;
+    text-align:center;
+}
+.concept li{
+    background-color:#2F4558;
+    border-radius:20px;
+    border:1px solid #2F4558;
+    margin:20px;
+   
+}
+.concept i{
+    color: #F6B12D;
+    font-size:4rem;
+    padding:10px 0;
+}
+.h3-about{
+	color:#F6B12D;
+}
+.p-about{
+    padding:20px;
+    text-align:center;
+    color:#fff;
+}
+.equipe{
+    display:flex;
+    flex-direction:column;
+    align-items:flex-start;
+    justify-content:space-around;
+}
+.equipe p{
+    text-align:center;
+    padding:20px;
+}
+.imgEquipe{
+   display:grid;
+   grid-template-columns:1fr 1fr;
+   gap:20px;
+    
+}
+.imgEquipe img{
+    border-radius:20px;
+    margin:50px;
 }
 
  /**********Reservation *****************************************/
@@ -453,12 +584,6 @@ a {
 
 /**********************************************************************************************************************************/
 
-/* Le code css pour la page Profil de l'utilisateur */
-
-.user-profil p {
-	text-transform: uppercase;
-}
-
 
 
 
@@ -479,8 +604,8 @@ a {
 .intro h1 {
 	color:#fff;
 	text-transform: uppercase;
-	margin-bottom: 3rem;
-	padding: 1.5rem 2rem;
+	margin-bottom: 0;
+	/*padding: 1.5rem 2rem;*/
 }
 
 .menu_header {
@@ -490,6 +615,7 @@ a {
 .cursive-title{
 	text-align: center;
 	color:#fff;
+	
 	
 	
 }
@@ -528,6 +654,7 @@ a {
     font-weight: 400;
     text-align: left;
     color:#fff;
+    font-size: 18px;
    
 }
 .submenu_title:after {
@@ -539,6 +666,7 @@ a {
     left: 0;
     bottom: 0;
 }
+
 .menuItem {
     background-color: #F6B12D;
     padding: 1rem;
@@ -552,6 +680,7 @@ a {
     justify-content: space-between;
     max-width: 100%;
     animation: slideup 1s forwards;
+        font-size: 20px;
     
      
     }
@@ -583,6 +712,80 @@ a {
     transform: translatey(0px);
     opacity: 100%;
 }
+}
+.color-error{
+	color:brown;
+	text-align: center;
+}
+.a-reservation{
+	background-color: #EF4B0A;
+    border-radius: 15px;
+    color: #fff !important;
+    padding: 15px 5px;
+    width: 40%;
+    cursor: pointer;
+  	display: block;
+   font-size: 18px;
+   text-decoration: none !important;
+   text-align: center;
+   margin-bottom: 20px;
+}
+/*****************Contact**********/
+.double-title {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    position: relative;
+    align-items: center;
+    text-align: center;
+   }
+.contact-subtitle {
+    margin-bottom: 0.2222222222em;
+    letter-spacing: 1px;
+    font-size: 1.375rem;
+      color: #Fff;
+}
+.contact-title {
+    line-height: 1;
+    font-weight: 400;
+    font-size: 2.5rem;
+    color: #F6B12D;
+    letter-spacing: 1px;
+    margin-bottom: 0;
+}
+.main-banner {
+    position: relative;
+    z-index: 4;
+    padding-top: 1.5625rem;
+    
+}
+.main-container{
+	background-color: #2F4558;
+	padding: 2rem 5rem;
+	margin: auto;
+}
+.input-contact{
+	background-color:#f4e7db;
+	border: none !important;
+	padding:15px 10px !important;
+	
+}
+.container-margin{
+	margin:auto;
+	width:800px;
+}
+.label-contact{
+	color:#F6B12D;
+}
+.form-contact{
+	width: 800px !important;
+	
+}
+.select-contact{
+	width:102%;
+}
+.color-messge{
+	color:#fff;
 }
 /* *****************************************************************
 VERSION TABLETTE
@@ -620,15 +823,33 @@ VERSION TABLETTE
    		 margin-right:0;
    		 margin-left:0;
 	}
+	.concept ul{
+            grid-template-columns:1fr 1fr;
+        }
+        
+   /* Page Nos restaurants */
+
+	.resto-card {
+		width: 65%;
+		padding: 30px 60px;
+	}
+	
+	.resto-btn {
+		right: 55px;
+	}
+     
 }
+
 
 /* *****************************************************************
 VERSION DESKTOP
 ***************************************************************** */
 @media screen and (min-width: 1100px) {
 	.header{
-		/*background: linear-gradient(to bottom,rgba(246,177,45,0.7)  0%,rgba(235,227,219,0.5) 50%,rgba(255,255,255,0) 100%);*/
-		background: #fff;
+		
+		 background:#fff; 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); 
+    padding: 20px;
 		
 		/*position: sticky;
 		top:0;*/
@@ -641,6 +862,7 @@ VERSION DESKTOP
 		justify-content: space-between;
 		align-items: center;
 		padding:5px 0;
+		
 		
 	}
 	
@@ -670,6 +892,7 @@ VERSION DESKTOP
 	
 	.submenus{
 		    grid-template-columns: repeat(4, 1fr);
+		    gap:1rem;
 	}
 	.container{
 		padding:0 25px;
@@ -677,7 +900,37 @@ VERSION DESKTOP
 	.cursive-title{
 		margin-top:0.25rem;
 	}
+	.intro h1, .intro-about h1 , .intro-resto h1{
+
+	margin-bottom: 3rem ;
+	padding: 1.5rem 2rem;
 }
+	/*****page about****/
+	  
+        .concept ul{
+            grid-template-columns:1fr 1fr 1fr;
+        }
+        .equipe{
+            display:flex;
+            flex-direction:row;
+        }
+        .imgEquipe img{
+            width:80%;
+        }
+        .imgEquipe{
+            gap:5px;
+        }
+        .a-reservation{
+		width: 15%;
+	}
+        
+
+ /* Page Nos restaurants */
+ 
+  .intro-resto h1 {
+	margin: 0.6rem 0;	
+}
+
 
 /*************************************************************Page accueil ***************************************************************************************/
 .main-accueil {
@@ -988,4 +1241,283 @@ font-family: Montserrat Subrayada;
    .nos_coups_coeur .menu-flex > div {
         width: 100%; /* Set width for each card to 100% for single column layout */
     }
+
+.resto-section h3 {
+	padding-top: 0px;
+}
+
+.resto-card {
+	position: inherit;
+	width: 60%;
+	height: 300px;
+}
+
+.resto-flex, .resto-icons, .icons-container {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+}
+
+.resto-flex, .icons-container {
+	justify-content: space-between;
+}
+
+.resto-flex-two {
+	display: flex;
+	flex-direction: column;
+	gap: 50px;
+	width: 70%;
+}
+
+.icons-container {
+	gap: 20px;
+	width: auto;
+}
+
+.resto-info {
+	width: 100%;
+	padding-top: 35px;
+}
+
+.resto-horaires {
+	width: 35%;
+	padding-top: 10px;
+}
+
+.resto-icons {
+	margin-top: 0px;
+}
+
+.resto-btn {
+	gap: 30px;
+	flex-direction: row;
+	justify-content: flex-start;
+	position: inherit;
+}
+
+/* Le pied de page */
+
+.footer-flex, .footer-info {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	
+}
+
+.footer-info {
+	gap: 15em;
+}
+
+.footer-flex {
+	gap: 33.5em;
+}
+        
+}
+
+/* Le code css pour la page d'utilisateur */
+
+	.user-profil {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		width: 100%;
+		justify-content: center;
+		padding: 100px 0;
+	}
+	
+	.user-profil h2 {
+		color: #EF4B0A;
+	}
+	
+	.user-profil-text {
+		display: flex;
+		flex-direction: column;
+		padding-bottom: 30px;
+		padding-left: 20px;
+	}
+	
+	.user-profil-form {
+		width: 40%;
+	}
+	
+	.form-group {
+		margin-bottom: 20px;
+	}
+	
+	.form-btn {
+	display: flex;
+	justify-content: center;
+	margin-top: 50px;
+	}
+
+	.form-btn button {
+		width: 40%;
+		padding: 15px 5px;
+		border: none;
+		border-radius: 10px;
+		background-color: #EF4B0A;
+		font-size: 0.6em;
+		color: white;
+		text-transform: uppercase;
+		font-weight: bold;
+		transition: all 0.3s ease-in-out;
+	}
+	
+	.form-btn button:hover {
+		 color: #EF4B0A;
+	  	 border: 2px solid #EF4B0A;
+	  	 background: transparent;
+	  	 transform: scale(.9);
+	}
+	
+	#email , #motdepasse {
+		background-color: gainsboro;
+	}
+	
+	.user-profil-delete {
+		font-size: 0.5em;
+	}
+	
+	.user-profil-delete span {
+		cursor: pointer;
+		color: #F6B12D;
+		text-decoration: underline;
+	}
+	
+	.user-profil-error {
+		text-align: center;
+		color: #EF4B0A;
+		font-size: 0.7em;
+		width: 80%;
+		padding-bottom: 20px;
+	}
+	
+	.modal-container {
+		width: auto;
+		padding: 16px;
+		text-align: center;
+	}
+	
+	.modal-container p {
+		padding-bottom: 20px;
+	}
+	
+	/* Float cancel and delete buttons and add an equal width */
+	.cancelbtn, .deletebtn {
+	  float: left;
+	  width: 50%;
+	}
+	
+	/* Add a color to the cancel button */
+	.cancelbtn {
+	  background-color: #2F4558;
+	  color: white;
+	}
+	
+	.cancelbtn:hover {
+		opacity: 0.8;
+	}
+	
+	/* Add a color to the delete button */
+	.deletebtn {
+	  background-color: #EF4B0A;
+	  color: white;
+	}
+	
+	.deletebtn:hover {
+		opacity: 0.8;
+	}
+	
+	/* The Modal (background) */
+	.modal {
+	  display: none; /* Hidden by default */
+	  position: fixed; /* Stay in place */
+	  z-index: 1; /* Sit on top */
+	  left: 0;
+	  top: 0;
+	  transform: translateX(50%);
+	  width: 50%; /* Full width */
+	  height: auto; /* Full height */
+	  overflow: auto; /* Enable scroll if needed */
+	  background-color: #F6B12D;
+	  padding-top: 50px;
+	}
+	
+	/* Modal Content/Box */
+	.modal-content {
+	  background-color: #fefefe;
+	  margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+	  border: 1px solid #888;
+	  width: 80%; /* Could be more or less, depending on screen size */
+	}
+	
+	/* Style the horizontal ruler */
+	hr {
+	  border: 1px solid #f1f1f1;
+	  margin-bottom: 25px;
+	}
+	
+	/* The Modal Close Button (x) */
+	.close {
+	  position: absolute;
+	  right: 35px;
+	  top: 15px;
+	  font-size: 40px;
+	  font-weight: bold;
+	  color: #f1f1f1;
+	}
+	
+	.close:hover,
+	.close:focus {
+	  color: #EF4B0A;
+	  cursor: pointer;
+	}
+	
+	/* Clear floats */
+	.clearfix::after {
+	  content: "";
+	  clear: both;
+	  display: table;
+	}
+	
+/* Le code css pour la page 404 */
+	
+	.error-page {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		padding: 60px 0 100px;
+		margin: 130px 0;
+	}
+	
+	.error-number {
+		color: #EF4B0A;
+		font-size: 96px;
+		font-weight: 700;
+	}
+	
+	.error-text {
+		color: #EF4B0A;
+		font-size: 18px;
+		font-weight: 500;
+		text-align: center;
+		width: 50%;
+		padding: 40px 0 50px;
+	}
+	
+	.error-page h2 {
+		margin: 0;
+	}
+	
+	.error-link {
+		font-weight: 500;
+		font-size: 14px;
+		text-decoration: underline;
+	}
+	
+	.fa-triangle-exclamation {
+		font-size: 6em;
+		color: #F6B12D;
+	}
+
 }

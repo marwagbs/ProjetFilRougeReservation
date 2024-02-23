@@ -17,12 +17,12 @@
 	<form action="connexion" method="POST" class="form">
 	<div class="form-div">
 		<div class="mb-3">
-			<label class="label">Email</label>
-			<input type="email" placeholder="Votre email" name="identifiant" class="form-control"/>
+			<label class="label">Email*</label>
+			<input type="email" placeholder="Votre email" name="identifiant" class="form-control" required="true"/>
 		</div>
 		<div class="mt-5">
-			<label>Mot de passe</label>
-			<input type="password" placeholder="Votre mot de passe" name="motDePasse" class="form-control"/>
+			<label>Mot de passe*</label>
+			<input type="password" placeholder="Votre mot de passe" name="motDePasse" class="form-control" required="true"/>
 		</div>
 		<div class="div-complement">
 			<a href="">Mot de passe oublié </a>
@@ -39,7 +39,7 @@
 	
 	<div>
 	 			<c:forEach var="current" items="${erreurs }">
-	 				<p>${current }</p>
+	 				<p class="color-error">${current }</p>
 	 			</c:forEach>
 	</div>
 	 

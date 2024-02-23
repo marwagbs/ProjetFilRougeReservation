@@ -13,46 +13,67 @@ import jakarta.servlet.http.HttpFilter;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
-/**
- * Servlet Filter implementation class FilterConnect
- */
+
 public class FilterConnect extends HttpFilter implements Filter {
 
 	private static final long serialVersionUID = 1L;
+	    private static final List<String> allowedPaths = new ArrayList<>();
 
-	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
-		
-		System.out.println("Passage dans le filtre");
-		HttpServletRequest req=(HttpServletRequest) request;
-		HttpServletResponse resp= (HttpServletResponse) response;
-		String path=req.getServletPath();
-		List<String> listPath=new ArrayList<>();
-		listPath.add("/cartes");
-		listPath.add("/creationDuCompte");
-		listPath.add("/connexion");
-		listPath.add("/accueil");
-		listPath.add("/nosRestaurants");
-		listPath.add("/WEB-INF/jsp/utilisateur/connexion.jsp");
-		listPath.add("/WEB-INF/jsp/utilisateur/creationducompte.jsp");
-		listPath.add("/WEB-INF/jsp/utilisateur/restaurants.jsp");
-		listPath.add("/WEB-INF/jsp/cartes.jsp");
-		listPath.add("/WEB-INF/jsp/accueil.jsp");
-		listPath.add(".css");
-		
-		for(String current : listPath) {
-			if (current.endsWith(".css") || current.equals(path)) {
-				chain.doFilter(req, resp);
-				return;
-			}
-			
-		}
-		 if (req.getSession().getAttribute("identifiant")!=null){
-			chain.doFilter(req, resp);
-		}
-	    else {
-			resp.sendRedirect(req.getContextPath() +"/connexion");
-		}
-	}
+	    static {
+	        allowedPaths.add("/cartes");
+	        allowedPaths.add("/creationDuCompte");
+	        allowedPaths.add("/connexion");
+	        allowedPaths.add("/accueil");
+	        allowedPaths.add("/about");
+	        allowedPaths.add("/nosRestaurants");
+	        allowedPaths.add("/accueil");
+	        allowedPaths.add("/WEB-INF/jsp/utilisateur/connexion.jsp");
+	        allowedPaths.add("/WEB-INF/jsp/utilisateur/creationducompte.jsp");
+	        allowedPaths.add("/WEB-INF/jsp/restaurants.jsp");
+	        allowedPaths.add("/WEB-INF/jsp/cartes.jsp");
+	        allowedPaths.add("/WEB-INF/jsp/accueil.jsp");
+	        allowedPaths.add("/WEB-INF/jsp/autre/about.jsp");
+	        allowedPaths.add(".css");
+	        allowedPaths.add("css");
+	        allowedPaths.add("assets");
+	    }
 
-	
+	  
+	    @Override
+	    public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
+	            throws IOException, ServletException {
+	        HttpServletRequest req = (HttpServletRequest) request;
+	        HttpServletResponse resp = (HttpServletResponse) response;
+
+	        String path = req.getServletPath();
+	        if (isAllowedPath(path) || isLoggedIn(req)) {
+	            chain.doFilter(req, resp);
+	            return;
+	        }
+	        
+	     // Récupération des paramètres de la requête à échapper
+	        String untrustedData = request.getParameter("identifiant"); // Remplacez "nomDuChamp" par le nom du champ que vous souhaitez échapper
+
+	        // Échappement des caractères HTML spéciaux
+	        String safeData = escapeHtml(untrustedData);
+
+	      
+	        req.getSession().setAttribute("identifiant", safeData);
+	        
+	        resp.sendRedirect(req.getContextPath() + "/connexion");
+	    }
+
+	    private boolean isAllowedPath(String path) {
+	        return allowedPaths.stream().anyMatch(p -> path.endsWith(p) || path.contains(p));
+	    }
+
+	    private boolean isLoggedIn(HttpServletRequest request) {
+	        return request.getSession().getAttribute("identifiant") != null;
+	    }
+	    
+	    // Méthode pour échapper les caractères HTML spéciaux
+	    private String escapeHtml(String input) {
+	        return HtmlEscaper.escapeHtml(input);
+	    }
 }
+
