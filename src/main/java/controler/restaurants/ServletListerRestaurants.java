@@ -81,6 +81,7 @@ public class ServletListerRestaurants extends HttpServlet {
 
 			
 
+
 //			List<Restaurant> restaurants = restaurantBLL.selectAll();
 //			
 //			HoraireParJour hpj = new HoraireParJour();
@@ -95,13 +96,13 @@ public class ServletListerRestaurants extends HttpServlet {
 //			request.setAttribute("horaires", hpj);
 //			
 //			request.setAttribute("restaurants", restaurants);
-			 
 
 //		} catch (BLLException e) {
 //			e.printStackTrace();
 //		}
 //		
-		request.getRequestDispatcher("/WEB-INF/jsp/restaurants.jsp").forward(request, response);
+//		request.getRequestDispatcher("/WEB-INF/jsp/restaurants.jsp").forward(request, response);
+
 	}
 
 }
