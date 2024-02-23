@@ -1,4 +1,4 @@
-DROP TABLE IF EXISTS Messages,Produits_Cartes, Commandes_Produits ,Produits , Categories,Commandes , Statuts, TablesRes,Reservations , Avis, Utilisateurs, Horaires_restaurants, Horaires ,Restaurants  ,cartes   ;
+DROP TABLE IF EXISTS Messages,Produits_Cartes, Commandes_Produits ,Produits , Categories,Commandes , TablesRes,Reservations ,Utilisateurs, Horaires_restaurants, Horaires ,Restaurants  ,cartes   ;
 
 CREATE TABLE Categories(
 
@@ -6,13 +6,6 @@ CREATE TABLE Categories(
 	libelle			VARCHAR(20)			NOT NULL
 
 );
-
-CREATE TABLE Statuts(
-	id				INT			PRIMARY KEY IDENTITY,
-	libelle			VARCHAR(20)			NOT NULL
-
-);
-
 
 CREATE TABLE Utilisateurs(
 	id			  INT	PRIMARY KEY IDENTITY,
@@ -67,12 +60,6 @@ CREATE TABLE Reservations(
 
 );
 
-
-CREATE TABLE Avis(
-	id			  INT	PRIMARY KEY IDENTITY,
-	id_utilisateur int NOT NULL,
-	contenu VARCHAR(250) NOT NULL,
-);
 CREATE TABLE Messages(
 	id			  INT	PRIMARY KEY IDENTITY,
 	id_utilisateur int NOT NULL,
@@ -93,7 +80,7 @@ CREATE TABLE TablesRes(
 
 CREATE TABLE Commandes(
 	id			  INT	PRIMARY KEY IDENTITY,
-	id_statut     INT NOT NULL,
+	libelle			VARCHAR(20)	Null,
 	id_table INT NOT NULL
 
 
@@ -133,8 +120,7 @@ ALTER TABLE Produits_Cartes
 
 ALTER TABLE Commandes
 	with CHECK ADD
-		FOREIGN KEY (id_statut) REFERENCES statuts(id)
-		ON DELETE NO ACTION,
+	
 		FOREIGN KEY (id_table) REFERENCES TablesRes(id)
 		ON DELETE CASCADE;
 
@@ -166,13 +152,7 @@ ALTER TABLE Reservations
 		ON DELETE CASCADE,
 		FOREIGN KEY (id_utilisateur) REFERENCES Utilisateurs(id)
 		ON DELETE CASCADE;
-
-ALTER TABLE Avis 
-	with CHECK ADD
-		FOREIGN KEY (id_utilisateur) REFERENCES Utilisateurs(id)
-		ON DELETE NO ACTION;
-
-		
+	
 ALTER TABLE Messages 
 	with CHECK ADD
 		FOREIGN KEY (id_utilisateur) REFERENCES Utilisateurs(id),
@@ -183,6 +163,3 @@ ALTER TABLE Horaires_restaurants
 	with CHECK ADD
 		FOREIGN KEY (id_horaire) REFERENCES horaires(id),
 		FOREIGN KEY (id_restaurant) REFERENCES restaurants(id);
-		
-
-

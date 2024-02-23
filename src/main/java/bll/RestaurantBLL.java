@@ -25,6 +25,13 @@ public class RestaurantBLL {
 			throw new BLLException("Echec de la récupération des restaurants", e);
 		}
 	}
+	public List<Restaurant> selectAllRes() throws BLLException {
+		try {
+			return dao.selectAllRes();
+		} catch (DALException e) {
+			throw new BLLException("Echec de la récupération des restaurants", e);
+		}
+	}
 	
 	public Restaurant selectById(int id) throws BLLException {
 		try {
