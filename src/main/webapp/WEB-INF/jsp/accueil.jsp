@@ -21,7 +21,7 @@
 
 <%@ include file="/WEB-INF/fragments/header.jspf" %>
 
-<main>
+<main class="main-accueil">
 
     <section class="carousel_accueil" class="carousel-container full-screen">
         <div class="container">
@@ -38,26 +38,23 @@
                 <div class="carousel-inner">
 
                     <div class="item active">
-                        <img src="./assets/img/carousel1.jpg" alt="Los Angeles" style="width:100%;">
+                        <img src="./assets/img/carousel1.jpg" alt="pate d'or 1" style="width:100%;">
                         <div class="carousel-caption">
-                            <h3>Los Angeles</h3>
-                            <p>LA is always so much fun!</p>
+                           
                         </div>
                     </div>
 
                     <div class="item">
-                        <img src="./assets/img/carousel2.jpg" alt="Chicago" style="width:100%;">
+                        <img src="./assets/img/carousel2.jpg" alt="pate d'or 2" style="width:100%;">
                         <div class="carousel-caption">
-                            <h3>Chicago</h3>
-                            <p>Thank you, Chicago!</p>
+                           
                         </div>
                     </div>
 
                     <div class="item">
-                        <img src="./assets/img/carousel3.jpg" alt="New York" style="width:100%;">
+                        <img src="./assets/img/carousel3.jpg" alt="pate d'or 3" style="width:100%;">
                         <div class="carousel-caption">
-                            <h3>New York</h3>
-                            <p>We love the Big Apple!</p>
+                           
                         </div>
                     </div>
 
@@ -82,11 +79,13 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-body">
-                        <h2>LA PATE D'OR</h2>
-                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-                            when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting,
-                            remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software
-                            like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                        
+                        <p>
+                        <b id="pate-or-accueil">LA PATE D'OR </b>
+                         , c'est avant tout une histoire de partage.  Dans un décor moderne, lumineux et chaleureux, Vous pourrez,
+                          découvrir l'identité et la créativité de notre <b>chef Etienne Cassin</b> et son équipe à travers des réalisations à base de produits <b>raffinés</b> 
+                          , de <b>saison</b> et de <b>producteurs locaux</b>.
+                         </p>
                     </div>
                 </div>
             </div>
@@ -97,30 +96,32 @@
 </section>
 
     <section class="nos_coups_coeur">
-            <h2 class="title">Nos Coups de Cœur à Découvrir </h2>
+            <h2 id="nos_coups_coeur-titre">Nos Coups de Cœur à Découvrir </h2>
             <p class="intro-p">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Hic fuga sit illo modi aut aspernatur tempore laboriosam saepe dolores eveniet.</p>
+            
             <div class="menu-flex">
                
                 <div>
-                    <img src="./assets/img/b1.jpg" alt="slider1">
+                    <img src="./assets/img/1.jpg" alt="slider1">
                     <h3 class="h3-menu">Lorem ipsum dolor sit amet consectetur</h3>
                     <p class="p-menu">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet itaque labor.</p>
                 </div>
                 <div>
-                    <img src="./assets/img/b2.jpg" alt="slider1">
+                    <img src="./assets/img/2.jpg" alt="slider1">
                     <h3>Lorem ipsum dolor sit amet consectetur</h3>
                     <p class="p-menu">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet itaque labor.</p>
                 </div>
                 <div>
-                    <img src="./assets/img/b3.jpg" alt="slider1">
+                    <img src="./assets/img/3.jpg" alt="slider1">
                     <h3>Lorem ipsum dolor sit amet consectetur</h3>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet itaque labor.</p>
                 </div>
                 <div>
-                    <img src="./assets/img/b4.jpg" alt="slider1">
+                    <img src="./assets/img/4.jpg" alt="slider1">
                     <h3>Lorem ipsum dolor sit amet consectetur</h3>
                     <p class="p-menu">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet itaque labor.</p>
                 </div>
+                <%-- 
                  <div>
                     <img src="./assets/img/b5.jpg" alt="slider1">
                     <h3>Lorem ipsum dolor sit amet consectetur</h3>
@@ -142,12 +143,12 @@
                     <p class="p-menu">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet itaque labor.</p>
                 </div>
             </div>
-           
+           --%>
     </section>
 
 
     <section class="nos_restaurants">
-        <h2>Decouvrir nos restaurants</h2>
+        <h2 id="nos-restaurants-titre-accueil">Decouvrir nos restaurants</h2>
         <div class="nous-decouvrir">
             <c:forEach var="restaurant" items="${restaurants}">
                 <div class="nous-decouvrir-card">
@@ -159,7 +160,7 @@
                     <form action="ServletReservation" method="get">
                         <input type="hidden" name="idRestaurant" value="${restaurant.id}">
                         <input type="hidden" name="idUtilisateur" value="${idUtilisateur}">
-                        <button type="submit">Reserver</button>
+                        <button type="submit" id="btn-reserver-accueil" >Reserver</button>
                     </form>
 
                 </div>
@@ -167,9 +168,7 @@
         </div>
     </section>
 
-    <div class="temoignages">
-        <h2> Temoignages </h2>
-    </div>
+   <br>
 
 </main>
 <%@ include file="/WEB-INF/fragments/footer.jspf" %>

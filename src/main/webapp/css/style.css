@@ -680,12 +680,19 @@ VERSION DESKTOP
 }
 
 /*************************************************************Page accueil ***************************************************************************************/
+.main-accueil {
+        background-image: url('../assets/img/background-accueil.jpg');
+        background-size: cover;
+        background-position: center;
+    }
+    
 /* Styles for each restaurant card */
 .nous-decouvrir-card {
+	color: #F6B12D;
     width: 25%; /* Each card occupies 25% of the container width by default */
     margin: 0 10px; /* Add spacing between cards */
-    background-color: #f9f9f9; /* Card background color */
-    border: 1px solid #ddd; /* Card border */
+    background-color: white;
+    border: 1px solid #2F4558; /* Card border */
     border-radius: 5px; /* Card border radius */
     padding: 20px; /* Card padding */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Card shadow */
@@ -707,19 +714,56 @@ VERSION DESKTOP
 }
 
 /* Styles for the "Reserver" button */
-.btn-reserver {
-    background-color: #007bff; /* Button background color */
-    color: #fff; /* Button text color */
-    border: none; /* Remove button border */
-    padding: 10px 20px; /* Button padding */
-    border-radius: 5px; /* Button border radius */
-    cursor: pointer; /* Change cursor on hover */
-    transition: background-color 0.3s ease; /* Smooth button transition */
+#btn-reserver-accueil {
+	/*
+   color: #F6B12D; 
+     background-color: #2F4558; 
+    border: none; 
+    padding: 10px 20px; 
+    border-radius: 5px; 
+    cursor: pointer; 
+    transition: background-color 0.3s ease; 
+      font-size: 18px; 
+  padding: 10px 20px; 
+  */
+   background-color: #1c87c9;
+  -webkit-border-radius: 60px;
+  border-radius: 60px;
+  border: none;
+  color: #eeeeee;
+  cursor: pointer;
+  display: inline-block;
+  font-family: sans-serif;
+  font-size: 20px;
+  padding: 5px 15px;
+  text-align: center;
+  text-decoration: none;
+ 
 }
+ @keyframes glowing {
+        0% {
+          background-color:  #2F4558;
+          box-shadow: 0 0 5px #2F4558;
+        }
+        50% {
+          background-color: #F6B12D;
+          box-shadow: 0 0 20px #F6B12D;
+        }
+        100% {
+          background-color:  #2F4558;
+          box-shadow: 0 0 5px  #2F4558;
+        }
+      }
+      
+    #btn-reserver-accueil {
+		  animation: glowing 1300ms infinite;
+		}  
 
-.btn-reserver:hover {
-    background-color: #0056b3; /* Button background color on hover */
-}
+
+/*
+#btn-reserver-accueil:hover {
+    background-color: #EF4B0A; /* Button background color on hover */
+
 
 /* Adjust layout for medium-sized screens (e.g., tablets) */
 @media (max-width: 991px) {
@@ -741,7 +785,6 @@ VERSION DESKTOP
 }
 
 
-/***************   Style pour page accueil ******************************************/
 .restaurant-cards {
     display: flex;
     flex-wrap: wrap;
@@ -766,26 +809,12 @@ VERSION DESKTOP
     margin-bottom: 10px; /* Add space below the image */
 }
 
-.btn-reserver {
-    background-color: #007bff; /* Button background color */
-    color: #fff; /* Button text color */
-    border: none; /* Remove button border */
-    padding: 10px 20px; /* Button padding */
-    border-radius: 5px; /* Button border radius */
-    cursor: pointer;
-    transition: background-color 0.3s ease; /* Smooth button transition */
-}
-
-.btn-reserver:hover {
-    background-color: #0056b3; /* Button background color on hover */
-}
-
 
 
 /*******style pour carousel et sections a propos  page d'accueil ******************************************/
 
 .carousel_accueil {
-    background-color: #000; /* Black background color */
+    background-color:transparent; /* Black background color */
     position: relative; /* Ensure the position is relative */
 }
 
@@ -799,8 +828,8 @@ VERSION DESKTOP
 }
 
 .carousel_accueil .carousel-inner .item img {
-    width: 100% !important;
-    height: auto;
+   width: 100% !important; /* Example width */
+    height: auto !important; /* Example height */
 }
 
 .carousel_accueil .carousel-caption {
@@ -834,12 +863,24 @@ VERSION DESKTOP
 .accueil_nous {
     margin-top: 20px; /* Add margin to the top of the section */
 }
-
+#pate-or-accueil{
+	
+font-family: Montserrat Subrayada;
+  font-weight: 400;
+  font-size: 40px; 
+  letter-spacing: 0px;
+  line-height: 34px;
+  text-transform: uppercase;
+}
 .accueil_nous .card {
-    margin-bottom: 20px; /* Add spacing between cards */
-    border: 1px solid #ccc; /* Card border */
-    border-radius: 5px; /* Card border radius */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Card shadow */
+   background-color: white;
+    color:  #2F4558;
+    font-family: Karla !important;
+    font-weight: 400;
+  font-size: 17px;
+  letter-spacing: 1px;
+  line-height: 27px;
+  text-align: justify
 }
 
 .accueil_nous .card-body {
@@ -849,16 +890,8 @@ VERSION DESKTOP
     flex-direction: column; /* Arrange content vertically */
 }
 
-.accueil_nous .card h2 {
-    font-size: 24px; /* Title font size */
-    margin-bottom: 15px; /* Add spacing below the title */
-        font-family: "Abel", Sans-serif;
-}
 
-.accueil_nous .card p {
-    font-size: 16px; /* Text font size */
-    line-height: 1.6; /* Line height */
-}
+
 
 .accueil_nous .col-md-6 {
     margin-bottom: 20px; /* Add spacing below each column */
@@ -874,48 +907,85 @@ VERSION DESKTOP
 }
 /****************************accueil nos coups d ecoeurs ****************************************************/
 .nos_coups_coeur {
-    padding: 20px; /* Add padding to the section */
+	padding: 20px;
+    background-color: white;
+    color:  #2F4558;
+    font-family: Karla !important;
+    font-weight: 400;
+  font-size: 17px;
+  letter-spacing: 1px;
+  line-height: 27px;
+  text-align: justify
+   
 }
 
-.menu-flex {
+#nos_coups_coeur-titre{
+	
+font-family: Montserrat Subrayada;
+  font-weight: 400;
+  font-size: 40px; 
+  letter-spacing: 0px;
+  line-height: 34px;
+  text-transform: uppercase;
+   color:  #2F4558;
+   
+}
+.nos_restaurants{
+	background-color: white;
+}
+#nos-restaurants-titre-accueil{
+	font-family: Montserrat Subrayada;
+  font-weight: 400;
+  font-size: 40px; 
+  letter-spacing: 0px;
+  line-height: 34px;
+  text-transform: uppercase;
+   color:  #2F4558;
+}
+
+
+.nos_coups_coeur .menu-flex {
     display: flex; /* Use flexbox layout */
     flex-wrap: wrap; /* Allow flex items to wrap to the next line */
-    justify-content: space-between; /* Distribute items evenly along the main axis with equal space between them */
+    /*justify-content: space-between; /* Distribute items evenly along the main axis with equal space between them */
+   
 }
 
-.menu-flex > div {
-    width: calc(25% - 10px); /* Set width for each card, subtracting margin and adjusting for 4 cards */
+.nos_coups_coeur .menu-flex > div {
+    width: calc(25% - 3px); /* Set width for each card, subtracting margin and adjusting for 4 cards */
     margin-bottom: 20px; /* Add spacing between cards */
-    box-sizing: border-box; /* Include padding and border in the element's total width and height */
-    border: 1px solid #ccc; /* Card border */
-    border-radius: 5px; /* Card border radius */
-    padding: 10px; /* Add padding to each card */
+   /* box-sizing: border-box; /* Include padding and border in the element's total width and height */
+    /*border: 1px solid #ccc; /* Card border */
+    /*border-radius: 5px; /* Card border radius */
+   /* padding: 10px; /* Add padding to each card */
+    /*background-color: #F6B12D;
 }
 
-.menu-flex > div img {
+.nos_coups_coeur .menu-flex > div img {
     width: 100%; /* Make images fill the entire width of their container */
-    border-radius: 5px; /* Apply border radius to images */
+    /*border-radius: 5px; /* Apply border radius to images */
 }
 
-.menu-flex > div h3 {
+.nos_coups_coeur .menu-flex > div h3 {
     margin-top: 10px; /* Add spacing above the heading */
     font-size: 18px; /* Adjust heading font size */
 }
 
-.menu-flex > div p {
+.nos_coups_coeur .menu-flex > div p {
     margin-top: 5px; /* Add spacing above the paragraph */
     font-size: 16px; /* Adjust paragraph font size */
+     text-align: center; /* Horizontal alignment */
 }
 /* Media query for medium-sized screens */
 @media (max-width: 992px) {
-    .menu-flex > div {
+    .nos_coups_coeur .menu-flex > div {
         width: calc(50% - 10px); /* Set width for each card, subtracting margin and adjusting for 2 cards per row */
     }
 }
 
 /* Media query for small screens (phones) */
 @media (max-width: 576px) {
-    .menu-flex > div {
+   .nos_coups_coeur .menu-flex > div {
         width: 100%; /* Set width for each card to 100% for single column layout */
     }
 }
