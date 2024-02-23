@@ -34,49 +34,49 @@ public class ServletListerRestaurants extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		try {
+		//try {
 		
-			Comparator<String> dayOfWeekComparator = new Comparator<String>() {
-			    private final Map<String, Integer> dayOrder = new HashMap<String, Integer>() {{
-			        put("Lundi", 1);
-			        put("Mardi", 2);
-			        put("Mercredi", 3);
-			        put("Jeudi", 4);
-			        put("Vendredi", 5);
-			        put("Samedi", 6);
-			        put("Dimanche", 7);
-			    }};
-
-			    @Override
-			    public int compare(String jour1, String jour2) {
-			        return Integer.compare(dayOrder.get(jour1), dayOrder.get(jour2));
-			    }
-			};
-
-			List<Restaurant> restaurantsHoraire = restaurantBLL.selectAllRes();
-			
-			request.setAttribute("restaurantsHoraire", restaurantsHoraire);
-			Map<Integer, Map<String, List<Horaire>>> horairesParRestaurant = new HashMap<>();
-
-			for (Restaurant restaurant : restaurantsHoraire) {
-			    Map<String, List<Horaire>> horairesParJour = new TreeMap<>(dayOfWeekComparator);
-			    List<Horaire> horairesRestaurant = restaurant.getHoraire();
-
-			    for (Horaire horaire : horairesRestaurant) {
-			        String jour = horaire.getJour();
-			    
-			        if (!horairesParJour.containsKey(jour)) {
-			            horairesParJour.put(jour, new ArrayList<>());
-			        }
-
-			        horairesParJour.get(jour).add(horaire);
-			    }
-
-			    horairesParRestaurant.put(restaurant.getId(), horairesParJour);
-			    
-			}
-			System.out.println(horairesParRestaurant.get(1) + "\n");
-			request.setAttribute("horairesParRestaurant", horairesParRestaurant);
+//			Comparator<String> dayOfWeekComparator = new Comparator<String>() {
+//			    private final Map<String, Integer> dayOrder = new HashMap<String, Integer>() {{
+//			        put("Lundi", 1);
+//			        put("Mardi", 2);
+//			        put("Mercredi", 3);
+//			        put("Jeudi", 4);
+//			        put("Vendredi", 5);
+//			        put("Samedi", 6);
+//			        put("Dimanche", 7);
+//			    }};
+//
+//			    @Override
+//			    public int compare(String jour1, String jour2) {
+//			        return Integer.compare(dayOrder.get(jour1), dayOrder.get(jour2));
+//			    }
+//			};
+//
+//			List<Restaurant> restaurantsHoraire = restaurantBLL.selectAllRes();
+//			
+//			request.setAttribute("restaurantsHoraire", restaurantsHoraire);
+//			Map<Integer, Map<String, List<Horaire>>> horairesParRestaurant = new HashMap<>();
+//
+//			for (Restaurant restaurant : restaurantsHoraire) {
+//			    Map<String, List<Horaire>> horairesParJour = new TreeMap<>(dayOfWeekComparator);
+//			    List<Horaire> horairesRestaurant = restaurant.getHoraire();
+//
+//			    for (Horaire horaire : horairesRestaurant) {
+//			        String jour = horaire.getJour();
+//			    
+//			        if (!horairesParJour.containsKey(jour)) {
+//			            horairesParJour.put(jour, new ArrayList<>());
+//			        }
+//
+//			        horairesParJour.get(jour).add(horaire);
+//			    }
+//
+//			    horairesParRestaurant.put(restaurant.getId(), horairesParJour);
+//			    
+//			}
+//			System.out.println(horairesParRestaurant.get(1) + "\n");
+//			request.setAttribute("horairesParRestaurant", horairesParRestaurant);
 
 
 			
@@ -97,10 +97,10 @@ public class ServletListerRestaurants extends HttpServlet {
 //			request.setAttribute("restaurants", restaurants);
 			 
 
-		} catch (BLLException e) {
-			e.printStackTrace();
-		}
-		
+//		} catch (BLLException e) {
+//			e.printStackTrace();
+//		}
+//		
 		request.getRequestDispatcher("/WEB-INF/jsp/restaurants.jsp").forward(request, response);
 	}
 
