@@ -45,14 +45,26 @@ private UtilisateurDAO dao;
 		}
 	}
 	
-	public Utilisateur insert(String nom, String prenom, String email, String motDePasse, String telephone, Boolean isAdmin) throws BLLException {
+	public Utilisateur insert(String nom, String prenom, String email, String motDePasse, String telephone,String role) throws BLLException {
 		BLLException bllException = new BLLException();
-		verifierLesDonnees(nom, prenom, email, motDePasse, telephone, isAdmin);
+		verifierLesDonnees(nom, prenom, email, motDePasse, telephone);
 
          byte[] saltBytes = email.getBytes();
         String hashedMotDePasse = hashMotDePasse(motDePasse, saltBytes);
 		
-        Utilisateur utilisateur = new Utilisateur(nom, prenom, email, hashedMotDePasse, telephone, isAdmin);
+        Utilisateur utilisateur = new Utilisateur();
+        utilisateur.setNom(nom);
+        utilisateur.setPrenom(prenom);
+        utilisateur.setEmail(email);
+        utilisateur.setMotDePasse(hashedMotDePasse);
+        utilisateur.setTelephone(telephone);
+        
+        if (role != null && !role.isEmpty()) {
+            utilisateur.setRole(role);
+        } else {
+            utilisateur.setRole("client"); // Définir le rôle par défaut en tant que "client"
+        }
+        
 		try {
 			
 			if(dao.selectByEmail(email) != null) {
@@ -87,7 +99,7 @@ private UtilisateurDAO dao;
 		}
 	}
 	
-	private  void verifierLesDonnees(String nom, String prenom, String email, String motDePasse, String telephone, Boolean isAdmin) throws BLLException {
+	private  void verifierLesDonnees(String nom, String prenom, String email, String motDePasse, String telephone) throws BLLException {
 		
 		BLLException bllException = new BLLException();
 		

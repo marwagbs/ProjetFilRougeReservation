@@ -7,7 +7,7 @@ public class Utilisateur {
 	private String email;
 	private String motDePasse;
 	private String telephone;
-	private Boolean isAdmin;
+	private String role;
 	
 	public Utilisateur() {}
     
@@ -16,25 +16,28 @@ public class Utilisateur {
 		this.id = id;
 	}
 
+
 	public Utilisateur(int id, String nom, String prenom, String email, String motDePasse, String telephone,
-			Boolean isAdmin) {
+			String role) {
+		super();
 		this.id = id;
 		this.nom = nom;
 		this.prenom = prenom;
 		this.email = email;
 		this.motDePasse = motDePasse;
 		this.telephone = telephone;
-		this.isAdmin = isAdmin;
+		this.role = role;
 	}
 
-	public Utilisateur(String nom, String prenom, String email, String motDePasse, String telephone, Boolean isAdmin) {
+	
+	public Utilisateur(String nom, String prenom, String email, String motDePasse, String telephone, String role) {
 		super();
 		this.nom = nom;
 		this.prenom = prenom;
 		this.email = email;
 		this.motDePasse = motDePasse;
 		this.telephone = telephone;
-		this.isAdmin = isAdmin;
+		this.role = role;
 	}
 
 	public int getId() {
@@ -85,20 +88,22 @@ public class Utilisateur {
 		this.telephone = telephone;
 	}
 
-	public Boolean getIsAdmin() {
-		return isAdmin;
+	
+	public String getRole() {
+		return role;
 	}
 
-	public void setIsAdmin(Boolean isAdmin) {
-		this.isAdmin = isAdmin;
+	public void setRole(String role) {
+		this.role = role;
 	}
 
 	@Override
 	public String toString() {
 		return "Utilisateur [id=" + id + ", nom=" + nom + ", prenom=" + prenom + ", email=" + email + ", motDePasse="
-				+ motDePasse + ", telephone=" + telephone + ", isAdmin=" + isAdmin + "]";
+				+ motDePasse + ", telephone=" + telephone + ", role=" + role + "]";
 	}
-	
+
+
 	
 	
 }
