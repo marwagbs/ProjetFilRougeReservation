@@ -9,7 +9,9 @@
 		<nav class="nav">
 			<ul class="navbarUl">
 				<li><a href="accueil">Accueil</a></li>
+
 				<li><a href="about">On fait connaissance?</a></li>
+
 				<li><a href="nosRestaurants">Nos Restaurants</a></li>
 				
 			<c:if test="${not empty identifiant }">

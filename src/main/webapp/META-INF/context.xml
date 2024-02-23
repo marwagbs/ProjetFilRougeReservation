@@ -10,6 +10,7 @@
 		url="jdbc:sqlserver://localhost;databasename=GESTION_RESTAURANT;trustservercertificate=true"
 		username="marwa_admin"
 		password="marwaadmin"
+
 		maxTotal="100"
 		maxIdle="30"
 		maxWaitMillis="10000"
