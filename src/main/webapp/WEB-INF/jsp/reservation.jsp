@@ -16,7 +16,7 @@
     <main>
         <div class="container-reservation">
             <div class="formulaire_reservation">
-                <p id="nom_restaurant"> Restaurant : ${restaurant.nom } </p>
+                <p class="nom-restaurant-reservation" id="nom_restaurant"> ${restaurant.nom } </p>
                 <input type="hidden" name="idRestaurant" value="${restaurant.id}">
                 <input type="hidden" name="idUtilisateur" value="${utilisateur.id}">
                 <form action="#" method="post">
@@ -33,12 +33,12 @@
                 </form>
             </div>
             <div class="reservation-image">
-                <img src="images/restaurant.jpg" alt="pate d'or">
+                <img src="./assets/img/restaurant_flyer.png" alt="pate d'or">
             </div>
         </div>
     </main>
 
-    <%@ include file="/WEB-INF/fragments/footer.jspf" %>        
+      
 
     <script type="text/javascript">
         function generateTimeSlots(start, end, interval) {
@@ -74,5 +74,6 @@
             });
         };
     </script>
+       <%@ include file="/WEB-INF/fragments/footer.jspf" %>   
 </body>
 </html>
