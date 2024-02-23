@@ -140,8 +140,9 @@
   <servlet-mapping>
     <servlet-name>ServletAbout</servlet-name>
     <url-pattern>/about</url-pattern>
-</servlet-mapping>
- <servlet>
+
+  </servlet-mapping>
+    <servlet>
     <description></description>
     <display-name>ServletModifierProfil</display-name>
     <servlet-name>ServletModifierProfil</servlet-name>
@@ -162,9 +163,20 @@
     <servlet-name>ServletSupprimerProfil</servlet-name>
     <url-pattern>/ServletSupprimerProfil</url-pattern>
   </servlet-mapping>
-  
-   <error-page>
- 	<error-code>404</error-code>
- 	<location>/error404.html</location>
- </error-page>
+
+   <servlet>
+    <description></description>
+    <display-name>ServletPageErreur</display-name>
+    <servlet-name>ServletPageErreur</servlet-name>
+    <servlet-class>controler.utilisateurs.ServletPageErreur</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ServletPageErreur</servlet-name>
+    <url-pattern>/ServletPageErreur</url-pattern>
+  </servlet-mapping>
+  <error-page>
+  	<error-code>404</error-code>
+  	<location>/ServletPageErreur</location>
+  </error-page>
+
 </web-app>

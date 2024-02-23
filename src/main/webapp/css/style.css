@@ -197,13 +197,27 @@ a {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	font-size: 0.7em;
-	width: 100%;
-	height: 250px;
+	font-size: 1em;
 	background-color: rgb(246, 177, 45);
-	gap: 0.6em;
-	padding: 30px 0 20px;
+	gap: 20px;
+	padding: 30px;
 	
+}
+
+.footer-flex {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 20px;
+}
+
+.footer-flex a {
+	color: #EF4B0A;
+	transition: transform 300ms ease-in-out;
+}
+
+.footer-flex a:hover {
+	transform: scale(1.2);
 }
 
 .footer-logo {
@@ -211,29 +225,29 @@ a {
 	height: auto;
 }
 
-.footer-icons img {
-	width: 1em;
-	height: auto;
+.fa-brands {
+	font-size: 1.3em;
 }
 
 .footer-icons {
 	display: flex;
-	gap: 1em;
-}
-
-.footer-flex, .footer-info {
-	display: flex;
-	flex-direction: row;
-	justify-content: space-between;
-	gap: 15em;
+	gap: 20px;
 }
 
 .footer-info {
-	font-size: 0.6em;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 10px;
+}
+
+.footer-info {
+	font-size: 0.8em;
 }
 
 .footer-text {
-	width: 450px;
+	width: 45%;
 }
 
 .footer-text p {
@@ -256,6 +270,11 @@ a {
 	color:#fff;
 	text-transform: uppercase;
 }
+
+ .intro-resto h1 {
+	margin: 1rem 0;	
+}
+
 .intro-resto p, .intro-p{
 	color:#EF4B0A ;
 	background-color: #fff;
@@ -275,6 +294,7 @@ a {
 }
 
 .resto-section h3 {
+	padding-top: 15px;
 	color: #EF4B0A;
 }
 
@@ -284,33 +304,35 @@ a {
 }
 
 .resto-card {
+	position: relative;
 	border: 1px solid black;
-	width: 60%;
-	height: 300px;
+	width: 50%;
+	height: 350px;
 	gap: 15px;
 	padding: 30px;
 	border-radius: 10px;
 	background-color: #F6B12D;
 }
 
-.resto-flex, .resto-icons, .icons-container {
+.resto-flex {
 	display: flex;
-	flex-direction: row;
-	align-items: center;
-}
-
-.resto-flex, .icons-container {
-	justify-content: space-between;
+	flex-direction: column;
+	align-items: flex-start;
 }
 
 .icons-container {
-	gap: 20px;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+	width: 100%;
 }
 
 .resto-info {
-	width: 50%;
+	width: 100%;
 	gap: 30px;
-	font-size: 0.7em;
+	font-size: 0.6em;
+	padding-top: 10px;
 }
 
 .resto-horaires {
@@ -318,15 +340,14 @@ a {
 	flex-direction: column;
 	justify-content: left;
 	gap: 5px;
-	width: 35%;
-	font-size: 0.5em;
+	width: 100%;
+	font-size: 0.6em;
 	line-height: 1;
-	padding-top: 10px;
 }
 
 .resto-horaires h3 {
 	text-align: left;
-	padding-bottom: 10px;
+	padding-bottom: 5px;
 }
 
 .resto-horaires div {
@@ -335,6 +356,10 @@ a {
 }
 
 .resto-icons {
+	margin-top: 30px;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
 	gap: 5px;
 }
 
@@ -362,7 +387,12 @@ a {
 
 .resto-btn {
 	display: flex;
-	gap: 30px;
+	flex-direction: column;
+	gap: 10px;
+	justify-content: center;
+	position: absolute;
+	bottom: 47px;
+	right: 30px;
 }
 
 .resto-btn button {
@@ -376,6 +406,15 @@ a {
 	text-transform: uppercase;
 	font-weight: bold;
 }
+.resto-btn a {
+	transition: transform 300ms ease-in-out;
+}
+
+.resto-btn a:hover {
+	transform: scale(0.8);
+}
+
+
 /***************about*********************/
 video {
 	display: block;
@@ -529,12 +568,6 @@ video {
                 padding-right: 0;
             }
         }
-
-/* Le code css pour la page Profil de l'utilisateur */
-
-.user-profil p {
-	text-transform: uppercase;
-}
 
 
 /***************   Style pour page accueil ******************************************/
@@ -818,6 +851,18 @@ VERSION TABLETTE
 	.concept ul{
             grid-template-columns:1fr 1fr;
         }
+        
+   /* Page Nos restaurants */
+
+	.resto-card {
+		width: 65%;
+		padding: 30px 60px;
+	}
+	
+	.resto-btn {
+		right: 55px;
+	}
+     
 }
 
 
@@ -904,19 +949,109 @@ VERSION DESKTOP
 		width: 15%;
 	}
         
-	}
+
+ /* Page Nos restaurants */
+ 
+  .intro-resto h1 {
+	margin: 0.6rem 0;	
+}
+
+.resto-section h3 {
+	padding-top: 0px;
+}
+
+.resto-card {
+	position: inherit;
+	width: 60%;
+	height: 300px;
+}
+
+.resto-flex, .resto-icons, .icons-container {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+}
+
+.resto-flex, .icons-container {
+	justify-content: space-between;
+}
+
+.resto-flex-two {
+	display: flex;
+	flex-direction: column;
+	gap: 50px;
+	width: 70%;
+}
+
+.icons-container {
+	gap: 20px;
+	width: auto;
+}
+
+.resto-info {
+	width: 100%;
+	padding-top: 35px;
+}
+
+.resto-horaires {
+	width: 35%;
+	padding-top: 10px;
+}
+
+.resto-icons {
+	margin-top: 0px;
+}
+
+.resto-btn {
+	gap: 30px;
+	flex-direction: row;
+	justify-content: flex-start;
+	position: inherit;
+}
+
+/* Le pied de page */
+
+.footer-flex, .footer-info {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	
+}
+
+.footer-info {
+	gap: 15em;
+}
+
+.footer-flex {
+	gap: 33.5em;
+}
+        
+}
 
 /* Le code css pour la page d'utilisateur */
 
 	.user-profil {
 		display: flex;
-		width: 90%;
+		flex-direction: column;
+		align-items: center;
+		width: 100%;
 		justify-content: center;
 		padding: 100px 0;
 	}
 	
+	.user-profil h2 {
+		color: #EF4B0A;
+	}
+	
+	.user-profil-text {
+		display: flex;
+		flex-direction: column;
+		padding-bottom: 30px;
+		padding-left: 20px;
+	}
+	
 	.user-profil-form {
-		width: 50%;
+		width: 40%;
 	}
 	
 	.form-group {
@@ -926,20 +1061,176 @@ VERSION DESKTOP
 	.form-btn {
 	display: flex;
 	justify-content: center;
-	gap: 30px;
 	margin-top: 50px;
 	}
 
 	.form-btn button {
-		width: 200px;
-		padding: 20px;
+		width: 40%;
+		padding: 15px 5px;
 		border: none;
-		border-radius: 30px;
+		border-radius: 10px;
 		background-color: #EF4B0A;
 		font-size: 0.6em;
 		color: white;
 		text-transform: uppercase;
 		font-weight: bold;
+		transition: all 0.3s ease-in-out;
 	}
-
 	
+	.form-btn button:hover {
+		 color: #EF4B0A;
+	  	 border: 2px solid #EF4B0A;
+	  	 background: transparent;
+	  	 transform: scale(.9);
+	}
+	
+	#email , #motdepasse {
+		background-color: gainsboro;
+	}
+	
+	.user-profil-delete {
+		font-size: 0.5em;
+	}
+	
+	.user-profil-delete span {
+		cursor: pointer;
+		color: #F6B12D;
+		text-decoration: underline;
+	}
+	
+	.user-profil-error {
+		text-align: center;
+		color: #EF4B0A;
+		font-size: 0.7em;
+		width: 80%;
+		padding-bottom: 20px;
+	}
+	
+	.modal-container {
+		width: auto;
+		padding: 16px;
+		text-align: center;
+	}
+	
+	.modal-container p {
+		padding-bottom: 20px;
+	}
+	
+	/* Float cancel and delete buttons and add an equal width */
+	.cancelbtn, .deletebtn {
+	  float: left;
+	  width: 50%;
+	}
+	
+	/* Add a color to the cancel button */
+	.cancelbtn {
+	  background-color: #2F4558;
+	  color: white;
+	}
+	
+	.cancelbtn:hover {
+		opacity: 0.8;
+	}
+	
+	/* Add a color to the delete button */
+	.deletebtn {
+	  background-color: #EF4B0A;
+	  color: white;
+	}
+	
+	.deletebtn:hover {
+		opacity: 0.8;
+	}
+	
+	/* The Modal (background) */
+	.modal {
+	  display: none; /* Hidden by default */
+	  position: fixed; /* Stay in place */
+	  z-index: 1; /* Sit on top */
+	  left: 0;
+	  top: 0;
+	  transform: translateX(50%);
+	  width: 50%; /* Full width */
+	  height: auto; /* Full height */
+	  overflow: auto; /* Enable scroll if needed */
+	  background-color: #F6B12D;
+	  padding-top: 50px;
+	}
+	
+	/* Modal Content/Box */
+	.modal-content {
+	  background-color: #fefefe;
+	  margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+	  border: 1px solid #888;
+	  width: 80%; /* Could be more or less, depending on screen size */
+	}
+	
+	/* Style the horizontal ruler */
+	hr {
+	  border: 1px solid #f1f1f1;
+	  margin-bottom: 25px;
+	}
+	
+	/* The Modal Close Button (x) */
+	.close {
+	  position: absolute;
+	  right: 35px;
+	  top: 15px;
+	  font-size: 40px;
+	  font-weight: bold;
+	  color: #f1f1f1;
+	}
+	
+	.close:hover,
+	.close:focus {
+	  color: #EF4B0A;
+	  cursor: pointer;
+	}
+	
+	/* Clear floats */
+	.clearfix::after {
+	  content: "";
+	  clear: both;
+	  display: table;
+	}
+	
+/* Le code css pour la page 404 */
+	
+	.error-page {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		padding: 60px 0 100px;
+		margin: 130px 0;
+	}
+	
+	.error-number {
+		color: #EF4B0A;
+		font-size: 96px;
+		font-weight: 700;
+	}
+	
+	.error-text {
+		color: #EF4B0A;
+		font-size: 18px;
+		font-weight: 500;
+		text-align: center;
+		width: 50%;
+		padding: 40px 0 50px;
+	}
+	
+	.error-page h2 {
+		margin: 0;
+	}
+	
+	.error-link {
+		font-weight: 500;
+		font-size: 14px;
+		text-decoration: underline;
+	}
+	
+	.fa-triangle-exclamation {
+		font-size: 6em;
+		color: #F6B12D;
+	}
+}
