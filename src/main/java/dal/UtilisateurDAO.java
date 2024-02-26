@@ -17,7 +17,7 @@ import bo.Utilisateur;
 public class UtilisateurDAO implements GenericDAO<Utilisateur> {
 	private static final String SELECT_BY_EMAIL = "SELECT * FROM utilisateurs WHERE email = ?";
 	private static final String DELETE = "DELETE FROM utilisateurs WHERE id = ?";
-	private static final String UPDATE = "UPDATE utilisateurs SET nom = ?, prenom = ?, email = ?, mot_de_passe = ?, telephone = ?, isAdmin = ? WHERE id = ?";
+	private static final String UPDATE = "UPDATE utilisateurs SET nom = ?, prenom = ?, email = ?, mot_de_passe = ?, telephone = ?, role = ? WHERE id = ?";
 	private static final String INSERT = "INSERT INTO utilisateurs (nom, prenom, email, mot_de_passe, telephone, role) VALUES (?,?,?,?,?,?)";
 	private static final String SELECT_BY_ID = "SELECT * FROM utilisateurs WHERE id = ?";
 	private static final String SELECT = "SELECT * FROM utilisateurs";

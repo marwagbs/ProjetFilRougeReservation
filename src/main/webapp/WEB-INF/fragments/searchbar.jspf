@@ -1,8 +1,0 @@
- <div>
- <form action="ServletDetail" method="GET">
-        <label for="search-bar">Rechercher un restaurant : </label>
-        <input type="text" id="search-bar" name="id" placeholder="Nom du restaurant...">
-        <input type="submit" value="Rechercher">
-    </form>
-    
-    </div>

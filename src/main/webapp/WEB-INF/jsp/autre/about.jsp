@@ -7,6 +7,7 @@
 <meta charset="UTF-8">
 <title>about</title>
 <link href="css/style.css" rel="stylesheet" >
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <%@include file="../../fragments/linksfont.jspf" %>
 
 </head>
@@ -75,7 +76,7 @@
 <section>
 	<h2 class="title-about">Lorem ipsum dolor </h2>
 	<article>
-		<p class="p-about">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit, totam.</p>
+		<p class="p-about-video">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit, totam.</p>
 		<video controls poster="././assets/media/poster.png">
 			<source src="././assets/media/cooking.mp4" type="video/mp4">
 		</video>

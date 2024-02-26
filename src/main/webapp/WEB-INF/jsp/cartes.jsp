@@ -6,7 +6,8 @@ pageEncoding="UTF-8"%> <%@ taglib prefix="c" uri="jakarta.tags.core" %>
     <meta charset="UTF-8" />
     <title>la carte de notre restaurant</title>
     <link href="././css/style.css" rel="stylesheet" />
-    <%@include file="../fragments/linksfont.jspf" %>
+     <meta name="viewport" content="width=device-width, initial-scale=1">
+<%@include file="../fragments/linksfont.jspf" %>
  
   </head>
 

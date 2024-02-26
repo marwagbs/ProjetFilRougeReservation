@@ -7,6 +7,8 @@
 <meta charset="UTF-8">
 <title>connexion</title>
 <link href="css/style.css" rel="stylesheet" >
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+<%@include file="../../fragments/linksfont.jspf" %>
 </head>
 <body>
  <%@include file="../../fragments/header.jspf" %> 

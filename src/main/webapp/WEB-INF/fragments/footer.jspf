@@ -1,7 +1,6 @@
+<footer  >
 
-<footer>
-
-	<div class="footer">
+	<div class="footer-section">
         <img src="././assets/logos/logo.png" alt="Logo de M2I Ristorante" class="footer-logo" />
         <div class="footer-flex">
         
@@ -26,7 +25,7 @@
 	            </div>
 	        </div>
 	        <div class="footer-text">
-	            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Phasellus tincidunt finibus ligula...</p>
+	            <p class="footer-text-p">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Phasellus tincidunt finibus ligula...</p>
 	        </div>
 	        <div class="footer-info">
 	            <a href="">Gestion de cookies</a>

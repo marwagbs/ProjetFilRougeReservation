@@ -15,13 +15,10 @@ pageEncoding="UTF-8"%> <%@ taglib prefix="c" uri="jakarta.tags.core" %>
 		<div class="main-banner">
 
 			<div class="double-title ">
-				<span class="contact-title ">Nous contacter</span> <span
-					class="double-title__main-title-wrapper">
+				<span class="contact-title ">Nous contacter</span> 
 					<h1 class="contact-subtitle">
 						Une question ? On vous répond au plus vite
 					</h1>
-
-				</span>
 			</div>
 		</div>
 

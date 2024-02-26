@@ -1,20 +1,18 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"  
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-
-
 <!DOCTYPE html>
 <html lang="fr">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title> ACCUEIL</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="./css/style.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <!--   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-    <link rel="icon" href="data:;base64,iVBORw0KGgo=">
+    <link rel="icon" href="data:;base64,iVBORw0KGgo="> -->
+   <link href="././css/style.css" rel="stylesheet" >
+	<%@include file="../fragments/linksfont.jspf" %>
 </head>
 
 <body>
@@ -97,7 +95,7 @@
 
     <section class="nos_coups_coeur">
             <h2 id="nos_coups_coeur-titre">Nos Coups de Cœur à Découvrir </h2>
-            <p class="intro-p">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Hic fuga sit illo modi aut aspernatur tempore laboriosam saepe dolores eveniet.</p>
+            <p class="intro-p-accueil">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Hic fuga sit illo modi aut aspernatur tempore laboriosam saepe dolores eveniet.</p>
             
             <div class="menu-flex">
                
@@ -121,29 +119,7 @@
                     <h3>Lorem ipsum dolor sit amet consectetur</h3>
                     <p class="p-menu">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet itaque labor.</p>
                 </div>
-                <%-- 
-                 <div>
-                    <img src="./assets/img/b5.jpg" alt="slider1">
-                    <h3>Lorem ipsum dolor sit amet consectetur</h3>
-                    <p class="p-menu">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet itaque labor.</p>
-                </div>
-                 <div>
-                    <img src="./assets/img/b6.jpg" alt="slider1">
-                    <h3>Lorem ipsum dolor sit amet consectetur</h3>
-                    <p class="p-menu">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet itaque labor.</p>
-                </div>
-                  <div>
-                    <img src="./assets/img/b7.jpg" alt="slider1">
-                    <h3>Lorem ipsum dolor sit amet consectetur</h3>
-                    <p class="p-menu">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet itaque labor.</p>
-                </div>
-                 <div>
-                    <img src="./assets/img/b7.jpg" alt="slider1">
-                    <h3>Lorem ipsum dolor sit amet consectetur</h3>
-                    <p class="p-menu">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet itaque labor.</p>
-                </div>
-            </div>
-           --%>
+   
     </section>
 
 
@@ -160,7 +136,13 @@
                     <form action="ServletReservation" method="get">
                         <input type="hidden" name="idRestaurant" value="${restaurant.id}">
                         <input type="hidden" name="idUtilisateur" value="${idUtilisateur}">
-                        <button type="submit" id="btn-reserver-accueil" >Reserver</button>
+                         <c:if test="${not empty identifiant }">
+									<a href="reservation?id=${restaurant.id}"><button type="button" id="btn-reserver-accueil" >Réserver</button></a>
+								</c:if>
+						<c:if test="${empty identifiant }">
+								      <a href="connexion"><button type="button" id="btn-reserver-accueil" >Réserver</button></a>
+						</c:if> 
+                        
                     </form>
 
                 </div>
@@ -171,6 +153,6 @@
    <br>
 
 </main>
-<%@ include file="/WEB-INF/fragments/footer.jspf" %>
+	<%@include file="../fragments/footer.jspf" %>
 </body>
 </html>

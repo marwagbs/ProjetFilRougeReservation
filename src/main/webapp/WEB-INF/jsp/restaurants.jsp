@@ -7,6 +7,7 @@
 <meta charset="UTF-8">
 <title>Nos restaurants</title>
 <link href="././css/style.css" rel="stylesheet" >
+ <meta name="viewport" content="width=device-width, initial-scale=1">
 <%@include file="../fragments/linksfont.jspf" %>
 </head>
 <body>
