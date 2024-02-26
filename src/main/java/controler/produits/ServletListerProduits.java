@@ -47,7 +47,7 @@ public class ServletListerProduits extends HttpServlet {
 			if (current.getCarte().getRestaurant().getId()==id) {
 				request.setAttribute("nomCarte", current.getCarte().getLibelle());
 				request.setAttribute("nomRestaurant", current.getCarte().getRestaurant().getNom());
-				System.out.println(current);
+			
 			    if (current.getCategorie().getId() == 1) {
 			        listeEntrees.add(current);
 			        
