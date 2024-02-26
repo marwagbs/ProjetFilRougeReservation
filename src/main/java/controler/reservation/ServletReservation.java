@@ -93,9 +93,10 @@ public class ServletReservation extends HttpServlet {
         LocalTime heure = LocalTime.parse(heureStr);
         int nbrPersonnes = Integer.parseInt(nbrPersonnesStr);
         
-     
+     System.out.println(idRestaurant);
 		  // Retrieve the "identifiant" attribute from the session
 	    String identifiant = (String) request.getSession().getAttribute("identifiant"); 
+	    System.out.println(identifiant);
 	    // Set the "identifiant" attribute as a request attribute
 	     Utilisateur utilisateur;
 		
