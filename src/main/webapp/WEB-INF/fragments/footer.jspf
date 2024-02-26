@@ -1,6 +1,5 @@
-<footer  >
+<footer class="footer" >
 
-	<div class="footer-section">
         <img src="././assets/logos/logo.png" alt="Logo de M2I Ristorante" class="footer-logo" />
         <div class="footer-flex">
         
@@ -32,6 +31,6 @@
 	            <p>L'équipe GIRL POWER</p>
 	            <p>©2024 Pâte d'Or</p>
 	        </div>
-    	</div>
+    	
 
 </footer>

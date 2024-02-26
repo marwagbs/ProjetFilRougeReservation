@@ -191,16 +191,28 @@ a {
 }
 /* Le code css pour le pied de page */
 
-.footer-section{
+footer {
+	font: inherit;
+	}
+.footer{
+	background-color: rgb(246, 177, 45);
 	display: flex;
 	flex-direction: column;
-	align-items: center;
-	/*font-size: 1em !important;*/
-	background-color: rgb(246, 177, 45);
+	align-items: center;	
 	gap: 20px;
 	padding: 30px;
 	
 }
+/*.footer-section{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	font-size: 1em !important;
+	
+	gap: 20px;
+	padding: 30px;
+	
+}*/
 
 .footer-flex {
 	display: flex;
