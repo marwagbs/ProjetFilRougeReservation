@@ -191,28 +191,16 @@ a {
 }
 /* Le code css pour le pied de page */
 
-footer {
-	font: inherit;
-	}
-.footer{
+.footer {
 	background-color: rgb(246, 177, 45);
 	display: flex;
 	flex-direction: column;
 	align-items: center;	
 	gap: 20px;
 	padding: 30px;
+	font-size: 1em;
 	
 }
-/*.footer-section{
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	font-size: 1em !important;
-	
-	gap: 20px;
-	padding: 30px;
-	
-}*/
 
 .footer-flex {
 	display: flex;
@@ -317,8 +305,8 @@ footer {
 .resto-card {
 	position: relative;
 	border: none;
-	width: 50%;
-	height: 350px;
+	width: 85%;
+	height: fit-content;
 	gap: 15px;
 	padding: 30px;
 	border-radius: 10px;
@@ -337,12 +325,14 @@ footer {
 	align-items: center;
 	justify-content: space-between;
 	width: 100%;
+	flex-wrap: wrap;
+	font-size: 0.7em;
 }
 
 .resto-info {
 	width: 100%;
 	gap: 30px;
-	font-size: 0.6em;
+	font-size: 0.5em;
 	padding-top: 10px;
 }
 
@@ -352,8 +342,9 @@ footer {
 	justify-content: left;
 	gap: 5px;
 	width: 100%;
-	font-size: 0.6em;
+	font-size: 0.5em;
 	line-height: 1;
+	margin-bottom: 60px;
 }
 
 .resto-horaires h3 {
@@ -398,21 +389,21 @@ footer {
 
 .resto-btn {
 	display: flex;
-	flex-direction: column;
+	/* flex-direction: column; */
 	gap: 10px;
 	justify-content: center;
 	position: absolute;
-	bottom: 47px;
-	right: 30px;
+	bottom: 10px;
+	/* right: 30px; */
 }
 
 .resto-btn button {
-	width: 200px;
+	width: 150px;
 	padding: 20px;
 	border: none;
 	border-radius: 30px;
 	background-color: #EF4B0A;
-	font-size: 0.6em;
+	font-size: 0.5em;
 	color: white;
 	text-transform: uppercase;
 	font-weight: bold;
@@ -1050,11 +1041,20 @@ VERSION TABLETTE
 		width: 65%;
 		padding: 30px 60px;
 	}
-	
-	.resto-btn {
-		right: 55px;
+	.icons-container {
+		font-size: 0.9em;
 	}
-     
+	.resto-info {
+		font-size: 0.6em;
+	}
+	.resto-horaires {
+		font-size: 0.6em;
+	}
+	
+	.resto-btn button {
+		width: 200px;
+		font-size: 0.6em;
+	}
 }
 
 /* *****************************************************************
@@ -1173,16 +1173,20 @@ VERSION DESKTOP
 .icons-container {
 	gap: 20px;
 	width: auto;
+	font-size: 0.9em;
 }
 
 .resto-info {
 	width: 100%;
 	padding-top: 35px;
+	font-size: 0.6em;
 }
 
 .resto-horaires {
 	width: 35%;
 	padding-top: 10px;
+	margin-bottom: 0px;
+	font-size: 0.6em;
 }
 
 .resto-icons {
@@ -1196,6 +1200,10 @@ VERSION DESKTOP
 	position: inherit;
 }
 
+.resto-btn button {
+	width: 200px;
+	font-size: 0.6em;
+}
 /* Le pied de page */
 
 .footer-flex, .footer-info {
