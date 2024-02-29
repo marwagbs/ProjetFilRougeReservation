@@ -47,7 +47,7 @@ public class ServletReservation extends HttpServlet {
   //------------------------------------------------------------------------------------------------------------------------------------------------------//
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        String idRestaurantStr = request.getParameter("idRestaurant");
+        String idRestaurantStr = request.getParameter("id");
         int idRestaurant = (idRestaurantStr != null && !idRestaurantStr.isEmpty()) ? Integer.parseInt(idRestaurantStr) : 0;
 
         Restaurant restaurant = null;
@@ -93,9 +93,10 @@ public class ServletReservation extends HttpServlet {
         LocalTime heure = LocalTime.parse(heureStr);
         int nbrPersonnes = Integer.parseInt(nbrPersonnesStr);
         
-     
+     System.out.println(idRestaurant);
 		  // Retrieve the "identifiant" attribute from the session
 	    String identifiant = (String) request.getSession().getAttribute("identifiant"); 
+	    System.out.println(identifiant);
 	    // Set the "identifiant" attribute as a request attribute
 	     Utilisateur utilisateur;
 		

@@ -95,6 +95,10 @@ a {
  margin:20px 0;
 }
 
+/*****SLIDER****/
+
+
+
 
 /*******************Form*************/
 .bradcrumb {
@@ -193,6 +197,7 @@ a {
 
 .footer {
 	background-color: rgb(246, 177, 45);
+
 	display: flex;
 	flex-direction: column;
 	align-items: center;	
@@ -270,6 +275,7 @@ a {
 
  .intro-resto h1 {
 	margin: 1rem 0;	
+	font-size: 2.5rem;
 }
 .intro-p-accueil{
 	text-align: center;
@@ -429,7 +435,7 @@ video {
 .intro-about{
 	background: url(../assets/img/about.jpg) center center;
 	background-size: cover;
-	padding: 8rem 0;
+	padding: 10rem 0;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -465,7 +471,7 @@ video {
 .p-about{
     padding:20px;
     text-align:center;
-    color:#fff;
+    
 }
 .p-about-video{
 	 padding:20px;
@@ -489,7 +495,7 @@ video {
 }
 .imgEquipe img{
     border-radius:20px;
-    margin:50px;
+   
 }
 
  /**********Reservation *****************************************/
@@ -1035,6 +1041,7 @@ VERSION TABLETTE
             grid-template-columns:1fr 1fr;
         }
         
+  
    /* Page Nos restaurants */
 
 	.resto-card {
@@ -1078,7 +1085,7 @@ VERSION DESKTOP
 		
 		
 	}
-	
+
 	.logo {
 		flex-direction: row;
 		margin-left: 2rem;
@@ -1088,7 +1095,7 @@ VERSION DESKTOP
 		
 		width: 50%;
 	}
-	
+
 	
 	.navbarUl {
 		background-color: transparent;
@@ -1129,6 +1136,7 @@ VERSION DESKTOP
         }
         .imgEquipe img{
             width:80%;
+            margin:50px;
         }
         .imgEquipe{
             gap:5px;
@@ -1139,9 +1147,12 @@ VERSION DESKTOP
         
 
  /* Page Nos restaurants */
- 
+ .intro-resto{
+	 padding: 14rem 0;
+ }
   .intro-resto h1 {
-	margin: 0.6rem 0;	
+	margin: 0.6rem 0;
+	font-size: 3rem;
 }
 .resto-section h3 {
 	padding-top: 0px;

@@ -19,10 +19,11 @@
         <div class="container-reservation">
             <div class="formulaire_reservation">
                 <p class="nom-restaurant-reservation" id="nom_restaurant"> ${restaurant.nom } </p>
-                <input type="hidden" name="idRestaurant" value="${restaurant.id}">
-                <input type="hidden" name="idUtilisateur" value="${utilisateur.id}">
-                <form action="#" method="post">
+         
+             
+                <form action="reservation" method="post">
                     <input type="hidden" name="idUtilisateur" value="${utilisateur.id}">
+                           <input type="hidden" name="idRestaurant" value="${restaurant.id}">
                     <label for="date">Date :</label>
                     <input type="date" id="date" name="dateres" required>
                     <select id="heureResa" name="heure" required>

@@ -188,8 +188,8 @@ public class HoraireRestaurantDAOJdbcimpl implements GenericDAO<HoraireRestauran
 				horaireRestaurant.getRestaurant().setId(rs.getInt("id"));
 				horaireRestaurant.getHoraire().setId(rs.getInt("id"));
 				horaire.setJour(rs.getString("jour"));
-				horaire.setHeureOuverture(LocalTime.parse(rs.getString("heure_ouverture"), DateTimeFormatter.ofPattern("HH:mm:ss")));
-				horaire.setHeureFermeture(LocalTime.parse(rs.getString("heure_fermeture"), DateTimeFormatter.ofPattern("HH:mm:ss")));
+				horaire.setHeureOuverture(LocalTime.parse(rs.getString("heure_ouverture"), DateTimeFormatter.ofPattern("HH:mm:ss.n")));
+				horaire.setHeureFermeture(LocalTime.parse(rs.getString("heure_fermeture"), DateTimeFormatter.ofPattern("HH:mm:ss.n")));
 				
 				horairesRestaurants.add(horaireRestaurant);
 			}
