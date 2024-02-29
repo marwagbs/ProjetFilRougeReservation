@@ -47,7 +47,7 @@ public class ServletReservation extends HttpServlet {
   //------------------------------------------------------------------------------------------------------------------------------------------------------//
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        String idRestaurantStr = request.getParameter("idRestaurant");
+        String idRestaurantStr = request.getParameter("id");
         int idRestaurant = (idRestaurantStr != null && !idRestaurantStr.isEmpty()) ? Integer.parseInt(idRestaurantStr) : 0;
 
         Restaurant restaurant = null;

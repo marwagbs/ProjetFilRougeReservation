@@ -7,12 +7,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title> ACCUEIL</title>
+    <link rel="stylesheet" type="text/css" href="css/slick.css" />
+	<link rel="stylesheet" type="text/css" href="css/slick-theme.css" />
        <link href="././css/style.css" rel="stylesheet" >
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+	<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+	<script type="text/javascript" src="././js/slick.min.js" defer></script>
+    <script type="text/javascript" src="././js/slick.js" defer></script>
+	   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <link rel="icon" href="data:;base64,iVBORw0KGgo="> 
-
 	<%@include file="../fragments/linksfont.jspf" %>
 </head>
 
@@ -21,19 +26,19 @@
 <%@ include file="/WEB-INF/fragments/header.jspf" %>
 
 <main class="main-accueil">
-
+ 
     <section class="carousel_accueil" class="carousel-container full-screen">
         <div class="container">
 
             <div id="myCarousel" class="carousel slide" data-ride="carousel">
-                <!-- Indicators -->
+                Indicators
                 <ol class="carousel-indicators">
                     <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
                     <li data-target="#myCarousel" data-slide-to="1"></li>
                     <li data-target="#myCarousel" data-slide-to="2"></li>
                 </ol>
 
-                <!-- Wrapper for slides -->
+                Wrapper for slides
                 <div class="carousel-inner">
 
                     <div class="item active">
@@ -59,7 +64,7 @@
 
                 </div>
 
-                <!-- Left and right controls -->
+                Left and right controls
                 <a class="left carousel-control" href="#myCarousel" data-slide="prev">
                     <span class="glyphicon glyphicon-chevron-left"></span>
                     <span class="sr-only">Previous</span>
@@ -70,7 +75,15 @@
                 </a>
             </div>
         </div>
-    </section>
+    </section> 
+    
+ <!--    <section class="container">
+    		<div class="slider">
+        <div> <img src="./assets/img/slider-01.jpg" alt="pate d'or 1" ></div>
+        <div> <img src="./assets/img/slider-02.jpg" alt="pate d'or 1" ></div>
+        <div> <img src="./assets/img/slider-03.jpg" alt="pate d'or 3" ></div>
+    </div> 
+    </section> -->
 
 <section class="accueil_nous">
     <div class="container">
@@ -155,5 +168,6 @@
 
 </main>
 	<%@include file="../fragments/footer.jspf" %>
+		
 </body>
 </html>
